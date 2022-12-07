@@ -1,0 +1,64 @@
+.section .copyright-wrapper {
+    border-top: 2px solid #000;
+    margin-bottom: 44px;
+}
+
+.copyright {
+    padding: 40px;
+    margin: 0px auto;
+    font-weight: 400;
+}
+
+.copyright a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.copyright > div:first-child > div {
+    text-align: center;
+    font-size: 10px;
+    padding: 25px 0;
+    /* TODO: font-family: "Gilroy Regular" */
+}
+
+.copyright > div:first-child > div a {
+    color: #000;
+}
+
+.copyright > div:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    text-align: center;
+    gap: 25px;
+    /* TODO: font-family: "Gilroy Medium" */
+}
+
+.copyright > div:nth-child(2) a.button {
+    border: 0;
+    background: transparent;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-weight: 400;
+    text-decoration: underline;
+    border-radius: 0;
+    /* TODO: font-family: "Gilroy Medium" */
+}
+
+@media (min-width: 768px) {
+    .copyright > div:nth-child(2) {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .copyright > div:nth-child(2) a.button:before {
+        content: '|';
+        display: inline;
+        padding: 0 10px;
+        color: #636365;
+    }
+}

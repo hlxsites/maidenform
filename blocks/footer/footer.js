@@ -1,19 +1,30 @@
-import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
+import { decorateMain } from '../../scripts/scripts.js';
+import { loadBlocks, readBlockConfig } from '../../scripts/lib-franklin.js';
 
-/**
- * loads and decorates the footer
- * @param {Element} block The header block element
- */
+async function loadFragment(path) {
+  if (path && path.startsWith('/')) {
+    const resp = await fetch(`${path}.plain.html`);
+    if (resp.ok) {
+      const main = document.createElement('main');
+      main.innerHTML = await resp.text();
+      decorateMain(main);
+      await loadBlocks(main);
+      return main;
+    }
+  }
+  return null;
+}
 
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
-  block.textContent = '';
+  const fragment = await loadFragment(cfg.footer || '/footer');
 
-  const footerPath = cfg.footer || '/footer';
-  const resp = await fetch(`${footerPath}.plain.html`);
-  const html = await resp.text();
-  const footer = document.createElement('div');
-  footer.innerHTML = html;
-  await decorateIcons(footer);
-  block.append(footer);
+  if (fragment) {
+    const fragmentSections = fragment.querySelectorAll(':scope .section');
+    if (fragmentSections) {
+      block.closest('.footer-wrapper').replaceChildren(...fragmentSections);
+    }
+  }
+
+  // TODO: Add back to top button
 }
