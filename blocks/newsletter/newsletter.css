@@ -5,7 +5,7 @@
 .newsletter {
     display: flex;
     flex-direction: column;
-    padding: 35px 25px 25px 25px;
+    padding: 35px 25px 25px;
     color: #fff;
     gap: 25px;
     font-size: 12px;
@@ -13,6 +13,7 @@
     letter-spacing: 1px;
     line-height: 25px;
     text-transform: uppercase;
+
     /* TODO: font-family: "Gilroy Regular"; */
 }
 
@@ -38,8 +39,6 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* width: 420px; */
-    /* gap: 35px; */
 }
 
 .email input {
@@ -49,6 +48,7 @@
     color: #000;
     font-size: 12px;
     height: 30px;
+
     /* TODO: font-family: "Gilroy Regular"; */
     padding-left: 10px;
 }

@@ -5,24 +5,13 @@
 
 .copyright {
     padding: 40px;
-    margin: 0px auto;
+    margin: 0 auto;
     font-weight: 400;
 }
 
 .copyright a {
     color: #000;
     text-decoration: underline;
-}
-
-.copyright > div:first-child > div {
-    text-align: center;
-    font-size: 10px;
-    padding: 25px 0;
-    /* TODO: font-family: "Gilroy Regular" */
-}
-
-.copyright > div:first-child > div a {
-    color: #000;
 }
 
 .copyright > div:nth-child(2) {
@@ -33,7 +22,20 @@
     font-size: 13px;
     text-align: center;
     gap: 25px;
+
     /* TODO: font-family: "Gilroy Medium" */
+}
+
+.copyright > div:first-child > div {
+    text-align: center;
+    font-size: 10px;
+    padding: 25px 0;
+
+    /* TODO: font-family: "Gilroy Regular" */
+}
+
+.copyright > div:first-child > div a {
+    color: #000;
 }
 
 .copyright > div:nth-child(2) a.button {
@@ -46,6 +48,7 @@
     font-weight: 400;
     text-decoration: underline;
     border-radius: 0;
+
     /* TODO: font-family: "Gilroy Medium" */
 }
 
@@ -55,7 +58,7 @@
         gap: 0;
     }
 
-    .copyright > div:nth-child(2) a.button:before {
+    .copyright > div:nth-child(2) a.button::before {
         content: '|';
         display: inline;
         padding: 0 10px;

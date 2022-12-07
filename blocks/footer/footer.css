@@ -16,7 +16,7 @@
 .back-to-top button {
   height: 100%;
   width: 100%;
-  background: url(../../icons/back-top.svg) no-repeat center 8px;
+  background: url('../../icons/back-top.svg') no-repeat center 8px;
   margin: 0;
   padding: 0;
   border: 0;

@@ -16,7 +16,7 @@
 
 .footer-links ul {
     list-style: none;
-    padding: 10px 0 0 0;
+    padding: 10px 0 0;
     margin: 0;
     font-weight: 500;
     font-size: 16px;
@@ -29,6 +29,7 @@
 
 .footer-links ul > li a {
     color: #000;
+
     /* TODO font-family: "Gilroy Medium" */
 }
 
@@ -38,6 +39,7 @@
     text-transform: uppercase;
     font-weight: 600;
     font-size: 16px;
+
     /* TODO: font-family: "Gilroy Bold" */
 }
 
