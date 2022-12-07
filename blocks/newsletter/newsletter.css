@@ -5,7 +5,7 @@
 .newsletter {
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding: 35px 25px 25px 25px;
     color: #fff;
     gap: 25px;
     font-size: 12px;
@@ -73,6 +73,7 @@
     .newsletter {
         flex-direction: row;
         font-size: 16px;
+        padding: 25px;
     }
 
     .newsletter .content-wrapper {

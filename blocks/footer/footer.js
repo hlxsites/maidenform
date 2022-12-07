@@ -18,13 +18,26 @@ async function loadFragment(path) {
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
   const fragment = await loadFragment(cfg.footer || '/footer');
+  const footer = block.closest('.footer-wrapper');
 
   if (fragment) {
     const fragmentSections = fragment.querySelectorAll(':scope .section');
     if (fragmentSections) {
-      block.closest('.footer-wrapper').replaceChildren(...fragmentSections);
+      footer.replaceChildren(...fragmentSections);
     }
   }
 
-  // TODO: Add back to top button
+  // Add back to top button
+  const backToTop = document.createRange().createContextualFragment(`
+  <div class="back-to-top">
+    <button aria-label="Back To Top"></button>
+  </div>
+  `);
+
+  // Scroll back to top
+  backToTop.querySelector('button').addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  footer.prepend(backToTop);
 }
