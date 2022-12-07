@@ -1,5 +1,5 @@
 import { decorateMain } from '../../scripts/scripts.js';
-import { loadBlocks, readBlockConfig } from '../../scripts/lib-franklin.js';
+import { loadBlocks } from '../../scripts/lib-franklin.js';
 
 async function loadFragment(path) {
   if (path && path.startsWith('/')) {
@@ -16,8 +16,7 @@ async function loadFragment(path) {
 }
 
 export default async function decorate(block) {
-  const cfg = readBlockConfig(block);
-  const fragment = await loadFragment(cfg.footer || '/footer');
+  const fragment = await loadFragment('/footer');
   const footer = block.closest('.footer-wrapper');
 
   if (fragment) {
