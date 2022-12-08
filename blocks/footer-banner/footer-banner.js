@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 class Carousel {
   constructor(items) {
     this.items = items;
@@ -38,7 +39,40 @@ class Carousel {
   }
 }
 
+class Modal {
+  constructor(content, carousel) {
+    this.content = content;
+    this.carousel = carousel;
+  }
+
+  show() {
+    this.modal = document.createRange().createContextualFragment(`
+      <div class="modal-background">
+        <div class="modal-content">
+          <button aria-label="Close">X</button>
+        </div>
+      </div>
+    `);
+
+    this.modal.querySelector('.modal-content').appendChild(this.content);
+    this.modal.querySelector('.modal-background').addEventListener('click', () => this.hide());
+    this.modal.querySelector('.modal-content button').addEventListener('click', () => this.hide());
+    this.modal.querySelector('.modal-content').addEventListener('click', (e) => e.stopPropagation());
+
+    this.modal = document.body.appendChild(this.modal.children[0]);
+
+    this.carousel.stop();
+  }
+
+  hide() {
+    this.modal.remove();
+    this.carousel.start();
+  }
+}
+
 export default async function decorate(block) {
+  const carousel = new Carousel(Array.from(block.children));
+
   // Add buttons to entries with modal
   Array.from(block.children).forEach((promotion) => {
     if (promotion.children.length < 2) {
@@ -52,11 +86,9 @@ export default async function decorate(block) {
 
     // Add class for modal
     promotion.children[1].classList.add('modal');
+    const modal = new Modal(promotion.children[1], carousel);
+    button.addEventListener('click', () => modal.show());
   });
 
-  // Start carousel
-  const carousel = new Carousel(Array.from(block.children));
   carousel.start();
-
-  // TODO: Modal logic
 }

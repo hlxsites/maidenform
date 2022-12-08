@@ -147,6 +147,10 @@ a.button.secondary, button.secondary {
   color: var(--text-color)
 } 
 
+/* TODO: Remove this, this is just to fix the mobile view */
+main {
+  overflow: hidden;
+}
 
 main input {
   font-size: 1.25rem;
