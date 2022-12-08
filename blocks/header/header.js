@@ -1,6 +1,6 @@
 import { decorateIcons } from '../../scripts/lib-franklin.js';
 
-function addDropdownElement(element) {
+function addDropdownIcon(element) {
   const dropdownArrow = document.createElement('span');
   dropdownArrow.classList.add('icon', 'icon-dropdown');
   element.append(dropdownArrow);
@@ -63,23 +63,28 @@ export default async function decorate(block) {
     const menus = [...nav.querySelectorAll('.nav-menu > div')];
     for (let i = 0; i < menus.length - 1; i += 2) {
       const li = document.createElement('li');
-      menus[i].classList.add('menu-nav-category');
-      menus[i + 1].classList.add('menu-nav-dropdown');
+      const menuTitle = menus[i];
+      const menuDropdownList = menus[i + 1];
+      menuTitle.classList.add('menu-nav-category');
+      menuDropdownList.classList.add('menu-nav-dropdown');
 
-      if (menuHasNoContent(menus[i + 1])) {
-        li.append(menus[i]);
+      if (menuHasNoContent(menuDropdownList)) {
+        li.append(menuTitle);
         ul.append(li);
         // eslint-disable-next-line no-continue
         continue;
       }
 
-      addDropdownElement(menus[i]);
-      li.append(menus[i]);
+      addDropdownIcon(menuTitle);
+      li.append(menuTitle);
 
+      // Add class name for each column in dropdown
       ['m-col-featured', 'm-col-2', 'm-col-3', 'm-feat-img', 'm-bg-img'].forEach((category, j) => {
-        menus[i + 1].querySelector(`:scope > div:nth-child(${j + 1})`)?.classList.add(category);
+        menuDropdownList.querySelector(`:scope > div:nth-child(${j + 1})`)?.classList.add(category);
       });
-      li.append(menus[i + 1]);
+      li.append(menuDropdownList);
+
+      // Add top-level menu expansion event listener
       li.addEventListener('click', () => {
         const expanded = li.getAttribute('aria-expanded') === 'true';
         collapseAllSubmenus(ul);
@@ -92,7 +97,7 @@ export default async function decorate(block) {
       featuredP.innerText = 'featured';
       li.querySelector('.m-col-featured')?.prepend(featuredP);
 
-      // Add dropdown functionality
+      // Add second-level expansion even listener
       li.querySelectorAll('p + ul').forEach((subDropdown) => {
         const subDropdownTitle = subDropdown.previousElementSibling;
         subDropdownTitle.setAttribute('aria-expanded', 'false');
@@ -105,7 +110,7 @@ export default async function decorate(block) {
           collapseAllSubmenus(li);
           subDropdownTitle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
         });
-        addDropdownElement(subDropdownTitle);
+        addDropdownIcon(subDropdownTitle);
       });
     }
     nav.querySelector('.nav-menu').append(ul);
