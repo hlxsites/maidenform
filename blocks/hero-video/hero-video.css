@@ -29,7 +29,7 @@
 }
 
 .hero-video .overlay-content {
-  align-items: center;
+  text-align: center;
   background: #000;
   border: 8px solid #000;
   box-shadow: 0 0 0 5px #f6d4cb inset;
@@ -69,11 +69,7 @@
   color: #fff;
   font-size: 20px;
   line-height: 1.1;
-}
-
-.hero-video .overlay-content .button-wrapper {
-  gap: 30px;
-  display: flex;
+  margin: 0;
 }
 
 .hero-video .overlay-content a.button.secondary {
