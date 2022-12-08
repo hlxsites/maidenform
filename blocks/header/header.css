@@ -117,10 +117,6 @@ header nav .nav-menu ul > li[aria-expanded="true"] {
   background-color: #f2f5f7;
 }
 
-header nav .m-feat-img {
-  display: none;
-}
-
 header nav .m-bg-img {
   display: none;
 }
@@ -142,7 +138,11 @@ header nav[aria-expanded="true"] .nav-menu ul > li .m-expandable-list li a {
 }
 
 header nav p.m-expandable-title[aria-expanded='true'] + .m-expandable-list {
-  display: initial
+  display: initial;
+}
+
+header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
+  display: none;
 }
 
 

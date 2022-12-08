@@ -14,9 +14,9 @@ function wrapChildren(element, newType) {
 }
 
 function menuHasNoContent(menu) {
-  return ((menu.children[0]?.children?.length ?? 0) === 0)
-    && ((menu.children[1]?.children?.length ?? 0) === 0)
-    && ((menu.children[2]?.children?.length ?? 0) === 0);
+  // check that first 4 columns have content
+  return [...menu.children].slice(0, 5)
+    .reduce((prev, curr) => prev && (curr.children[0]?.children?.length ?? 0) === 0, true);
 }
 
 function collapseAllSubmenus(menu) {
@@ -93,9 +93,11 @@ export default async function decorate(block) {
       ul.append(li);
 
       // Create featured dropdown
-      const featuredP = document.createElement('p');
-      featuredP.innerText = 'featured';
-      li.querySelector('.m-col-featured')?.prepend(featuredP);
+      if (li.querySelector('.m-col-featured')?.children.length > 0) {
+        const featuredP = document.createElement('p');
+        featuredP.innerText = 'featured';
+        li.querySelector('.m-col-featured')?.prepend(featuredP);
+      }
 
       // Add second-level expansion even listener
       li.querySelectorAll('p + ul').forEach((subDropdown) => {
