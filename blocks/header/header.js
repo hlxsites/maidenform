@@ -1,10 +1,32 @@
 import { decorateIcons } from '../../scripts/lib-franklin.js';
 
+function addDropdownElement(element) {
+  const dropdownArrow = document.createElement('span');
+  dropdownArrow.classList.add('icon', 'icon-dropdown');
+  element.append(dropdownArrow);
+}
+
+function wrapChildren(element, newType) {
+  const wrapper = document.createElement(newType);
+  wrapper.innerHTML = element.innerHTML;
+  element.innerHTML = '';
+  element.append(wrapper);
+}
+
+function menuHasNoContent(menu) {
+  return ((menu.children[0]?.children?.length ?? 0) === 0)
+    && ((menu.children[1]?.children?.length ?? 0) === 0)
+    && ((menu.children[2]?.children?.length ?? 0) === 0);
+}
+
+function collapseAllSubmenus(menu) {
+  menu.querySelectorAll('*[aria-expanded="true"]').forEach((el) => el.setAttribute('aria-expanded', 'false'));
+}
+
 /**
  * decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
-
 export default async function decorate(block) {
   block.innerHTML = '';
   // fetch nav content
@@ -44,20 +66,47 @@ export default async function decorate(block) {
       menus[i].classList.add('menu-nav-category');
       menus[i + 1].classList.add('menu-nav-dropdown');
 
-      const dropdownArrow = document.createElement('span');
-      dropdownArrow.classList.add('icon', 'icon-dropdown');
-      menus[i].append(dropdownArrow);
+      if (menuHasNoContent(menus[i + 1])) {
+        li.append(menus[i]);
+        ul.append(li);
+        // eslint-disable-next-line no-continue
+        continue;
+      }
 
+      addDropdownElement(menus[i]);
       li.append(menus[i]);
-      ['m-col-1', 'm-col-2', 'm-col-3', 'm-feat-img', 'm-bg-img'].forEach((category, j) => {
+
+      ['m-col-featured', 'm-col-2', 'm-col-3', 'm-feat-img', 'm-bg-img'].forEach((category, j) => {
         menus[i + 1].querySelector(`:scope > div:nth-child(${j + 1})`)?.classList.add(category);
       });
       li.append(menus[i + 1]);
       li.addEventListener('click', () => {
         const expanded = li.getAttribute('aria-expanded') === 'true';
+        collapseAllSubmenus(ul);
         li.setAttribute('aria-expanded', expanded ? 'false' : 'true');
       });
       ul.append(li);
+
+      // Create featured dropdown
+      const featuredP = document.createElement('p');
+      featuredP.innerText = 'featured';
+      li.querySelector('.m-col-featured')?.prepend(featuredP);
+
+      // Add dropdown functionality
+      li.querySelectorAll('p + ul').forEach((subDropdown) => {
+        const subDropdownTitle = subDropdown.previousElementSibling;
+        subDropdownTitle.setAttribute('aria-expanded', 'false');
+        subDropdownTitle.classList.add('m-expandable-title');
+        wrapChildren(subDropdownTitle, 'span');
+        subDropdown.classList.add('m-expandable-list');
+        subDropdownTitle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const expanded = subDropdownTitle.getAttribute('aria-expanded') === 'true';
+          collapseAllSubmenus(li);
+          subDropdownTitle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+        });
+        addDropdownElement(subDropdownTitle);
+      });
     }
     nav.querySelector('.nav-menu').append(ul);
 

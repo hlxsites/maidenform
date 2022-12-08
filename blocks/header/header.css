@@ -21,6 +21,14 @@ header nav .nav-logo {
   justify-self: center;
 }
 
+header nav .nav-logo .icon {
+  display: flex;
+}
+
+header nav .nav-logo svg {
+  width: 100px;
+}
+
 header nav .nav-hamburger {
   grid-area: hamburger;
   align-self: center;
@@ -57,9 +65,15 @@ header nav[aria-expanded="true"] .nav-menu {
 header nav[aria-expanded="true"] .nav-menu ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-header nav .nav-menu ul > li .menu-nav-category {
+header nav[aria-expanded="true"] .nav-menu ul .menu-nav-dropdown ul > li {
+  padding: 20px;
+  border-bottom: 1px solid #e7ebee;
+}
+
+header nav .nav-menu ul > li .menu-nav-category, header nav p.m-expandable-title {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
@@ -67,9 +81,13 @@ header nav .nav-menu ul > li .menu-nav-category {
   padding: 20px;
 }
 
-header nav .nav-menu ul > li .menu-nav-category .icon {
+header nav p.m-expandable-title .icon, header nav .nav-menu ul > li .menu-nav-category .icon {
   width: 14px;
   transition: transform 200ms;
+}
+
+header nav .nav-menu ul > li p.m-expandable-title[aria-expanded="true"] .icon {
+  transform: rotate(180deg);
 }
 
 header nav .nav-menu ul > li[aria-expanded="true"] .menu-nav-category .icon {
@@ -80,10 +98,11 @@ header nav[aria-expanded="true"] .nav-menu ul > li:first-child .menu-nav-categor
   border-top: 1px solid #e7ebee;
 }
 
-header nav[aria-expanded="true"] .nav-menu ul > li a {
+header nav[aria-expanded="true"] .nav-menu ul > li *:is(a, p) {
   text-transform: uppercase;
   color: black;
   font-weight: bolder;
+  margin: 0;
 }
 
 header nav .nav-menu .menu-nav-dropdown {
@@ -96,6 +115,34 @@ header nav[aria-expanded="true"] .nav-menu ul > li[aria-expanded="true"] .menu-n
 
 header nav .nav-menu ul > li[aria-expanded="true"] {
   background-color: #f2f5f7;
+}
+
+header nav .m-feat-img {
+  display: none;
+}
+
+header nav .m-bg-img {
+  display: none;
+}
+
+header nav .m-expandable-list {
+  display: none;
+}
+
+header nav .m-expandable-list > li a {
+  display: block;
+}
+
+header nav[aria-expanded="true"] .nav-menu ul > li .m-expandable-title > span:first-child {
+  margin-left: 20px;
+}
+
+header nav[aria-expanded="true"] .nav-menu ul > li .m-expandable-list li a {
+  margin-left: 40px;
+}
+
+header nav p.m-expandable-title[aria-expanded='true'] + .m-expandable-list {
+  display: initial
 }
 
 
