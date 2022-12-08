@@ -23,8 +23,11 @@ function decorateOverlay(overlay, overlaySticker) {
   const overlayContent = overlay.firstElementChild;
   overlayContent.classList.add('overlay-content');
 
+  const iconSpan = overlaySticker.querySelector('span.icon');
+  const icon = iconSpan.classList[1].substring(5);
+  overlay.insertAdjacentHTML('beforebegin', `<style>.hero-video .overlay-content::before { content: url("${window.hlx.codeBasePath}/icons/${icon}.svg");}</style>`);
+
   overlay.replaceWith(overlayContent);
-  // todo
   overlaySticker.remove();
 }
 

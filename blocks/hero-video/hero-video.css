@@ -10,6 +10,13 @@
   position: relative;
 }
 
+.hero-video .video-desktop,
+.hero-video .video-mobile {
+  margin: 0 auto;
+  max-width: max-content;
+  width: 100%;
+}
+
 .hero-video .video-desktop {
   display: none;
 }
@@ -31,39 +38,49 @@
   justify-content: center;
   margin: 0;
   padding: 30px;
+  position: relative;
 }
 
-.hero-video .overlay-content h4 {
-  color: #f6d4cb;
-  font-size: 4vw;
-  letter-spacing: 3px;
-  margin: 0;
+.hero-video .overlay-content::before {
+  display: block;
+  width: 150px;
+  position: absolute;
+  z-index: 1;
+  right: -1%;
+  top: -33%;
+  transform: rotate(18deg);
 }
 
 .hero-video .overlay-content h3 {
   color: #fff;
-  font-size: 10.5vw;
+  font-size: 65px;
   line-height: 1;
   margin: 10px 0;
 }
 
+.hero-video .overlay-content h4 {
+  color: #f6d4cb;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
 .hero-video .overlay-content p {
   color: #fff;
-  font-size: 4vw;
+  font-size: 20px;
   line-height: 1.1;
 }
 
 .hero-video .overlay-content .button-wrapper {
-    gap: 30px;
-    display: flex;
+  gap: 30px;
+  display: flex;
 }
 
 .hero-video .overlay-content a.button.secondary {
-    background: #F6D4CB;
-    color: #000 !important;
-    border: none;
+  background: #f6d4cb;
+  color: #000 !important;
+  border: none;
 }
-
 
 @media (min-width: 768px) {
   .hero-video .video-desktop {
@@ -74,24 +91,23 @@
     display: none;
   }
 
-  .hero-video .overlay-content h4 {
-    font-size: 2rem;
-    line-height: 1.3;
-    margin: 0 0 15px;
-  }
-
   .hero-video .overlay-content h3 {
-    font-size: 6.5rem;
     line-height: 0.8;
     margin-bottom: 20px;
   }
 
+  .hero-video .overlay-content h4 {
+    line-height: 1.3;
+    margin: 0 0 15px;
+  }
+
   .hero-video .overlay-content p {
-    font-size: 3vw;
+    line-height: 1.1;
+    font-size: 20px;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .hero-video .overlay-content {
     left: 20%;
     top: 25%;
@@ -100,8 +116,10 @@
     transform: translate(-50%, 0);
   }
 
-  .hero-video .overlay-content p {
-    font-size: 2.2rem;
-    line-height: 1.1;
+  .hero-video .overlay-content::before {
+    width: 180px;
+    left: -24%;
+    top: -35%;
+    transform: unset;
   }
 }
