@@ -1,5 +1,8 @@
 import { decorateIcons } from '../../scripts/lib-franklin.js';
 
+const mobileBreakpoint = 1024;
+let globalWindowWidth = window.innerWidth;
+
 function addDropdownIcon(element) {
   const dropdownArrow = document.createElement('span');
   dropdownArrow.classList.add('icon', 'icon-dropdown');
@@ -21,6 +24,36 @@ function menuHasNoContent(menu) {
 
 function collapseAllSubmenus(menu) {
   menu.querySelectorAll('*[aria-expanded="true"]').forEach((el) => el.setAttribute('aria-expanded', 'false'));
+}
+
+function addEventListenersMobile() {
+  document.querySelectorAll('.menu-expandable').forEach((title) => {
+    title.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const expanded = title.getAttribute('aria-expanded') === 'true';
+      collapseAllSubmenus(title.closest('li'));
+      title.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+}
+
+function addEventListenersDesktop() {
+  document.querySelectorAll('.menu-expandable').forEach((title) => {
+    title.addEventListener('mouseenter', (e) => {
+      e.stopPropagation();
+      const expanded = title.getAttribute('aria-expanded') === 'true';
+      collapseAllSubmenus(title.closest('li'));
+      title.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+}
+
+function reAttachEventListeners() {
+  if (window.innerWidth < mobileBreakpoint) {
+    addEventListenersMobile();
+  } else {
+    addEventListenersDesktop();
+  }
 }
 
 /**
@@ -78,18 +111,20 @@ export default async function decorate(block) {
       addDropdownIcon(menuTitle);
       li.append(menuTitle);
 
+      li.classList.add('menu-expandable');
+
       // Add class name for each column in dropdown
       ['m-col-featured', 'm-col-2', 'm-col-3', 'm-feat-img', 'm-bg-img'].forEach((category, j) => {
-        menuDropdownList.querySelector(`:scope > div:nth-child(${j + 1})`)?.classList.add(category);
+        menuDropdownList.querySelector(`:scope > div:nth-child(${j + 1})`)?.classList.add(category, 'menu-expandable');
       });
       li.append(menuDropdownList);
 
       // Add top-level menu expansion event listener
-      li.addEventListener('click', () => {
-        const expanded = li.getAttribute('aria-expanded') === 'true';
-        collapseAllSubmenus(ul);
-        li.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-      });
+      // li.addEventListener('click', () => {
+      //   const expanded = li.getAttribute('aria-expanded') === 'true';
+      //   collapseAllSubmenus(ul);
+      //   li.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      // });
       ul.append(li);
 
       // Create featured dropdown
@@ -106,12 +141,6 @@ export default async function decorate(block) {
         subDropdownTitle.classList.add('m-expandable-title');
         wrapChildren(subDropdownTitle, 'span');
         subDropdown.classList.add('m-expandable-list');
-        subDropdownTitle.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const expanded = subDropdownTitle.getAttribute('aria-expanded') === 'true';
-          collapseAllSubmenus(li);
-          subDropdownTitle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-        });
         addDropdownIcon(subDropdownTitle);
       });
     }
@@ -120,5 +149,28 @@ export default async function decorate(block) {
     decorateIcons(nav);
 
     block.append(nav);
+
+    // Handle different event listeners for mobile/desktop on window resize
+    const removeAllEventListeners = (element) => {
+      element.replaceWith(element.cloneNode(true));
+    };
+
+    const shouldResize = () => {
+      const resize = (window.innerWidth > mobileBreakpoint && globalWindowWidth <= mobileBreakpoint)
+        || (window.innerWidth < mobileBreakpoint && globalWindowWidth >= mobileBreakpoint);
+      globalWindowWidth = window.innerWidth;
+      return resize;
+    };
+
+    window.addEventListener('resize', () => {
+      if (shouldResize()) {
+        nav.setAttribute('aria-expanded', 'false');
+        removeAllEventListeners(document.querySelector('nav .nav-menu'));
+        collapseAllSubmenus(block);
+        reAttachEventListeners();
+      }
+    });
+
+    reAttachEventListeners();
   }
 }
