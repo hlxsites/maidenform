@@ -509,12 +509,6 @@ main .section.customer-service > div > p {
   margin-bottom: 1rem;
 }
 
-main img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
-}
-
 main .section.customer-service > div > p + p img{
   max-width: 1.75rem;
   margin: 0 0.5rem 0 0;
@@ -534,25 +528,6 @@ main blockquote {
   text-indent: -1rem;
   hanging-punctuation: first;
 }
-
-main blockquote p::before {
-  content: "“";
-  line-height: 0;
-}
-
-main blockquote p::after {
-  content: "”";
-  line-height: 0;
-}
-
-hr {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  border: 0;
-  border-bottom: 1px solid var(--overlay-background-color);
-}
-
-
 
 @media (min-width: 1024px) {
   :root {
@@ -575,12 +550,3 @@ hr {
   }
 }
 
-/* progressive section appearance */
-main .section[data-section-status='loading'],
-main .section[data-section-status='initialized'] {
-  display: none;
-}
-
-main .section.highlight {
-  background-color: var(--highlight-background-color);
-}
