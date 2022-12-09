@@ -213,11 +213,6 @@ a.button:hover, a.button:focus, button:hover, button:focus  {
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
-  background-color: var(--overlay-background-color);
-  cursor: unset;
-}
-
 a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
@@ -372,6 +367,11 @@ main .section.highlight {
     top: 0;
     z-index: 1000;
     transition: all .3s ease;
+}
+
+button:disabled, button:disabled:hover {
+  background-color: var(--overlay-background-color);
+  cursor: unset;
 }
 
 .modal-content button:hover {

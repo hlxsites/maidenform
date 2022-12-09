@@ -1,11 +1,3 @@
-.section.promo-banner-container {
-  padding: 0;
-}
-
-.section.hero-video-container > div {
-  max-width: inherit;
-}
-
 .promo-banner-wrapper {
   background: #793e4e;
   color: #fff;
@@ -79,4 +71,12 @@
 /* Hide Modal content */
 .promo-banner .modal {
   display: none;
+}
+
+.section.promo-banner-container {
+  padding: 0;
+}
+
+.section.hero-video-container > div {
+  max-width: inherit;
 }

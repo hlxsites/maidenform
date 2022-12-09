@@ -76,8 +76,8 @@ export default async function decorate(block) {
   // Add buttons to entries with modal
   Array.from(block.children).forEach((promotion) => {
     if (
-      promotion.children.length < 2 ||
-      !promotion.children[1].hasChildNodes()
+      promotion.children.length < 2
+      || !promotion.children[1].hasChildNodes()
     ) {
       return;
     }

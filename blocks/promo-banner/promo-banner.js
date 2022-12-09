@@ -1,4 +1,4 @@
-import { Carousel, Modal } from "../footer-banner/footer-banner.js";
+import { Carousel, Modal } from '../footer-banner/footer-banner.js';
 
 export default async function decorate(block) {
   const carousel = new Carousel(Array.from(block.children));
@@ -6,8 +6,8 @@ export default async function decorate(block) {
   // Add buttons to entries with modal
   Array.from(block.children).forEach((promotion) => {
     if (
-      promotion.children.length < 2 ||
-      !promotion.children[1].hasChildNodes()
+      promotion.children.length < 2
+      || !promotion.children[1].hasChildNodes()
     ) {
       return;
     }
