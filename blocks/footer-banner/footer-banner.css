@@ -1,0 +1,144 @@
+.footer-banner-container {
+    background: #000;
+    color: #fff;
+    height: 44px;
+    padding: 2px;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    z-index: 2003;
+
+    /* TODO: font-family: 'Gilroy Regular' */
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.footer-banner-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.footer-banner {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.footer-banner a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-banner > div {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    transform: translateX(100%);
+}
+
+.footer-banner > div:first-child {
+    transform: translateX(0%);
+}
+
+.footer-banner > div.animated {
+    transition: 0.5s ease all;
+}
+
+.footer-banner button {
+    background: none;
+    border: 0;
+    margin: 0;
+    display: inline;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: underline;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 9px 15px;
+
+    /* TODO: font-family: 'Gilroy Bold' */
+}
+
+@media (min-width: 768px) {
+    .footer-banner > div {
+        font-size: 20px;
+    }
+}
+
+/* Hide Modal content */
+.footer-banner .modal {
+    display: none;
+}
+
+.modal-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    background: rgb(0 0 0 / 80%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    max-width: 120rem;
+    width: 60%;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+
+    /* TODO: font-family: 'Gilroy Regular' */
+}
+
+.modal-content h1 {
+    margin: 10px 0;
+    padding: 0;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.modal-content button {
+    display: block;
+    background: #fff;
+    border: 1px solid #000;
+    width: 44px;
+    height: 44px;
+    margin: -20px -20px 0 0;
+    text-align: center;
+    color: #333;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 44px;
+    font-family: Arial, monospace;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    transition: all .3s ease;
+}
+
+.modal-content button:hover {
+    background: #000;
+    color: #fff;
+}

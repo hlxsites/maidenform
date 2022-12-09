@@ -1,1 +1,139 @@
 /* below the fold CSS goes here */
+
+/* || Gilroy Fonts */
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-ExtraBold.woff2') format('woff2'),url('../fonts/Gilroy-ExtraBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-ExtraBold-Italic.woff2') format('woff2'),url('../fonts/Gilroy-ExtraBold-Italic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-SemiBold.woff2') format('woff2'),url('../fonts/Gilroy-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-Medium.woff2') format('woff2'),url('../fonts/Gilroy-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-Regular.woff2') format('woff2'),url('../fonts/Gilroy-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-Light.woff2') format('woff2'),url('../fonts/Gilroy-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Gilroy;
+    src: url('../fonts/Gilroy-UltraLight.woff2') format('woff2'),url('../fonts/Gilroy-UltraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* || Zahrah Fonts */
+
+@font-face {
+    font-family: Zahrah;
+    src: url('../fonts/Zahrah-Bold.woff') format('woff2'),url('../fonts/Zahrah-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Zahrah;
+    src: url('../fonts/Zahrah-Bold-Italic.woff2') format('woff2'),url('../fonts/Zahrah-Bold-Italic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Zahrah;
+    src: url('../fonts/Zahrah-SemiBold.woff2') format('woff2'),url('../fonts/Zahrah-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Zahrah;
+    src: url('../fonts/Zahrah-SemiBold-Italic.woff2') format('woff2'),url('../fonts/Zahrah-SemiBold-Italic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Zahrah;
+    src: url('../fonts/Zahrah-Medium-Italic.woff2') format('woff2'),url('../fonts/Zahrah-Medium-Italic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Zahrah;
+    src: url('../fonts/Zahrah-Medium.woff2') format('woff2'),url('../fonts/Zahrah-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Zahrah;
+    src: url('../fonts/Zahrah-Regular.woff2') format('woff2'),url('../fonts/Zahrah-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Zahrah;
+    src: url('../fonts/Zahrah-Regular-Italic.woff2') format('woff2'),url('../fonts/Zahrah-Regular-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Zahrah;
+    src: url('../fonts/Zahrah-Light.woff2') format('woff2'),url('../fonts/Zahrah-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Zahrah;
+    src: url('../fonts/Zahrah-Light-Italic.woff2') format('woff2'),url('../fonts/Zahrah-Light-Italic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+} 

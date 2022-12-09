@@ -1,14 +1,30 @@
-footer {
-  padding: 2rem;
-  background-color: var(--overlay-background-color);
-  font-size: var(--body-font-size-s);
+.back-to-top {
+  display: block;
+  background: #fff;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 60%);
+  cursor: pointer;
+  margin-right: -20px;
+  z-index: 1;
+  margin-top: -20px;
+  position: absolute;
+  right: 50%;
 }
 
-footer .footer {
-  max-width: 1200px;
-  margin: auto;
-}
-
-footer .footer p {
+.back-to-top button {
+  height: 100%;
+  width: 100%;
+  background: url('../../icons/back-top.svg') no-repeat center 8px;
   margin: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .back-to-top {
+    right: 10%;
+  }
 }
