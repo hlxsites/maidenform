@@ -23,12 +23,17 @@ function decorateOverlay(overlay, overlaySticker) {
   const overlayContent = overlay.firstElementChild;
   overlayContent.classList.add('overlay-content');
 
-  const iconSpan = overlaySticker.querySelector('span.icon');
-  const icon = iconSpan.classList[1].substring(5);
-  overlay.insertAdjacentHTML('beforebegin', `<style>.hero-video .overlay-content::before { content: url("${window.hlx.codeBasePath}/icons/${icon}.svg");}</style>`);
+  if (overlaySticker) {
+    const iconSpan = overlaySticker.querySelector('span.icon');
+    const icon = iconSpan.classList[1].substring(5);
+    overlay.insertAdjacentHTML(
+      'beforebegin',
+      `<style>.hero-video .overlay-content::before { content: url("${window.hlx.codeBasePath}/icons/${icon}.svg");}</style>`,
+    );
+    overlaySticker.remove();
+  }
 
   overlay.replaceWith(overlayContent);
-  overlaySticker.remove();
 }
 
 export default function decorate(block) {
@@ -62,5 +67,7 @@ export default function decorate(block) {
 
   mobileVideoRow.replaceWith(decorateVideo(mobileVideo));
   desktopVideoRow.replaceWith(decorateVideo(desktopVideo));
-  decorateOverlay(overlayRow, overlayStickerRow);
+  if (overlayRow) {
+    decorateOverlay(overlayRow, overlayStickerRow);
+  }
 }
