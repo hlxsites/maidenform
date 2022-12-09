@@ -81,6 +81,20 @@
   src: local("Arial");
 }
 
+/* fallback font for Gilroy Bold (normal - normal) */
+@font-face {
+  font-family: "gilroy-bold-normal-normal-fallback";
+  size-adjust: 102.931%;
+  src: local("Arial");
+}
+
+/* fallback font for Gilroy Bold (normal - bold) */
+@font-face {
+  font-family: "gilroy-bold-normal-bold-fallback";
+  size-adjust: 102.811%;
+  src: local("Arial");
+}
+
 :root {
   /* colors */
   --clr-black: #000;
@@ -219,11 +233,23 @@ button:disabled, button:disabled:hover {
 }
 
 a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color)
+  font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback';
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 20px;
+  min-width: 130px;
+  background-color: var(--clr-black);
+  border: 1px solid var(--clr-black);
+  color: var(--clr-white);
+  padding: 10px 20px;
 } 
 
+a.button.secondary:hover, button.secondary:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+} 
 
 main input {
   font-size: 1.25rem;
