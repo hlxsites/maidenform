@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-class Carousel {
+export class Carousel {
   constructor(items) {
     this.items = items;
     this.currentItemIndex = 1;
@@ -39,7 +39,7 @@ class Carousel {
   }
 }
 
-class Modal {
+export class Modal {
   constructor(content, carousel) {
     this.content = content;
     this.carousel = carousel;
@@ -75,7 +75,10 @@ export default async function decorate(block) {
 
   // Add buttons to entries with modal
   Array.from(block.children).forEach((promotion) => {
-    if (promotion.children.length < 2) {
+    if (
+      promotion.children.length < 2
+      || !promotion.children[1].hasChildNodes()
+    ) {
       return;
     }
 
