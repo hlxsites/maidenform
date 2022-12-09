@@ -8,6 +8,7 @@
 
 .hero-video {
   position: relative;
+  overflow: hidden;
 }
 
 .hero-video .video-desktop,
