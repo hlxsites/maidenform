@@ -1,5 +1,6 @@
 header .header.block {
   position: fixed;
+  z-index: 99;
   width: 100%;
   background: white;
 }
@@ -102,7 +103,7 @@ header nav .nav-menu ul > li:first-child .menu-nav-category {
 header nav .nav-menu ul > li *:is(a, p) {
   text-transform: uppercase;
   color: black;
-  font-weight: bolder;
+  font-weight: bold;
   margin: 0;
 }
 
@@ -172,7 +173,11 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
 
   header nav .nav-menu ul {
     display: flex;
-    gap: 15px;
+  }
+
+  header nav .nav-menu ul li {
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   header nav .nav-menu .menu-nav-dropdown .column {
@@ -246,9 +251,22 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   }
 
   header nav .nav-menu .menu-nav-dropdown .m-feat-img img {
-    display: initial;
-    height: 152px;
+    height: 150px;
     width: auto;
+    display: block;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-feat-img picture {
+    display: initial;
+  }
+
+
+  header nav .nav-menu .menu-nav-dropdown .m-feat-img ul li {
+    flex: 1 1 0;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-feat-img ul li * {
+    display: block;
   }
 
   header nav .nav-menu .menu-nav-dropdown .m-expandable-title {
@@ -257,9 +275,13 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
 
   header nav .nav-menu .menu-nav-dropdown .m-expandable-list {
     flex-direction: column;
-    gap: 0;
+    gap: 8px;
     text-transform: unset;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-feat-img .m-expandable-list {
+    flex-direction: row;
   }
 
   header nav .nav-menu .menu-nav-dropdown div:not(.m-col-featured) .m-expandable-list li > *:is(a, p) {

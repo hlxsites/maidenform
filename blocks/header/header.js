@@ -158,6 +158,12 @@ export default async function decorate(block) {
         link.parentElement.append(newLink);
         newLink.classList.add('linked-picture-desktop');
       });
+
+      const backgroundImg = li.querySelector('.m-bg-img picture img');
+      if (backgroundImg && backgroundImg.getAttribute('src')) {
+        menuDropdownList.style.background = `url(${backgroundImg.getAttribute('src')})`;
+        menuDropdownList.style.backgroundSize = 'cover';
+      }
     }
     nav.querySelector('.nav-menu').innerHTML = ul.outerHTML;
 
