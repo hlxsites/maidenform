@@ -15,6 +15,7 @@ function decorateVideo(video) {
   videoTag.setAttribute('title', video.title);
   videoTag.innerHTML = `<source src="${video.videoUrl}" type="video/mp4">`;
   div.appendChild(videoTag);
+  videoTag.muted = true;
   return div;
 }
 

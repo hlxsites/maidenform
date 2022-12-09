@@ -47,7 +47,7 @@
   position: absolute;
   z-index: 1;
   right: -1%;
-  top: -33%;
+  top: -25%;
   transform: rotate(18deg);
 }
 
@@ -78,7 +78,7 @@
   border: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .hero-video .video-desktop {
     display: unset;
   }
@@ -115,7 +115,7 @@
   .hero-video .overlay-content::before {
     width: 180px;
     left: -24%;
-    top: -35%;
+    top: -30%;
     transform: unset;
   }
 }
