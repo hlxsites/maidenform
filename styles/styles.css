@@ -97,8 +97,8 @@
   --text-color: var(--clr-black);
 
   /* fonts */
-  --body-font-family: 'Gilroy', 'Arial', sans-serif;
-  --heading-font-family: 'Zahrah', 'Arial', sans-serif;
+  --body-font-family: 'Gilroy', 'gilroy-normal-700-fallback', 'gilroy-normal-600-fallback', 'gilroy-normal-400-fallback', 'gilroy-normal-300-fallback', 'Arial', sans-serif;
+  --heading-font-family: 'Zahrah',  'zahrah-normal-700-fallback', 'zahrah-italic-700-fallback', 'zahrah-normal-600-fallback', 'zahrah-italic-600-fallback', 'zahrah-italic-500-fallback','Arial', sans-serif;
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 
   /* body sizes */
