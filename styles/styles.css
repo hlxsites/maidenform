@@ -311,10 +311,49 @@ main img {
   height: auto;
 }
 
+/* Section Styles */
+
+.section.variant1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 16px;
+  margin: 40px 0;
+}
+
+.section.variant1 > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.section.variant1 > div:first-child p {
+  margin: 0;
+}
+
+.section.variant1 > div:first-child h3 {
+  font-family: 'Zahrah SemiBold', 'zahrah-normal-600-fallback', serif;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+  text-decoration: underline;
+  letter-spacing: 4px;
+}
+
 @media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
-  }  
+  }
+
+  .section.variant1 {
+    padding: 0 32px;
+  }
+
+  .section.variant1 > div:first-child {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 900px) {

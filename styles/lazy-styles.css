@@ -84,7 +84,7 @@
 }
 
 @font-face {
-    font-family: Zahrah;
+    font-family: 'Zahrah SemiBold';
     src: url('../fonts/Zahrah-SemiBold.woff2') format('woff2'),url('../fonts/Zahrah-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
