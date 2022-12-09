@@ -111,6 +111,66 @@
     display: none;
 }
 
+/* Variant 4 */
+.section > .columns-wrapper:has(.variant4) {
+    max-width: 970px;
+}
+
+.columns.variant4 {
+    text-align: center;
+}
+
+.columns.variant4 > div > div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.columns.variant4 > div:first-child > div:first-child > div {
+    display: block;
+    background: #000;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 14px;
+    max-width: 100px;
+    margin: 0 0 0 -15%;
+}
+
+.columns.variant4 > div > div p {
+    margin: 0;
+    font-family: 'Gilroy Medium', 'gilroy-normal-400-fallback', sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.columns.variant4 > div:first-child > div > div h3 {
+    margin: 0 0 20px;
+    font-family: 'Zahrah Bold Italic', 'zahrah-italic-700-fallback', serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.columns.variant4 > div:first-child > div > div h4 {
+    margin: 0;
+    font-family: 'Zahrah Bold Italic', 'zahrah-italic-700-fallback', serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.columns.variant4 > div > div:nth-child(2) a.button {
+    margin: 10px;
+    min-width: 210px;
+}
+
+.columns.variant4 > div > div:nth-child(2) h2 {
+    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+}
+
 @media (min-width: 900px) {
     .section > div.columns-wrapper {
         max-width: 1548px;
@@ -185,4 +245,28 @@
         flex: 5;
         align-self: stretch;
     }
+
+    /* Variant 4 */
+
+    .columns.variant4 > div > div:first-child {
+        flex: 2;
+    }
+
+    .columns.variant4 > div:first-child > div:first-child > div {
+        max-width: 185px;
+        padding: 20px;
+    }
+
+    .columns.variant4 > div > div p {
+        font-size: 16px;
+    }
+
+    .columns.variant4 > div:first-child > div > div h3 {
+        font-size: 28px;
+    }
+
+    .columns.variant4 > div:first-child > div > div h4 {
+        font-size: 20px;
+    }
+
 }

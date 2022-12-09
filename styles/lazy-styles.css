@@ -26,7 +26,7 @@
 }
 
 @font-face {
-    font-family: Gilroy;
+    font-family: 'Gilroy Medium';
     src: url('../fonts/Gilroy-Medium.woff2') format('woff2'),url('../fonts/Gilroy-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
@@ -76,7 +76,7 @@
 }
 
 @font-face {
-    font-family: Zahrah;
+    font-family: 'Zahrah Bold Italic';
     src: url('../fonts/Zahrah-Bold-Italic.woff2') format('woff2'),url('../fonts/Zahrah-Bold-Italic.woff') format('woff');
     font-weight: 700;
     font-style: italic;
