@@ -175,9 +175,22 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
     gap: 15px;
   }
 
+  header nav .nav-menu .menu-nav-dropdown .column {
+    padding: 12px;
+  }
+
   header nav .nav-menu ul > li *:is(a, p) {
     font-size: 15px;
     padding: 0;
+  }
+
+  header nav .nav-menu .menu-nav-category > div > a:hover {
+    color: #c41b53;
+    text-decoration: none;
+  }
+
+  header nav .nav-menu ul > li[aria-expanded="true"] {
+    background-color: unset;
   }
 
   header nav .nav-menu ul > li .menu-nav-category {
@@ -185,11 +198,81 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
     border-bottom: none;
   }
 
+  header nav .nav-menu > ul > li {
+    padding-bottom: 30px;
+    margin-bottom: -30px;
+  }
+
   header nav .nav-menu ul > li:first-child .menu-nav-category {
     border-top: none;
   }
 
-  header .menu-nav-category .icon {
+  header .icon.icon-dropdown {
     display: none;
+  }
+
+  header nav .nav-menu ul .menu-nav-dropdown ul > li {
+    border-bottom: none;
+  }
+
+  header nav .nav-menu .menu-expandable[aria-expanded='true'] .menu-nav-dropdown {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: white;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .empty {
+    display: none;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-col-2 {
+    border-left: 1px solid #e7ebee;
+    padding-left: 50px;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-col-featured > p:first-child {
+    display: none;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-feat-img a:not(.linked-picture-desktop) {
+    display: none;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-feat-img img {
+    display: initial;
+    height: 152px;
+    width: auto;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-expandable-title {
+    margin-bottom: 5px;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-expandable-list {
+    flex-direction: column;
+    gap: 0;
+    text-transform: unset;
+    margin-bottom: 20px;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown div:not(.m-col-featured) .m-expandable-list li > *:is(a, p) {
+    text-transform: unset;
+    font-weight: normal;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-expandable-list li {
+    padding: 0;
+    border: none;
+  }
+
+  header nav p.m-expandable-title {
+    border: none;
   }
 }

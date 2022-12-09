@@ -38,12 +38,18 @@ function addEventListenersMobile() {
 }
 
 function addEventListenersDesktop() {
-  document.querySelectorAll('.menu-expandable').forEach((title) => {
+  document.querySelectorAll('.nav-menu > ul > li').forEach((title) => {
     title.addEventListener('mouseenter', (e) => {
       e.stopPropagation();
       const expanded = title.getAttribute('aria-expanded') === 'true';
-      collapseAllSubmenus(title.closest('li'));
+      collapseAllSubmenus(title.closest('ul'));
       title.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  document.querySelectorAll('.nav-menu > ul > li').forEach((title) => {
+    title.addEventListener('mouseleave', () => {
+      collapseAllSubmenus(document.querySelector('nav'));
     });
   });
 }
@@ -115,16 +121,15 @@ export default async function decorate(block) {
 
       // Add class name for each column in dropdown
       ['m-col-featured', 'm-col-2', 'm-col-3', 'm-feat-img', 'm-bg-img'].forEach((category, j) => {
-        menuDropdownList.querySelector(`:scope > div:nth-child(${j + 1})`)?.classList.add(category, 'menu-expandable');
+        const node = menuDropdownList.querySelector(`:scope > div:nth-child(${j + 1})`);
+        node?.classList.add(category, 'menu-expandable', 'column');
+        if (node?.children.length === 0) {
+          node?.classList.add('empty');
+        }
       });
       li.append(menuDropdownList);
 
       // Add top-level menu expansion event listener
-      // li.addEventListener('click', () => {
-      //   const expanded = li.getAttribute('aria-expanded') === 'true';
-      //   collapseAllSubmenus(ul);
-      //   li.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-      // });
       ul.append(li);
 
       // Create featured dropdown
@@ -143,8 +148,18 @@ export default async function decorate(block) {
         subDropdown.classList.add('m-expandable-list');
         addDropdownIcon(subDropdownTitle);
       });
+
+      // Link pictures
+      li.querySelectorAll('.m-feat-img picture + a').forEach((link) => {
+        const picture = link.previousElementSibling;
+        const newLink = link.cloneNode();
+        newLink.innerHTML = picture.outerHTML;
+        picture.remove();
+        link.parentElement.append(newLink);
+        newLink.classList.add('linked-picture-desktop');
+      });
     }
-    nav.querySelector('.nav-menu').append(ul);
+    nav.querySelector('.nav-menu').innerHTML = ul.outerHTML;
 
     decorateIcons(nav);
 
