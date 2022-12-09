@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 .section.columns-container {
     padding-left: 0;
     padding-right: 0;
@@ -8,15 +10,26 @@
     flex-direction: column;
 }
 
-.columns img {
-    /* width: 100%; */
-}
-
 /* Variant 2 */
 
 .columns.variant2 > div {
     height: 100%;
     align-items: stretch;
+    text-align: center;
+    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.columns.variant2 h2 {
+    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
+    font-size: 45px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -1px;
+    line-height: 35px;
+    margin: 30px 0 10px;
 }
 
 .columns.variant2 > div > div > picture > img {
@@ -26,12 +39,16 @@
     object-fit: cover;
 }
 
+.columns.variant2.columns-2-cols > div > div:first-child {
+    display: none;
+}
+
 /* Variant 3 */
 
 .columns.variant3, .columns.variant3 > div {
     text-align: center;
     background: #f4e9e2;
-    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback';
+    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
     font-size: 19px;
     font-weight: 400;
     line-height: 24.2px;
@@ -49,7 +66,7 @@
 }
 
 .columns.variant3 h4 {
-    font-family: 'Gilroy Bold', 'gilroy-bold-normal-bold-fallback';
+    font-family: 'Gilroy Bold', gilroy-bold-normal-bold-fallback, sans-serif;
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 4px;
@@ -57,7 +74,7 @@
 }
 
 .columns.variant3 h2 {
-    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback';
+    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
     font-size: 45px;
     font-weight: 400;
     font-style: italic;
@@ -69,9 +86,6 @@
 .columns.variant3.columns-3-cols > div > div:first-child {
     display: none;
 }
-
-/* TODO Remove first column in mobile */
-/* text below image in mobile, remove max height? */
 
 @media (min-width: 900px) {
     .section > div.columns-wrapper {
@@ -97,10 +111,22 @@
 
     .columns.variant2, .columns.variant2 > div {
         max-height: 656px;
+        font-size: 22px;
     }
 
     .columns.variant2.columns-2-cols > div > div:first-child {
         flex: 2;
+        display: block;
+    }
+
+    .columns.variant2.columns-2-cols > div > div:last-child img {
+        max-width: 455px;
+    }
+
+    .columns.variant2 h2 {
+        margin: 30px 0;
+        font-size: 73px;
+        line-height: 58.4px;
     }
 
     /* Variant 3 */

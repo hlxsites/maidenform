@@ -69,28 +69,28 @@
 
 /* fallback font for Zahrah SemiBold Italic (italic - 600) */
 @font-face {
-  font-family: "zahrah-italic-600-fallback";
+  font-family: 'zahrah-italic-600-fallback';
   size-adjust: 100.871%;
   src: local("Arial");
 }
 
 /* fallback font for Zahrah Medium Italic (italic - 500) */
 @font-face {
-  font-family: "zahrah-italic-500-fallback";
+  font-family: 'zahrah-italic-500-fallback';
   size-adjust: 98.879%;
   src: local("Arial");
 }
 
 /* fallback font for Gilroy Bold (normal - normal) */
 @font-face {
-  font-family: "gilroy-bold-normal-normal-fallback";
+  font-family: gilroy-bold-normal-normal-fallback;
   size-adjust: 102.931%;
   src: local("Arial");
 }
 
 /* fallback font for Gilroy Bold (normal - bold) */
 @font-face {
-  font-family: "gilroy-bold-normal-bold-fallback";
+  font-family: gilroy-bold-normal-bold-fallback;
   size-adjust: 102.811%;
   src: local("Arial");
 }
@@ -233,7 +233,7 @@ button:disabled, button:disabled:hover {
 }
 
 a.button.secondary, button.secondary {
-  font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback';
+  font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
   font-size: 20px;
   font-style: italic;
   font-weight: 400;
