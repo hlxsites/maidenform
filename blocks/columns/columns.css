@@ -1,6 +1,7 @@
 /* stylelint-disable no-descending-specificity */
 
-.section.columns-container {
+.section.columns-container:has(.columns.variant2),
+.section.columns-container:has(.columns.variant3) {
     padding-left: 0;
     padding-right: 0;
 }
@@ -8,6 +9,29 @@
 .columns > div {
     display: flex;
     flex-direction: column;
+}
+
+/* Variant 1 */
+
+.columns.variant1 > div {
+    text-align: center;
+    height: 100%;
+    align-items: stretch;
+    font-family: 'Gilroy Regular', 'gilroy-normal-400-fallback', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.columns.variant1 > div p {
+    margin: 0;
+}
+
+.columns.variant1 > div > div > p:nth-child(3) {
+    margin-top: -15px;
+}
+
+.columns.variant1 > div > div > p:first-of-type > picture > img {
+    box-shadow: -3px 3px 10px 0 #222222;
 }
 
 /* Variant 2 */

@@ -34,7 +34,7 @@
 }
 
 @font-face {
-    font-family: Gilroy-Regular;
+    font-family: Gilroy Regular;
     src: url('../fonts/Gilroy-Regular.woff2') format('woff2'),url('../fonts/Gilroy-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
