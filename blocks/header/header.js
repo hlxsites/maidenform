@@ -35,6 +35,15 @@ function addEventListenersMobile() {
       title.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     });
   });
+
+  document.querySelectorAll('.m-expandable-title').forEach((title) => {
+    title.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const expanded = title.getAttribute('aria-expanded') === 'true';
+      collapseAllSubmenus(title.closest('li'));
+      title.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
 }
 
 function addEventListenersDesktop() {
@@ -122,7 +131,7 @@ export default async function decorate(block) {
       // Add class name for each column in dropdown
       ['m-col-featured', 'm-col-2', 'm-col-3', 'm-feat-img', 'm-bg-img'].forEach((category, j) => {
         const node = menuDropdownList.querySelector(`:scope > div:nth-child(${j + 1})`);
-        node?.classList.add(category, 'menu-expandable', 'column');
+        node?.classList.add(category, 'column');
         if (node?.children.length === 0) {
           node?.classList.add('empty');
         }

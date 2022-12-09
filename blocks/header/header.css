@@ -92,7 +92,7 @@ header nav .nav-menu ul > li div.menu-expandable[aria-expanded='true'] .icon {
   transform: rotate(180deg);
 }
 
-header nav .nav-menu ul > li[aria-expanded="true"] .menu-nav-category .icon {
+header nav .nav-menu ul > .m-expandable-title[aria-expanded="true"] .menu-nav-category .icon {
   transform: rotate(180deg);
 }
 
@@ -139,7 +139,7 @@ header nav[aria-expanded="true"] .nav-menu ul > li .m-expandable-list li a {
   margin-left: 40px;
 }
 
-header nav div.menu-expandable[aria-expanded='true'] > .m-expandable-list {
+header nav p.m-expandable-title[aria-expanded='true'] + .m-expandable-list {
   display: initial;
 }
 
