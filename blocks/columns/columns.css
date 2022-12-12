@@ -17,7 +17,7 @@
     text-align: center;
     height: 100%;
     align-items: stretch;
-    font-family: 'Gilroy Regular', 'gilroy-normal-400-fallback', sans-serif;
+    font-family: 'Gilroy Regular 400', 'Gilroy Regular 400 Fallback', sans-serif;
     font-weight: 400;
     font-size: 22px;
 }
@@ -40,14 +40,14 @@
     height: 100%;
     align-items: stretch;
     text-align: center;
-    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 20px;
 }
 
 .columns.large-image h2 {
-    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
     font-size: 45px;
     font-weight: 400;
     font-style: italic;
@@ -72,7 +72,7 @@
 .columns.two-images, .columns.two-images > div {
     text-align: center;
     background: #f4e9e2;
-    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
     font-size: 19px;
     font-weight: 400;
     line-height: 24.2px;
@@ -90,7 +90,7 @@
 }
 
 .columns.two-images h4 {
-    font-family: 'Gilroy Bold', gilroy-bold-normal-bold-fallback, sans-serif;
+    font-family: 'Gilroy Bold 700', 'Gilroy Bold 700 Fallback', sans-serif;
     font-weight: 700;
     font-size: 16px;
     letter-spacing: 4px;
@@ -98,7 +98,7 @@
 }
 
 .columns.two-images h2 {
-    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
     font-size: 45px;
     font-weight: 400;
     font-style: italic;
@@ -137,14 +137,14 @@
 
 .columns.teaser > div > div p {
     margin: 0;
-    font-family: 'Gilroy Medium', 'gilroy-normal-400-fallback', sans-serif;
+    font-family: 'Gilroy Medium 400', 'Gilroy Medium 400 Fallback', sans-serif;
     font-size: 15px;
     line-height: 18px;
 }
 
 .columns.teaser > div:first-child > div > div h3 {
     margin: 0 0 20px;
-    font-family: 'Zahrah Bold Italic', 'zahrah-italic-700-fallback', serif;
+    font-family: 'Zahrah Bold Italic 700', 'Zahrah Bold Italic 700 Fallback', serif;
     font-size: 15px;
     font-style: italic;
     font-weight: 700;
@@ -152,7 +152,7 @@
 
 .columns.teaser > div:first-child > div > div h4 {
     margin: 0;
-    font-family: 'Zahrah Bold Italic', 'zahrah-italic-700-fallback', serif;
+    font-family: 'Zahrah Bold Italic 700', 'Zahrah Bold Italic 700 Fallback', serif;
     font-size: 15px;
     font-style: italic;
     font-weight: 700;
@@ -164,7 +164,7 @@
 }
 
 .columns.teaser > div > div:nth-child(2) h2 {
-    font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
     font-size: 30px;
     font-style: italic;
     font-weight: 400;

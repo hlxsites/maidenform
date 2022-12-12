@@ -31,11 +31,15 @@
   src: local("Arial");
 }
 
-/* fallback font for Gilroy Medium (normal - 400) */
 @font-face {
-  font-family: "gilroy-normal-400-fallback";
-  size-adjust: 101.491%;
-  src: local("Arial");
+  font-family: 'Gilroy Medium 400 Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 91.96%;
+  descent-override: 25.50%;
+  line-gap-override: 0.00%;
+  size-adjust: 104.92%;
 }
 
 /* fallback font for Gilroy Regular (normal - 300) */
@@ -50,6 +54,39 @@
   font-family: "zahrah-normal-700-fallback";
   size-adjust: 103.121%;
   src: local("Arial");
+}
+
+@font-face {
+  font-family: 'Gilroy Regular 400 Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 91.98%;
+  descent-override: 24.89%;
+  line-gap-override: 0.00%;
+  size-adjust: 104.36%;
+}
+
+@font-face {
+  font-family: 'Zahrah Semibold Italic 400 Fallback';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Times New Roman Italic');
+  ascent-override: 66.53%;
+  descent-override: 21.47%;
+  line-gap-override: 17.60%;
+  size-adjust: 113.64%;
+}
+
+@font-face {
+  font-family: 'Zahrah Bold Italic 700 Fallback';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Times New Roman Bold Italic');
+  ascent-override: 66.75%;
+  descent-override: 21.54%;
+  line-gap-override: 17.66%;
+  size-adjust: 113.26%;
 }
 
 /* fallback font for Zahrah Bold Italic (italic - 700) */
@@ -93,6 +130,28 @@
   font-family: gilroy-bold-normal-bold-fallback;
   size-adjust: 102.811%;
   src: local("Arial");
+}
+
+@font-face {
+  font-family: 'Gilroy Bold 700 Fallback';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arial Bold');
+  ascent-override: 99.50%;
+  descent-override: 28.85%;
+  line-gap-override: 0.00%;
+  size-adjust: 98.00%;
+}
+
+@font-face {
+  font-family: 'Zahrah Semibold 400 Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Times New Roman');
+  ascent-override: 65.98%;
+  descent-override: 21.30%;
+  line-gap-override: 17.46%;
+  size-adjust: 114.57%;
 }
 
 :root {
@@ -228,7 +287,7 @@ a.button:hover, a.button:focus, button:hover, button:focus  {
 }
 
 a.button.secondary, button.secondary {
-  font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
+  font-family: 'Zahrah Semibold Italic 400', 'Zahrah Semibold Italic 400 Fallback', serif;
   font-size: 20px;
   font-style: italic;
   font-weight: 400;
@@ -329,7 +388,7 @@ main img {
 }
 
 .section.center-shadow > div:first-child h3 {
-  font-family: 'Zahrah SemiBold', 'zahrah-normal-600-fallback', serif;
+  font-family: 'Zahrah Semibold 400', 'Zahrah Semibold 400 Fallback', serif;
   margin: 0;
   font-size: 22px;
   font-weight: 400;
