@@ -17,6 +17,14 @@ header nav .nav-menu {
   display: none;
 }
 
+header nav .nav-tools .sign-in-link-desktop {
+  display: none;
+}
+
+header nav .nav-menu .sign-in-link-mobile {
+  background-color: #f2f5f7;
+}
+
 header nav .nav-logo {
   grid-area: logo;
   align-self: center;
@@ -125,7 +133,7 @@ header nav .nav-menu ul .menu-nav-dropdown ul > li {
   border-bottom: 1px solid #e7ebee;
 }
 
-header nav .nav-menu ul > li .menu-nav-category, header nav p.m-expandable-title {
+header nav .nav-menu ul .menu-nav-category, header nav p.m-expandable-title {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
@@ -201,6 +209,21 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
 @media (min-width: 1024px) {
   header nav .nav-hamburger {
     display: none;
+  }
+
+  header nav .nav-menu ul .menu-nav-category.sign-in-link-mobile {
+    display: none;
+  }
+
+  header nav .nav-tools .sign-in-link-desktop {
+    font-size: 12px;
+    text-decoration: underline;
+    margin-right: 20px;
+    display: initial;
+  }
+
+  header nav .nav-logo svg {
+    width: 130px;
   }
 
   header nav > div {

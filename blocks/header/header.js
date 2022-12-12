@@ -135,8 +135,13 @@ export default async function decorate(block) {
     `;
     toolContainer.append(searchBar);
 
+    const login = document.createElement('a');
+    login.classList.add('sign-in-link-desktop');
+    login.innerText = 'Sign In';
+    toolContainer.prepend(login);
+
     // link section
-    const ul = document.createElement('ul');
+    const navMenuUl = document.createElement('ul');
     const menus = [...nav.querySelectorAll('.nav-menu > div')];
     for (let i = 0; i < menus.length - 1; i += 2) {
       const li = document.createElement('li');
@@ -147,7 +152,7 @@ export default async function decorate(block) {
 
       if (menuHasNoContent(menuDropdownList)) {
         li.append(menuTitle);
-        ul.append(li);
+        navMenuUl.append(li);
         // eslint-disable-next-line no-continue
         continue;
       }
@@ -168,7 +173,7 @@ export default async function decorate(block) {
       li.append(menuDropdownList);
 
       // Add top-level menu expansion event listener
-      ul.append(li);
+      navMenuUl.append(li);
 
       // Create featured dropdown
       if (li.querySelector('.m-col-featured')?.children.length > 0) {
@@ -203,7 +208,13 @@ export default async function decorate(block) {
         menuDropdownList.style.backgroundSize = 'cover';
       }
     }
-    nav.querySelector('.nav-menu').innerHTML = ul.outerHTML;
+
+    const loginMobile = document.createElement('li');
+    loginMobile.classList.add('sign-in-link-mobile', 'menu-nav-category');
+    loginMobile.innerHTML = '<a>Sign In</a>';
+    navMenuUl.prepend(loginMobile);
+
+    nav.querySelector('.nav-menu').innerHTML = navMenuUl.outerHTML;
 
     decorateIcons(nav);
 
