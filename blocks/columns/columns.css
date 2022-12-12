@@ -1,7 +1,7 @@
 /* stylelint-disable no-descending-specificity */
 
-.section.columns-container:has(.columns.variant2),
-.section.columns-container:has(.columns.variant3) {
+.section.columns-container:has(.columns.large-image),
+.section.columns-container:has(.columns.two-images) {
     padding-left: 0;
     padding-right: 0;
 }
@@ -11,9 +11,9 @@
     flex-direction: column;
 }
 
-/* Variant 1 */
+/* Center Shadow Style */
 
-.columns.variant1 > div {
+.columns.center-shadow > div {
     text-align: center;
     height: 100%;
     align-items: stretch;
@@ -22,21 +22,21 @@
     font-size: 22px;
 }
 
-.columns.variant1 > div p {
+.columns.center-shadow > div p {
     margin: 0;
 }
 
-.columns.variant1 > div > div > p:nth-child(3) {
+.columns.center-shadow > div > div > p:nth-child(3) {
     margin-top: -15px;
 }
 
-.columns.variant1 > div > div > p:first-of-type > picture > img {
+.columns.center-shadow > div > div > p:first-of-type > picture > img {
     box-shadow: -3px 3px 10px 0 #222;
 }
 
-/* Variant 2 */
+/* Large Image Style */
 
-.columns.variant2 > div {
+.columns.large-image > div {
     height: 100%;
     align-items: stretch;
     text-align: center;
@@ -46,7 +46,7 @@
     line-height: 20px;
 }
 
-.columns.variant2 h2 {
+.columns.large-image h2 {
     font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
     font-size: 45px;
     font-weight: 400;
@@ -56,20 +56,20 @@
     margin: 30px 0 10px;
 }
 
-.columns.variant2 > div > div > picture > img {
+.columns.large-image > div > div > picture > img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.columns.variant2.columns-2-cols > div > div:first-child {
+.columns.large-image.columns-2-cols > div > div:first-child {
     display: none;
 }
 
-/* Variant 3 */
+/* Two Images Style */
 
-.columns.variant3, .columns.variant3 > div {
+.columns.two-images, .columns.two-images > div {
     text-align: center;
     background: #f4e9e2;
     font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
@@ -78,18 +78,18 @@
     line-height: 24.2px;
 }
 
-.columns.variant3 > div {
+.columns.two-images > div {
     height: 100%;
 }
 
-.columns.variant3 > div > div > picture > img {
+.columns.two-images > div > div > picture > img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.columns.variant3 h4 {
+.columns.two-images h4 {
     font-family: 'Gilroy Bold', gilroy-bold-normal-bold-fallback, sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -97,7 +97,7 @@
     text-transform: uppercase;
 }
 
-.columns.variant3 h2 {
+.columns.two-images h2 {
     font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
     font-size: 45px;
     font-weight: 400;
@@ -107,25 +107,25 @@
     margin: 15px 0 0;
 }
 
-.columns.variant3.columns-3-cols > div > div:first-child {
+.columns.two-images.columns-3-cols > div > div:first-child {
     display: none;
 }
 
-/* Variant 4 */
-.section > .columns-wrapper:has(.variant4) {
+/* Teaser Style */
+.section > .columns-wrapper:has(.teaser) {
     max-width: 970px;
 }
 
-.columns.variant4 {
+.columns.teaser {
     text-align: center;
 }
 
-.columns.variant4 > div > div:first-child {
+.columns.teaser > div > div:first-child {
     display: flex;
     align-items: center;
 }
 
-.columns.variant4 > div:first-child > div:first-child > div {
+.columns.teaser > div:first-child > div:first-child > div {
     display: block;
     background: #000;
     color: #fff;
@@ -135,14 +135,14 @@
     margin: 0 0 0 -15%;
 }
 
-.columns.variant4 > div > div p {
+.columns.teaser > div > div p {
     margin: 0;
     font-family: 'Gilroy Medium', 'gilroy-normal-400-fallback', sans-serif;
     font-size: 15px;
     line-height: 18px;
 }
 
-.columns.variant4 > div:first-child > div > div h3 {
+.columns.teaser > div:first-child > div > div h3 {
     margin: 0 0 20px;
     font-family: 'Zahrah Bold Italic', 'zahrah-italic-700-fallback', serif;
     font-size: 15px;
@@ -150,7 +150,7 @@
     font-weight: 700;
 }
 
-.columns.variant4 > div:first-child > div > div h4 {
+.columns.teaser > div:first-child > div > div h4 {
     margin: 0;
     font-family: 'Zahrah Bold Italic', 'zahrah-italic-700-fallback', serif;
     font-size: 15px;
@@ -158,12 +158,12 @@
     font-weight: 700;
 }
 
-.columns.variant4 > div > div:nth-child(2) a.button {
+.columns.teaser > div > div:nth-child(2) a.button {
     margin: 10px;
     min-width: 210px;
 }
 
-.columns.variant4 > div > div:nth-child(2) h2 {
+.columns.teaser > div > div:nth-child(2) h2 {
     font-family: 'Zahrah SemiBold Italic', 'zahrah-italic-600-fallback', serif;
     font-size: 30px;
     font-style: italic;
@@ -191,81 +191,81 @@
         margin-left: unset;
     }
 
-    /* Variant 2 */
+    /* Large Image Style */
 
-    .columns.variant2, .columns.variant2 > div {
+    .columns.large-image, .columns.large-image > div {
         max-height: 656px;
         font-size: 22px;
     }
 
-    .columns.variant2.columns-2-cols > div > div:first-child {
+    .columns.large-image.columns-2-cols > div > div:first-child {
         flex: 2;
         display: block;
     }
 
-    .columns.variant2.columns-2-cols > div > div:last-child img {
+    .columns.large-image.columns-2-cols > div > div:last-child img {
         max-width: 455px;
     }
 
-    .columns.variant2 h2 {
+    .columns.large-image h2 {
         margin: 30px 0;
         font-size: 73px;
         line-height: 58.4px;
     }
 
-    /* Variant 3 */
+    /* Two Images Style */
 
-    .columns.variant3, .columns.variant3 > div {
+    .columns.two-images, .columns.two-images > div {
         max-height: 603px;
         font-size: 22px;
     }
 
-    .columns.variant3 h4 {
+    .columns.two-images h4 {
         font-size: 22px;
         letter-spacing: 4px;
     }
     
-    .columns.variant3 h2 {
+    .columns.two-images h2 {
         font-size: 73px;
         line-height: 58.4px;
         margin: 20px 0;
     }
 
-    .columns.variant3.columns-3-cols > div > div:first-child {
+    .columns.two-images.columns-3-cols > div > div:first-child {
         display: block;
         flex: 2;
         align-self: stretch;
     }
 
-    .columns.variant3.columns-3-cols > div > div:nth-child(2) {
+    .columns.two-images.columns-3-cols > div > div:nth-child(2) {
         flex: 3;
     }
 
-    .columns.variant3.columns-3-cols > div > div:last-child {
+    .columns.two-images.columns-3-cols > div > div:last-child {
         flex: 5;
         align-self: stretch;
     }
 
-    /* Variant 4 */
+    /* Teaser Style */
 
-    .columns.variant4 > div > div:first-child {
+    .columns.teaser > div > div:first-child {
         flex: 2;
     }
 
-    .columns.variant4 > div:first-child > div:first-child > div {
+    .columns.teaser > div:first-child > div:first-child > div {
         max-width: 185px;
         padding: 20px;
     }
 
-    .columns.variant4 > div > div p {
+    .columns.teaser > div > div p {
         font-size: 16px;
     }
 
-    .columns.variant4 > div:first-child > div > div h3 {
+    .columns.teaser > div:first-child > div > div h3 {
         font-size: 28px;
     }
 
-    .columns.variant4 > div:first-child > div > div h4 {
+    .columns.teaser > div:first-child > div > div h4 {
         font-size: 20px;
     }
 

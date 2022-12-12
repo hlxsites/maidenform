@@ -308,14 +308,14 @@ main img {
 
 /* Section Styles */
 
-.section.variant1 {
+.section.center-shadow {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0 16px;
   margin: 40px 0;
 }
 
-.section.variant1 > div:first-child {
+.section.center-shadow > div:first-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -324,11 +324,11 @@ main img {
   padding: 20px 0;
 }
 
-.section.variant1 > div:first-child p {
+.section.center-shadow > div:first-child p {
   margin: 0;
 }
 
-.section.variant1 > div:first-child h3 {
+.section.center-shadow > div:first-child h3 {
   font-family: 'Zahrah SemiBold', 'zahrah-normal-600-fallback', serif;
   margin: 0;
   font-size: 22px;
@@ -342,11 +342,11 @@ main img {
     padding: 64px 32px;
   }
 
-  .section.variant1 {
+  .section.center-shadow {
     padding: 0 32px;
   }
 
-  .section.variant1 > div:first-child {
+  .section.center-shadow > div:first-child {
     flex-direction: row;
   }
 }
