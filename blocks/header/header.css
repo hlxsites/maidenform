@@ -45,12 +45,62 @@ header nav div:is(.nav-tools, .nav-hamburger) svg {
 
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  align-items: center;
   align-self: center;
   justify-self: center;
 }
 
 header nav .nav-tools .icon {
   margin-right: 14px;
+}
+
+header nav .nav-tools form {
+  display: flex;
+  align-items: center;
+}
+
+header nav .nav-tools form input {
+  display: none;
+}
+
+header nav .nav-tools form .search-button {
+  padding: 0;
+  color: black;
+  background: none;
+}
+
+header nav .nav-tools form .close-button {
+  display: none;
+}
+
+header nav .nav-tools form[aria-expanded='true'] {
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: white;
+  justify-content: space-between;
+  height: var(--nav-height);
+}
+
+header nav .nav-tools form[aria-expanded='true'] input {
+  display: initial;
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  padding-right: 45px;
+  font-size: 16px;
+}
+
+header nav .nav-tools form[aria-expanded='true'] .search-button {
+  position: absolute;
+  left: 10px;
+}
+
+header nav .nav-tools form[aria-expanded='true'] .close-button {
+  display: initial;
+  position: absolute;
+  right: 10px;
 }
 
 header nav[aria-expanded="true"] .nav-menu {
@@ -164,6 +214,25 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
     align-self: center;
   }
 
+  header nav .nav-tools form {
+    position: relative;
+    margin-right: 20px;
+  }
+
+  header nav .nav-tools form input {
+    display: initial;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid black;
+    padding: 3px;
+  }
+
+  header nav .nav-tools form .search-button {
+    position: absolute;
+    right: 0;
+    top: -16px;
+  }
+
   header nav .nav-menu {
     display: flex;
     align-items: flex-end;
@@ -261,6 +330,11 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   }
 
 
+  header nav .nav-menu .menu-nav-dropdown .m-expandable-list li {
+    padding: 0;
+    border: none;
+  }
+
   header nav .nav-menu .menu-nav-dropdown .m-feat-img ul li {
     flex: 1 1 0;
   }
@@ -289,12 +363,23 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
     font-weight: normal;
   }
 
-  header nav .nav-menu .menu-nav-dropdown .m-expandable-list li {
-    padding: 0;
-    border: none;
-  }
-
   header nav p.m-expandable-title {
     border: none;
+  }
+}
+
+@media (min-width: 1300px) {
+  header nav .nav-menu > ul > li {
+    padding-left: 24px;
+    padding-right: 24px;
+    font-size: 26px;
+  }
+
+  header nav .nav-menu > ul > li .menu-nav-category a {
+    font-size: 18px;
+  }
+
+  header nav .nav-logo svg {
+    width: 150px;
   }
 }

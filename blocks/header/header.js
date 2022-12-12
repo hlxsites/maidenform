@@ -44,6 +44,24 @@ function addEventListenersMobile() {
       title.setAttribute('aria-expanded', expanded ? 'false' : 'true');
     });
   });
+
+  document.querySelector('form .search-button').addEventListener('click', (e) => {
+    const form = e.target.closest('form');
+    if (!form.hasAttribute('aria-expanded')) {
+      e.preventDefault();
+      e.stopPropagation();
+      form.setAttribute('aria-expanded', 'true');
+    }
+  });
+
+  document.querySelector('form .close-button').addEventListener('click', (e) => {
+    const form = e.target.closest('form');
+    if (form.hasAttribute('aria-expanded')) {
+      e.preventDefault();
+      e.stopPropagation();
+      form.removeAttribute('aria-expanded');
+    }
+  });
 }
 
 function addEventListenersDesktop() {
@@ -61,6 +79,9 @@ function addEventListenersDesktop() {
       collapseAllSubmenus(document.querySelector('nav'));
     });
   });
+
+  const searchButton = document.querySelector('.nav-tools form');
+  if (searchButton.hasAttribute('aria-expanded')) searchButton.removeAttribute('aria-expanded');
 }
 
 function reAttachEventListeners() {
@@ -99,12 +120,20 @@ export default async function decorate(block) {
     nav.setAttribute('aria-expanded', 'false');
 
     // tools
+    const toolContainer = nav.querySelector('.nav-tools');
     ['heart', 'minicart'].forEach((tool) => {
-      const toolContainer = nav.querySelector('.nav-tools');
       const icon = document.createElement('span');
       icon.classList.add('icon', `icon-${tool}`);
       toolContainer.append(icon);
     });
+
+    const searchBar = document.createElement('form');
+    searchBar.innerHTML = `
+      <input name="query" type="text" placeholder="Search" />
+      <button class="search-button" aria-label="submit search query"><span class="icon icon-search" /></button>
+      <span class="icon icon-x-lg close-button" />
+    `;
+    toolContainer.append(searchBar);
 
     // link section
     const ul = document.createElement('ul');
@@ -195,7 +224,7 @@ export default async function decorate(block) {
     window.addEventListener('resize', () => {
       if (shouldResize()) {
         nav.setAttribute('aria-expanded', 'false');
-        removeAllEventListeners(document.querySelector('nav .nav-menu'));
+        removeAllEventListeners(document.querySelector('nav'));
         collapseAllSubmenus(block);
         reAttachEventListeners();
       }
