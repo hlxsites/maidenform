@@ -14,6 +14,7 @@ header nav > div {
 }
 
 header nav .nav-menu {
+  padding-bottom: 50px;
   display: none;
 }
 
@@ -189,6 +190,11 @@ header nav .m-expandable-list > li a {
   display: block;
 }
 
+header nav .nav-menu .menu-nav-category > div > em > a {
+  color: #c41b53;
+  font-style: normal;
+}
+
 header nav[aria-expanded="true"] .nav-menu ul > li .m-expandable-title > span:first-child {
   margin-left: 20px;
 }
@@ -279,11 +285,6 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   header nav .nav-menu ul > li *:is(a, p) {
     font-size: 15px;
     padding: 0;
-  }
-
-  header nav .nav-menu .menu-nav-category > div > em > a {
-    color: #c41b53;
-    font-style: normal;
   }
 
   header nav .nav-menu .menu-nav-category > div > a:hover {

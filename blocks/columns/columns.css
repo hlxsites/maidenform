@@ -1,13 +1,181 @@
+/* stylelint-disable no-descending-specificity */
+
+.section.columns-container:has(.columns.large-image),
+.section.columns-container:has(.columns.two-images) {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .columns > div {
     display: flex;
     flex-direction: column;
 }
 
-.columns img {
+/* Center Shadow Style */
+
+.columns.center-shadow > div {
+    text-align: center;
+    height: 100%;
+    align-items: stretch;
+    font-family: 'Gilroy Regular 400', 'Gilroy Regular 400 Fallback', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.columns.center-shadow > div p {
+    margin: 0;
+}
+
+.columns.center-shadow > div > div > p:nth-child(3) {
+    margin-top: -15px;
+}
+
+.columns.center-shadow > div > div > p:first-of-type > picture > img {
+    box-shadow: -3px 3px 10px 0 #222;
+}
+
+/* Large Image Style */
+
+.columns.large-image > div {
+    height: 100%;
+    align-items: stretch;
+    text-align: center;
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.columns.large-image h2 {
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
+    font-size: 45px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -1px;
+    line-height: 35px;
+    margin: 30px 0 10px;
+}
+
+.columns.large-image > div > div > picture > img {
+    display: block;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.columns.large-image.columns-2-cols > div > div:first-child {
+    display: none;
+}
+
+/* Two Images Style */
+
+.columns.two-images, .columns.two-images > div {
+    text-align: center;
+    background: #f4e9e2;
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 24.2px;
+}
+
+.columns.two-images > div {
+    height: 100%;
+}
+
+.columns.two-images > div > div > picture > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.columns.two-images h4 {
+    font-family: 'Gilroy Bold 700', 'Gilroy Bold 700 Fallback', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.columns.two-images h2 {
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
+    font-size: 45px;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -1px;
+    line-height: 35px;
+    margin: 15px 0 0;
+}
+
+.columns.two-images.columns-3-cols > div > div:first-child {
+    display: none;
+}
+
+/* Teaser Style */
+.section > .columns-wrapper:has(.teaser) {
+    max-width: 970px;
+}
+
+.columns.teaser {
+    text-align: center;
+}
+
+.columns.teaser > div > div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.columns.teaser > div:first-child > div:first-child > div {
+    display: block;
+    background: #000;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 14px;
+    max-width: 100px;
+    margin: 0 0 0 -15%;
+}
+
+.columns.teaser > div > div p {
+    margin: 0;
+    font-family: 'Gilroy Medium 400', 'Gilroy Medium 400 Fallback', sans-serif;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.columns.teaser > div:first-child > div > div h3 {
+    margin: 0 0 20px;
+    font-family: 'Zahrah Bold Italic 700', 'Zahrah Bold Italic 700 Fallback', serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.columns.teaser > div:first-child > div > div h4 {
+    margin: 0;
+    font-family: 'Zahrah Bold Italic 700', 'Zahrah Bold Italic 700 Fallback', serif;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.columns.teaser > div > div:nth-child(2) a.button {
+    margin: 10px;
+    min-width: 210px;
+}
+
+.columns.teaser > div > div:nth-child(2) h2 {
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
+    font-size: 30px;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
 }
 
 @media (min-width: 900px) {
+    .section > div.columns-wrapper {
+        max-width: 1548px;
+    }
+
     .columns > div {
         display: flex;
         align-items: center;
@@ -22,4 +190,83 @@
     .columns > div > div:first-of-type {
         margin-left: unset;
     }
+
+    /* Large Image Style */
+
+    .columns.large-image, .columns.large-image > div {
+        max-height: 656px;
+        font-size: 22px;
+    }
+
+    .columns.large-image.columns-2-cols > div > div:first-child {
+        flex: 2;
+        display: block;
+    }
+
+    .columns.large-image.columns-2-cols > div > div:last-child img {
+        max-width: 455px;
+    }
+
+    .columns.large-image h2 {
+        margin: 30px 0;
+        font-size: 73px;
+        line-height: 58.4px;
+    }
+
+    /* Two Images Style */
+
+    .columns.two-images, .columns.two-images > div {
+        max-height: 603px;
+        font-size: 22px;
+    }
+
+    .columns.two-images h4 {
+        font-size: 22px;
+        letter-spacing: 4px;
+    }
+    
+    .columns.two-images h2 {
+        font-size: 73px;
+        line-height: 58.4px;
+        margin: 20px 0;
+    }
+
+    .columns.two-images.columns-3-cols > div > div:first-child {
+        display: block;
+        flex: 2;
+        align-self: stretch;
+    }
+
+    .columns.two-images.columns-3-cols > div > div:nth-child(2) {
+        flex: 3;
+    }
+
+    .columns.two-images.columns-3-cols > div > div:last-child {
+        flex: 5;
+        align-self: stretch;
+    }
+
+    /* Teaser Style */
+
+    .columns.teaser > div > div:first-child {
+        flex: 2;
+    }
+
+    .columns.teaser > div:first-child > div:first-child > div {
+        max-width: 185px;
+        padding: 20px;
+    }
+
+    .columns.teaser > div > div p {
+        font-size: 16px;
+    }
+
+    .columns.teaser > div:first-child > div > div h3 {
+        font-size: 28px;
+    }
+
+    .columns.teaser > div:first-child > div > div h4 {
+        font-size: 20px;
+    }
+
 }

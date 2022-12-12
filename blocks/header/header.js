@@ -235,7 +235,8 @@ export default async function decorate(block) {
     window.addEventListener('resize', () => {
       if (shouldResize()) {
         nav.setAttribute('aria-expanded', 'false');
-        removeAllEventListeners(document.querySelector('nav'));
+        removeAllEventListeners(document.querySelector('.nav-menu'));
+        removeAllEventListeners(document.querySelector('.nav-tools'));
         collapseAllSubmenus(block);
         reAttachEventListeners();
       }
