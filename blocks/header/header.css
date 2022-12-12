@@ -281,6 +281,11 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
     padding: 0;
   }
 
+  header nav .nav-menu .menu-nav-category > div > em > a {
+    color: #c41b53;
+    font-style: normal;
+  }
+
   header nav .nav-menu .menu-nav-category > div > a:hover {
     color: #c41b53;
     text-decoration: none;
@@ -332,6 +337,12 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   header nav .nav-menu .menu-nav-dropdown .m-col-2 {
     border-left: 1px solid #e7ebee;
     padding-left: 50px;
+  }
+
+  header nav .nav-menu .menu-nav-dropdown .m-feat-img p {
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   header nav .nav-menu .menu-nav-dropdown .m-col-featured > p:first-child {
