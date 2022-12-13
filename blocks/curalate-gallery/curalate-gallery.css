@@ -1,5 +1,10 @@
+.section div.curalate-gallery-wrapper {
+  display: block;
+}
+
 .curalate-gallery {
   max-width: 720px;
+  margin: 0 auto;
 }
 
 @media (min-width: 1024px) {
