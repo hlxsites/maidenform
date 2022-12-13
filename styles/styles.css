@@ -236,18 +236,23 @@ h6 {
 h1 {
   font-size: var(--heading-font-size-xxl);
 }
+
 h2 {
   font-size: var(--heading-font-size-xl);
 }
+
 h3 {
   font-size: var(--heading-font-size-l);
 }
+
 h4 {
   font-size: var(--heading-font-size-m);
 }
+
 h5 {
   font-size: var(--heading-font-size-s);
 }
+
 h6 {
   font-size: var(--heading-font-size-xs);
 }
@@ -402,7 +407,6 @@ main img {
 }
 
 /* Section Styles */
-
 .section.center-shadow {
   background-repeat: no-repeat;
   background-size: cover;
@@ -514,7 +518,7 @@ main .section.highlight {
   /* TODO: font-family: 'Gilroy Regular' */
 }
 
-.modal-content h1 {
+.modal-content h1 { /* stylelint-disable-line no-descending-specificity */
   margin: 10px 0;
   padding: 0;
   font-size: 24px;
