@@ -99,7 +99,7 @@ function reAttachEventListeners() {
 export default async function decorate(block) {
   block.innerHTML = '';
   // fetch nav content
-  const resp = await fetch('nav.plain.html');
+  const resp = await fetch('/nav.plain.html');
   if (resp.ok) {
     const html = await resp.text();
 
