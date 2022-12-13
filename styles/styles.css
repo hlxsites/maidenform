@@ -31,11 +31,15 @@
   src: local("Arial");
 }
 
-/* fallback font for Gilroy Medium (normal - 400) */
 @font-face {
-  font-family: "gilroy-normal-400-fallback";
-  size-adjust: 101.491%;
-  src: local("Arial");
+  font-family: 'Gilroy Medium 400 Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 91.96%;
+  descent-override: 25.50%;
+  line-gap-override: 0.00%;
+  size-adjust: 104.92%;
 }
 
 /* fallback font for Gilroy Regular (normal - 300) */
@@ -50,6 +54,39 @@
   font-family: "zahrah-normal-700-fallback";
   size-adjust: 103.121%;
   src: local("Arial");
+}
+
+@font-face {
+  font-family: 'Gilroy Regular 400 Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 91.98%;
+  descent-override: 24.89%;
+  line-gap-override: 0.00%;
+  size-adjust: 104.36%;
+}
+
+@font-face {
+  font-family: 'Zahrah Semibold Italic 400 Fallback';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Times New Roman Italic');
+  ascent-override: 66.53%;
+  descent-override: 21.47%;
+  line-gap-override: 17.60%;
+  size-adjust: 113.64%;
+}
+
+@font-face {
+  font-family: 'Zahrah Bold Italic 700 Fallback';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Times New Roman Bold Italic');
+  ascent-override: 66.75%;
+  descent-override: 21.54%;
+  line-gap-override: 17.66%;
+  size-adjust: 113.26%;
 }
 
 /* fallback font for Zahrah Bold Italic (italic - 700) */
@@ -69,16 +106,52 @@
 
 /* fallback font for Zahrah SemiBold Italic (italic - 600) */
 @font-face {
-  font-family: "zahrah-italic-600-fallback";
+  font-family: 'zahrah-italic-600-fallback';
   size-adjust: 100.871%;
   src: local("Arial");
 }
 
 /* fallback font for Zahrah Medium Italic (italic - 500) */
 @font-face {
-  font-family: "zahrah-italic-500-fallback";
+  font-family: 'zahrah-italic-500-fallback';
   size-adjust: 98.879%;
   src: local("Arial");
+}
+
+/* fallback font for Gilroy Bold (normal - normal) */
+@font-face {
+  font-family: gilroy-bold-normal-normal-fallback;
+  size-adjust: 102.931%;
+  src: local("Arial");
+}
+
+/* fallback font for Gilroy Bold (normal - bold) */
+@font-face {
+  font-family: gilroy-bold-normal-bold-fallback;
+  size-adjust: 102.811%;
+  src: local("Arial");
+}
+
+@font-face {
+  font-family: 'Gilroy Bold 700 Fallback';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arial Bold');
+  ascent-override: 99.50%;
+  descent-override: 28.85%;
+  line-gap-override: 0.00%;
+  size-adjust: 98.00%;
+}
+
+@font-face {
+  font-family: 'Zahrah Semibold 400 Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Times New Roman');
+  ascent-override: 65.98%;
+  descent-override: 21.30%;
+  line-gap-override: 17.46%;
+  size-adjust: 114.57%;
 }
 
 :root {
@@ -117,6 +190,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
+  --desktop-nav-height: 100px;
   --nav-height: 64px;
   
   /* section max width */
@@ -201,7 +275,7 @@ a.button:any-link, button {
   border: 2px solid transparent;
   padding: 5px 30px;
   text-align: center;
-  font-style: normal; 
+  font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
@@ -219,10 +293,23 @@ a.button:hover, a.button:focus, button:hover, button:focus  {
 }
 
 a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color)
-} 
+  font-family: 'Zahrah Semibold Italic 400', 'Zahrah Semibold Italic 400 Fallback', serif;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 20px;
+  min-width: 130px;
+  background-color: var(--clr-black);
+  border: 1px solid var(--clr-black);
+  color: var(--clr-white);
+  padding: 10px 20px;
+}
+
+a.button.secondary:hover, button.secondary:hover {
+  background-color: var(--clr-white);
+  color: var(--clr-black);
+}
 
 main input {
   font-size: 1.25rem;
@@ -230,7 +317,7 @@ main input {
   max-width: 50rem;
   display: block;
   margin-bottom: 1rem;
-  padding: 0.75rem 0.6rem;    
+  padding: 0.75rem 0.6rem;
   border-radius: 0.25rem;
   box-sizing: border-box;
   border: 1px solid var(--text-color);
@@ -278,106 +365,18 @@ main img {
   height: auto;
 }
 
-@media (min-width: 600px) {
-  main .section {
-    padding: 64px 32px;
-  }  
+/* Section Styles */
+.section.center {
+  padding: 0 16px;
+  margin: 40px 0;
 }
 
-@media (min-width: 900px) {
-  :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;  
-  }
-  
-  .section > div {
-    max-width: 1920px;
-    margin: auto;
-  }
-}
-
-/* progressive section appearance */
-main .section[data-section-status='loading'],
-main .section[data-section-status='initialized'] {
-  display: none;
-}
-
-main .section.highlight {
-  background-color: var(--highlight-background-color);
-}
-
-/* modal dialog styles */
-.modal-background {
-  display: flex;
-  flex-direction: column;
+.section.center > div {
   justify-content: center;
   align-items: center;
-  z-index: 3000;
-  background: rgb(0 0 0 / 80%);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
-
-.modal-content {
-  background: #fff;
-  padding: 20px;
-  text-align: center;
-  max-width: 120rem;
-  width: 60%;
-  border-radius: 4px;
-  font-size: 14px;
-  font-weight: 400;
-  position: relative;
-
-  /* TODO: font-family: 'Gilroy Regular' */
-}
-
-.modal-content h1 {
-  margin: 10px 0;
-  padding: 0;
-  font-size: 24px;
-  font-weight: 300;
-}
-
-.modal-content button {
-  display: block;
-  background: #fff;
-  border: 1px solid #000;
-  width: 44px;
-  height: 44px;
-  margin: -20px -20px 0 0;
-  text-align: center;
-  color: #333;
-  border-radius: 50%;
-  padding: 0;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 44px;
-  font-family: Arial, monospace;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-  transition: all .3s ease;
-}
-
-button:disabled, button:disabled:hover {
-  background-color: var(--overlay-background-color);
-  cursor: unset;
-}
-
-.modal-content button:hover {
-  background: #000;
-  color: #fff;
-}
-
 
 main .section 
 h1, h2, h3,
@@ -456,9 +455,6 @@ main .section.privacy-policy a:any-link{
 }
 
 /* styles for /terms-of-use */
-
-
-
 main .section.terms-of-use h1{
   font-size: 4.2rem;
   margin: 0 0 2rem;  
@@ -512,6 +508,144 @@ main .section.customer-service > div > p {
 main .section.customer-service > div > p + p img{
   max-width: 1.75rem;
   margin: 0 0.5rem 0 0;
+}
+
+.section.shadow {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section.shadow > div:first-child {
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.section.shadow > div:first-child p {
+  margin: 0;
+}
+
+.section.shadow > div:first-child h3 {
+  font-family: 'Zahrah Semibold 400', 'Zahrah Semibold 400 Fallback', serif;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+  text-decoration: underline;
+  letter-spacing: 4px;
+}
+
+@media (min-width: 600px) {
+  main .section {
+    padding: 64px 32px;
+  }
+
+  .section.center {
+    padding: 0 32px;
+  }
+
+  .section.center > div:first-child {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 900px) {
+  :root {
+    --heading-font-size-xxl: 60px;
+    --heading-font-size-xl: 48px;
+    --heading-font-size-l: 36px;
+    --heading-font-size-m: 30px;
+    --heading-font-size-s: 24px;
+    --heading-font-size-xs: 22px;
+  }
+
+  .section > div {
+    max-width: 1920px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --nav-height: var(--desktop-nav-height);
+  }
+}
+
+/* progressive section appearance */
+main .section[data-section-status='loading'],
+main .section[data-section-status='initialized'] {
+  display: none;
+}
+
+main .section.highlight {
+  background-color: var(--highlight-background-color);
+}
+
+/* modal dialog styles */
+.modal-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  background: rgb(0 0 0 / 80%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  max-width: 120rem;
+  width: 60%;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+
+  /* TODO: font-family: 'Gilroy Regular' */
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.modal-content h1 {
+  margin: 10px 0;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.modal-content button {
+  display: block;
+  background: #fff;
+  border: 1px solid #000;
+  width: 44px;
+  height: 44px;
+  margin: -20px -20px 0 0;
+  text-align: center;
+  color: #333;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 44px;
+  font-family: Arial, monospace;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  transition: all .3s ease;
+}
+
+button:disabled, button:disabled:hover {
+  background-color: var(--overlay-background-color);
+  cursor: unset;
+}
+
+.modal-content button:hover {
+  background: #000;
+  color: #fff;
 }
 
 main pre {
