@@ -400,28 +400,33 @@ main img {
 }
 
 /* Section Styles */
-
-.section.center-shadow {
-  background-repeat: no-repeat;
-  background-size: cover;
+.section.center {
   padding: 0 16px;
   margin: 40px 0;
 }
 
-.section.center-shadow > div:first-child {
+.section.center > div {
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+.section.shadow {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section.shadow > div:first-child {
   gap: 20px;
-  align-items: center;
   padding: 20px 0;
 }
 
-.section.center-shadow > div:first-child p {
+.section.shadow > div:first-child p {
   margin: 0;
 }
 
-.section.center-shadow > div:first-child h3 {
+.section.shadow > div:first-child h3 {
   font-family: 'Zahrah Semibold 400', 'Zahrah Semibold 400 Fallback', serif;
   margin: 0;
   font-size: 22px;
@@ -435,11 +440,11 @@ main img {
     padding: 64px 32px;
   }
 
-  .section.center-shadow {
+  .section.center {
     padding: 0 32px;
   }
 
-  .section.center-shadow > div:first-child {
+  .section.center > div:first-child {
     flex-direction: row;
   }
 }
