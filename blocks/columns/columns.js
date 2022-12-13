@@ -9,4 +9,22 @@ export default function decorate(block) {
       cols[0].appendChild(cols[1]);
     }
   }
+
+  // Handling of hover-cards style
+  if (block.classList.contains('hover-cards')) {
+    cols.forEach((col) => {
+      // Move picture and content into separate divs
+      const imgContainer = document.createElement('div');
+      const contentContainer = document.createElement('div');
+      imgContainer.appendChild(col.querySelector('picture'));
+      const h3 = col.querySelector('h3');
+      contentContainer.append(...col.children);
+      contentContainer.querySelectorAll('p').forEach((p) => {
+        if (p.innerHTML.trim() === '') {
+          p.remove();
+        }
+      });
+      col.append(imgContainer, contentContainer, h3);
+    });
+  }
 }

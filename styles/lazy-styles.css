@@ -125,11 +125,19 @@
 }
 
 @font-face {
-    font-family: Zahrah;
-    src: url('../fonts/Zahrah-Regular.woff2') format('woff2'),url('../fonts/Zahrah-Regular.woff') format('woff');
-    font-weight: 400;
+    font-family: 'Zahrah Regular 400';
     font-style: normal;
+    font-weight: 400;
     font-display: swap;
+    src: url('../fonts/Zahrah-Regular.woff') format('woff'), url('../fonts/Zahrah-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Zahrah Regular 600';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/Zahrah-Regular.woff') format('woff'), url('../fonts/Zahrah-Regular.woff2') format('woff2');
 }
 
 @font-face {

@@ -165,6 +165,28 @@
   size-adjust: 109.53%;
 }
 
+@font-face {
+  font-family: 'Zahrah Regular 400 Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Times New Roman');
+  ascent-override: 67.91%;
+  descent-override: 21.92%;
+  line-gap-override: 17.97%;
+  size-adjust: 111.33%;
+}
+
+@font-face {
+  font-family: 'Zahrah Regular 600 Fallback';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Times New Roman Bold');
+  ascent-override: 72.13%;
+  descent-override: 23.28%;
+  line-gap-override: 19.08%;
+  size-adjust: 104.81%;
+}
+
 :root {
   /* colors */
   --clr-black: #000;
