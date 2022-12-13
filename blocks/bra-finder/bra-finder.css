@@ -1,0 +1,145 @@
+.block.bra-finder {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Image overlay */
+.block.bra-finder .fit-image-overlay {
+  position: relative;
+}
+
+.block.bra-finder .fit-image-overlay > div:first-child {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block.bra-finder .fit-image-overlay > div:first-child a {
+  background: #d9b391;
+  padding: 12px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.block.bra-finder .fit-image-overlay > div:first-child p {
+  font-size: 18px;
+}
+
+.block.bra-finder .fit-image-overlay > div:last-child img {
+  min-height: 400px;
+  object-fit: cover;
+}
+
+/* Titles */
+.block.bra-finder .fit-title h2 {
+  letter-spacing: .5rem;
+  color: #595a5c;
+  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.block.bra-finder .fit-title em {
+  font-size: 4rem;
+  color: #ce789f;
+  text-transform: none;
+}
+
+/* Tabs */
+.block.bra-finder .fit-tabs {
+  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
+  font-style: italic;
+  color: #58595b;
+  text-align: center;
+}
+
+.block.bra-finder .fit-tabs ul[role='tablist'] {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 120px 0;
+}
+
+.block.bra-finder .fit-tabs ul[role='tabpanel'] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.block.bra-finder .fit-tabs ul[role='tabpanel'] li {
+  display: grid;
+  grid-template-areas: 'picture title' 'picture description';
+  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.block.bra-finder .fit-tabs ul[role='tabpanel'] li > picture {
+  grid-area: picture;
+}
+
+.block.bra-finder .fit-tabs ul[role='tablist'] > li {
+  border: 4px solid #fad1e0;
+  background: white;
+  padding: 15px;
+  transition: transform 200ms;
+}
+
+.block.bra-finder .fit-tabs ul[role='tablist'] > li[aria-selected='true'] {
+  transform: scale(120%);
+  border-color: #ea0c8e;
+}
+
+.block.bra-finder .fit-tabs ul[role='tabpanel'][hidden='true'] {
+  display: none;
+}
+
+/* Size calculator instructions */
+.block.bra-finder .fit-measure-steps {
+  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
+  font-style: italic;
+  color: #58595b;
+  text-align: center;
+}
+
+.block.bra-finder .fit-measure-steps:not(.fit-image-overlay) > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@media (min-width: 800px) {
+  .block.bra-finder .fit-tabs ul[role='tabpanel'] {
+    flex-direction: row;
+  }
+
+  .block.bra-finder .fit-tabs ul[role='tabpanel'] li {
+    grid-template-areas: 'picture';
+  }
+
+  .block.bra-finder .fit-tabs ul[role='tablist'] > li img {
+    max-width: 150px;
+  }
+
+  .block.bra-finder .fit-tabs ul[role='tablist'] > li {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .block.bra-finder .fit-measure-steps {
+    display: flex;
+    gap: 40px;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
