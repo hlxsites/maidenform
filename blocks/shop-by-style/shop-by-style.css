@@ -68,7 +68,7 @@
     min-width: 150px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
     .shop-by-style>div>div h2 {
         font-size: 24px;
     }
