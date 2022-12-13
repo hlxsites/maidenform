@@ -153,4 +153,12 @@
     src: url('../fonts/Zahrah-Light-Italic.woff2') format('woff2'),url('../fonts/Zahrah-Light-Italic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
-} 
+}
+
+@font-face {
+    font-family: 'Zahrah Regular Italic 400';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/Zahrah-Regular-Italic.woff') format('woff'), url('../fonts/Zahrah-Regular-Italic.woff2') format('woff2');
+}

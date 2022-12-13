@@ -154,6 +154,17 @@
   size-adjust: 114.57%;
 }
 
+@font-face {
+  font-family: 'Zahrah Regular Italic 400 Fallback';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Times New Roman Italic');
+  ascent-override: 69.02%;
+  descent-override: 22.28%;
+  line-gap-override: 18.26%;
+  size-adjust: 109.53%;
+}
+
 :root {
   /* colors */
   --clr-black: #000;
