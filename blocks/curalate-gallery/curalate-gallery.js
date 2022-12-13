@@ -1,6 +1,5 @@
 const crl8SiteName = 'maidenform-py0jjh';
-const crl8StaticScript =
-  '//apps.bazaarvoice.com/deployments/hanes-maidenform/main_site/production/en_US/bv.js';
+const crl8StaticScript = '//apps.bazaarvoice.com/deployments/hanes-maidenform/main_site/production/en_US/bv.js';
 
 const loadScript = (url, callback, type) => {
   const head = document.querySelector('head');
@@ -22,36 +21,44 @@ export default async function decorate(block) {
 
   /* start of reverse engineered minified original JS */
   const crl8Instances = [];
-  const crl8 = (window.crl8 = window.crl8 || {});
+  const crl8 = window.crl8 || {};
   let initialized = false;
-  (crl8.ready = function (instance) {
+  // eslint-disable-next-line func-names
+  crl8.ready = function (instance) {
+    // eslint-disable-next-line no-unused-expressions
     initialized ? instance() : crl8Instances.push(instance);
-  }),
-    (crl8.pixel =
-      crl8.pixel ||
-      function () {
-        crl8.pixel.q.push(arguments);
-      }),
-    (crl8.pixel.q = crl8.pixel.q || []);
+  };
+  // eslint-disable-next-line func-names
+  crl8.pixel = function () {
+    // eslint-disable-next-line prefer-rest-params
+    crl8.pixel.q.push(arguments);
+  };
+  crl8.pixel.q = crl8.pixel.q || [];
 
-  const crl8DebugParam =
-    -1 !== window.document.location.search.indexOf('crl8-debug=true')
-      ? 'js'
-      : 'min.js';
+  const crl8DebugParam = window.document.location.search.indexOf('crl8-debug=true') !== -1
+    ? 'js'
+    : 'min.js';
   const crl8ScriptExtension = crl8.debug || crl8DebugParam;
-  const crl8DynamicScript =
-    window.document.location.protocol +
-    '//edge.curalate.com/sites/' +
-    crl8SiteName +
-    '/site/latest/site.' +
-    crl8ScriptExtension;
+  const crl8DynamicScript = `${window.document.location.protocol}//edge.curalate.com/sites/${crl8SiteName}/site/latest/site.${crl8ScriptExtension}`;
 
+  // eslint-disable-next-line func-names
   const crl8Callback = function () {
     initialized = true;
     crl8Instances.forEach((instance) => instance());
   };
   /* end of reverse engineered minified original JS */
 
-  loadScript(crl8DynamicScript, crl8Callback);
-  loadScript(crl8StaticScript);
+  if ('IntersectionObserver' in window) {
+    // eslint-disable-next-line vars-on-top
+    const lazyCrl8Observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          loadScript(crl8DynamicScript, crl8Callback);
+          loadScript(crl8StaticScript);
+          lazyCrl8Observer.unobserve(entry.target);
+        }
+      });
+    });
+    lazyCrl8Observer.observe(container);
+  }
 }
