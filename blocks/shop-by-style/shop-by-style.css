@@ -25,16 +25,15 @@
 }
 
 .shop-by-style>div>div h2 {
-    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
+    font-family: var(--ff-zahrah-regular-italic);
     font-size: 16px;
     font-weight: 400;
     margin: 0 0 20px;
 }
 
 .shop-by-style>div>div h1 {
-    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
+    font-family: var(--ff-zahrah-semibold-italic);
     font-size: 34px;
-    font-weight: 400;
     margin: 0;
     line-height: 38px;
 }
@@ -59,9 +58,7 @@
 .shop-by-style>div>div>ul>li {
     margin: 0 5px 10px;
     font-size: 16px;
-    font-style: italic;
-    font-weight: 700;
-    font-family: 'Zahrah Bold Italic 700', 'Zahrah Bold Italic 700 Fallback', serif;
+    font-family: var(--ff-zahrah-bold-italic);
 }
 
 .shop-by-style>div>div>ul>li img {
@@ -71,10 +68,12 @@
 @media (min-width: 900px) {
     .shop-by-style>div>div h2 {
         font-size: 24px;
+        font-family:var(--ff-zahrah-semibold-italic);
     }
 
     .shop-by-style>div>div h1 {
         font-size: 40px;
         line-height: 44px;
+        font-family:var(--ff-zahrah-semibold-italic);
     }
 }
