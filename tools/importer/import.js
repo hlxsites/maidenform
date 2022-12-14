@@ -42,33 +42,36 @@ function transformPLP(document) {
 
 function makeAbsoluteLinks(main) {
   main.querySelectorAll('a').forEach((a) => {
-    const ori = a.href;
-    let u;
-    if (a.href.startsWith('/')) {
-      u = new URL(a.href, 'https://main--maidenform--hlxsites.hlx.page/');
-    } else {
-      u = new URL(a.href);
-      u.hostname = 'main--maidenform--hlxsites.hlx.page';
-    }
+    try {
+      const ori = a.href;
+      let u;
+      if (a.href.startsWith('/')) {
+        u = new URL(a.href, 'https://main--maidenform--hlxsites.hlx.page/');
+      } else {
+        u = new URL(a.href);
+        u.hostname = 'main--maidenform--hlxsites.hlx.page';
+      }
 
-    // Remove .html extension
-    if (u.pathname.endsWith('.html')) {
-      u.pathname = u.pathname.slice(0, -5);
-    }
+      // Remove .html extension
+      if (u.pathname.endsWith('.html')) {
+        u.pathname = u.pathname.slice(0, -5);
+      }
 
-    a.href = u.toString();
+      a.href = u.toString();
 
-    if (a.textContent === ori) {
-      a.textContent = a.href;
+      if (a.textContent === ori) {
+        a.textContent = a.href;
+      }
+    } catch (err) {
+      console.warn(`Unable to make absolute link for ${a.href}: ${err.message}`);
     }
   });
 }
 
 const makeProxySrcs = (main, host = 'https://www.maidenform.com') => {
   main.querySelectorAll('img').forEach((img) => {
-    console.log('img', img.src);
     if (img.src.startsWith('//')) {
-      img.src = `http:${img.src}`;
+      img.src = `https:${img.src}`;
     } else if (img.src.startsWith('/')) {
       // make absolute
       const cu = new URL(host);
@@ -78,7 +81,6 @@ const makeProxySrcs = (main, host = 'https://www.maidenform.com') => {
       const u = new URL(img.src);
       u.searchParams.append('host', u.origin);
       img.src = `http://localhost:3001${u.pathname}${u.search}`;
-      console.log('u', img.src);
     } catch (error) {
       console.warn(`Unable to make proxy src for ${img.src}: ${error.message}`);
     }
@@ -120,6 +122,7 @@ export default {
       '#rfk_search_container',
       'body > div[id^="batBeacon"]',
       'body > img',
+      '.category-cms',
     ]);
 
     const meta = {
