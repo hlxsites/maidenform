@@ -67,13 +67,13 @@
     text-align: center;
     height: 100%;
     align-items: stretch;
-    font-family: 'Gilroy Regular 400', 'Gilroy Regular 400 Fallback', sans-serif;
-    font-weight: 400;
-    font-size: 22px;
 }
 
 .columns.center-shadow > div p {
     margin: 0;
+    font-family: 'Gilroy Regular 400', 'Gilroy Regular 400 Fallback', sans-serif;
+    font-weight: 400;
+    font-size: 22px;
 }
 
 .columns.center-shadow > div > div > p:nth-child(3) {
@@ -293,6 +293,9 @@
 
     .columns.large-image, .columns.large-image > div {
         max-height: 656px;
+    }
+
+    .columns.large-image > div p {
         font-size: 22px;
     }
 
@@ -315,6 +318,9 @@
 
     .columns.two-images, .columns.two-images > div {
         max-height: 603px;
+    }
+
+    .columns.two-images > div p {
         font-size: 22px;
     }
 

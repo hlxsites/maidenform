@@ -40,6 +40,11 @@
     opacity: 1;
 }
 
+.hover-cards > div:first-child > div > div:nth-child(2) p {
+    font-size: 25px;
+    margin: 25px 0;
+}
+
 .hover-cards h3 {
     text-align: center;
     font-family: 'Zahrah Regular 600', 'Zahrah Regular 600 Fallback', serif;
