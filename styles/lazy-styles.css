@@ -2,7 +2,7 @@
 
 /* || Gilroy Fonts */
 @font-face {
-    font-family: Gilroy;
+    font-family: 'Gilroy ExtraBold 700';
     src: url('../fonts/Gilroy-ExtraBold.woff2') format('woff2'),url('../fonts/Gilroy-ExtraBold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
@@ -10,7 +10,7 @@
 }
 
 @font-face {
-    font-family: Gilroy;
+    font-family: 'Gilroy ExtraBold Italic 700';
     src: url('../fonts/Gilroy-ExtraBold-Italic.woff2') format('woff2'),url('../fonts/Gilroy-ExtraBold-Italic.woff') format('woff');
     font-weight: 700;
     font-style: italic;
@@ -18,7 +18,7 @@
 }
 
 @font-face {
-    font-family: Gilroy;
+    font-family: 'Gilroy SemiBold 600';
     src: url('../fonts/Gilroy-SemiBold.woff2') format('woff2'),url('../fonts/Gilroy-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
@@ -26,12 +26,12 @@
 }
 
 @font-face {
-    font-family: 'Gilroy Medium 400';
+    font-family: 'Gilroy Medium 500';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-display: swap;
     src: url('../fonts/Gilroy-Medium.woff') format('woff'), url('../fonts/Gilroy-Medium.woff2') format('woff2');
-  }
+}
 
 @font-face {
     font-family: 'Gilroy Regular 400';
@@ -39,10 +39,10 @@
     font-weight: 400;
     font-display: swap;
     src: url('../fonts/Gilroy-Regular.woff') format('woff'), url('../fonts/Gilroy-Regular.woff2') format('woff2');
-  }
+}
 
 @font-face {
-    font-family: Gilroy;
+    font-family: 'Gilroy Light 300';
     src: url('../fonts/Gilroy-Light.woff2') format('woff2'),url('../fonts/Gilroy-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
@@ -50,7 +50,7 @@
 }
 
 @font-face {
-    font-family: Gilroy;
+    font-family: 'Gilroy UltraLight 200';
     src: url('../fonts/Gilroy-UltraLight.woff2') format('woff2'),url('../fonts/Gilroy-UltraLight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
@@ -69,7 +69,7 @@
 /* || Zahrah Fonts */
 
 @font-face {
-    font-family: Zahrah;
+    font-family: 'Zahrah Bold 700';
     src: url('../fonts/Zahrah-Bold.woff') format('woff2'),url('../fonts/Zahrah-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
@@ -82,26 +82,26 @@
     font-weight: 700;
     font-display: swap;
     src: url('../fonts/Zahrah-Bold-Italic.woff') format('woff'), url('../fonts/Zahrah-Bold-Italic.woff2') format('woff2');
-  }
+}
 
 @font-face {
     font-family: 'Zahrah Semibold 400';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-display: swap;
     src: url('../fonts/Zahrah-SemiBold.woff') format('woff'), url('../fonts/Zahrah-SemiBold.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'Zahrah Semibold Italic 400';
+    font-family: 'Zahrah Semibold Italic 600';
     font-style: italic;
-    font-weight: 400;
+    font-weight: 600;
     font-display: swap;
     src: url('../fonts/Zahrah-SemiBold-Italic.woff') format('woff'), url('../fonts/Zahrah-SemiBold-Italic.woff2') format('woff2');
-  }
+}
 
 @font-face {
-    font-family: 'Zahrah SemiBold Italic';
+    font-family: 'Zahrah SemiBold Italic 600';
     src: url('../fonts/Zahrah-SemiBold-Italic.woff2') format('woff2'),url('../fonts/Zahrah-SemiBold-Italic.woff') format('woff');
     font-weight: 600;
     font-style: italic;
@@ -109,7 +109,7 @@
 }
 
 @font-face {
-    font-family: Zahrah;
+    font-family: 'Zahrah Medium Italic 500';
     src: url('../fonts/Zahrah-Medium-Italic.woff2') format('woff2'),url('../fonts/Zahrah-Medium-Italic.woff') format('woff');
     font-weight: 500;
     font-style: italic;
@@ -117,7 +117,7 @@
 }
 
 @font-face {
-    font-family: Zahrah;
+    font-family: 'Zahrah Medium 500';
     src: url('../fonts/Zahrah-Medium.woff2') format('woff2'),url('../fonts/Zahrah-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
@@ -141,7 +141,7 @@
 }
 
 @font-face {
-    font-family: Zahrah;
+    font-family: 'Zahrah Regular Italic 400';
     src: url('../fonts/Zahrah-Regular-Italic.woff2') format('woff2'),url('../fonts/Zahrah-Regular-Italic.woff') format('woff');
     font-weight: 400;
     font-style: italic;
@@ -149,7 +149,7 @@
 }
 
 @font-face {
-    font-family: Zahrah;
+    font-family: 'Zahrah Light 300';
     src: url('../fonts/Zahrah-Light.woff2') format('woff2'),url('../fonts/Zahrah-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
@@ -157,16 +157,9 @@
 }
 
 @font-face {
-    font-family: Zahrah;
+    font-family: 'Zahrah Light 300';
     src: url('../fonts/Zahrah-Light-Italic.woff2') format('woff2'),url('../fonts/Zahrah-Light-Italic.woff') format('woff');
     font-weight: 300;
     font-style: italic;
 }
 
-@font-face {
-    font-family: 'Zahrah Regular Italic 400';
-    font-style: italic;
-    font-weight: 400;
-    font-display: swap;
-    src: url('../fonts/Zahrah-Regular-Italic.woff') format('woff'), url('../fonts/Zahrah-Regular-Italic.woff2') format('woff2');
-}
