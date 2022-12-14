@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/adobe/helix-project-boilerplate#readme",
   "devDependencies": {
-    "@adobe/helix-cli": "^14.17.3",
+    "@adobe/helix-cli": "^14.18.1",
     "@babel/core": "7.19.3",
     "@babel/eslint-parser": "7.19.1",
     "@esm-bundle/chai": "4.3.4-fix.0",
