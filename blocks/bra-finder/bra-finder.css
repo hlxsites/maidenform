@@ -13,7 +13,7 @@
 }
 
 .block.bra-finder .fit-title em {
-  font-size: 4rem;
+  font-size: 7rem;
   color: #ce789f;
   text-transform: none;
 }
@@ -180,7 +180,7 @@
 
 .block.bra-finder .fit-finder-tool button {
   background: #bf4f82;
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
   font-style: italic;
 }
