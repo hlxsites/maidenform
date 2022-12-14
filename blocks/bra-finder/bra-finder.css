@@ -3,6 +3,21 @@
   margin: auto;
 }
 
+/* Titles */
+.block.bra-finder .fit-title h2 {
+  letter-spacing: .5rem;
+  color: #595a5c;
+  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.block.bra-finder .fit-title em {
+  font-size: 4rem;
+  color: #ce789f;
+  text-transform: none;
+}
+
 /* Image overlay */
 .block.bra-finder .fit-image-overlay {
   position: relative;
@@ -25,6 +40,7 @@
   padding: 12px;
   width: 100%;
   max-width: 300px;
+  box-shadow: 0.5rem 0.5rem 1rem rgb(0 0 0 / 30%);
 }
 
 .block.bra-finder .fit-image-overlay > div:first-child p {
@@ -60,21 +76,6 @@
 .block.bra-finder .fit-image-overlay > div:last-child img {
   min-height: 400px;
   object-fit: cover;
-}
-
-/* Titles */
-.block.bra-finder .fit-title h2 {
-  letter-spacing: .5rem;
-  color: #595a5c;
-  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.block.bra-finder .fit-title em {
-  font-size: 4rem;
-  color: #ce789f;
-  text-transform: none;
 }
 
 /* Tabs */
@@ -151,17 +152,17 @@
   text-align: center;
 }
 
-.block.bra-finder .fit-finder-tool > div:first-child {
-  font-style: italic;
-  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
-  color: #ce789f;
-}
-
-.block.bra-finder .fit-finder-tool form > div {
+.block.bra-finder .fit-finder-tool:not(.fit-image-overlay) form > div {
   display: flex;
   justify-content: center;
   gap: 20px;
   align-items: center;
+}
+
+.block.bra-finder .fit-finder-tool:not(.fit-image-overlay) > div:first-child {
+  font-style: italic;
+  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
+  color: #ce789f;
 }
 
 .block.bra-finder .fit-finder-tool form select {
