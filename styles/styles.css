@@ -335,7 +335,7 @@ h6 {
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 a:any-link {
@@ -442,7 +442,6 @@ main .section > div {
 
 main .section > div p {
   font-size: 1.6rem;
-  margin: 0;
 }
 
 main blockquote p::before {
