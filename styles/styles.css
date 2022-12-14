@@ -12,23 +12,23 @@
 
 /* fallback font for Gilroy  (normal - 700) */
 @font-face {
-  font-family: "gilroy-normal-700-fallback";
+  font-family: 'gilroy-normal-700-fallback';
   size-adjust: 102.931%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Gilroy (normal - 600) */
 @font-face {
-  font-family: "gilroy-normal-600-fallback";
+  font-family: 'gilroy-normal-600-fallback';
   size-adjust: 102.811%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Gilroy (normal - 500) */
 @font-face {
-  font-family: "gilroy-normal-500-fallback";
+  font-family: 'gilroy-normal-500-fallback';
   size-adjust: 101.991%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 @font-face {
@@ -37,23 +37,23 @@
   font-weight: 400;
   src: local('Arial');
   ascent-override: 91.96%;
-  descent-override: 25.50%;
-  line-gap-override: 0.00%;
+  descent-override: 25.5%;
+  line-gap-override: 0%;
   size-adjust: 104.92%;
 }
 
 /* fallback font for Gilroy Regular (normal - 300) */
 @font-face {
-  font-family: "gilroy-normal-300-fallback";
+  font-family: 'gilroy-normal-300-fallback';
   size-adjust: 100.871%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Zahrah Bold (normal - 700) */
 @font-face {
-  font-family: "zahrah-normal-700-fallback";
+  font-family: 'zahrah-normal-700-fallback';
   size-adjust: 103.121%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 @font-face {
@@ -63,7 +63,7 @@
   src: local('Arial');
   ascent-override: 91.98%;
   descent-override: 24.89%;
-  line-gap-override: 0.00%;
+  line-gap-override: 0%;
   size-adjust: 104.36%;
 }
 
@@ -74,7 +74,7 @@
   src: local('Times New Roman Italic');
   ascent-override: 66.53%;
   descent-override: 21.47%;
-  line-gap-override: 17.60%;
+  line-gap-override: 17.6%;
   size-adjust: 113.64%;
 }
 
@@ -91,45 +91,44 @@
 
 /* fallback font for Zahrah Bold Italic (italic - 700) */
 @font-face {
-  font-family: "zahrah-italic-700-fallback";
+  font-family: 'zahrah-italic-700-fallback';
   size-adjust: 103.121%;
-  src: local("Arial");
+  src: local('Arial');
 }
-
 
 /* fallback font for Zahrah SemiBold (normal - 600) */
 @font-face {
-  font-family: "zahrah-normal-600-fallback";
+  font-family: 'zahrah-normal-600-fallback';
   size-adjust: 102.181%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Zahrah SemiBold Italic (italic - 600) */
 @font-face {
   font-family: 'zahrah-italic-600-fallback';
   size-adjust: 100.871%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Zahrah Medium Italic (italic - 500) */
 @font-face {
   font-family: 'zahrah-italic-500-fallback';
   size-adjust: 98.879%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Gilroy Bold (normal - normal) */
 @font-face {
   font-family: gilroy-bold-normal-normal-fallback;
   size-adjust: 102.931%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Gilroy Bold (normal - bold) */
 @font-face {
   font-family: gilroy-bold-normal-bold-fallback;
   size-adjust: 102.811%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 @font-face {
@@ -137,10 +136,10 @@
   font-style: normal;
   font-weight: 700;
   src: local('Arial Bold');
-  ascent-override: 99.50%;
+  ascent-override: 99.5%;
   descent-override: 28.85%;
-  line-gap-override: 0.00%;
-  size-adjust: 98.00%;
+  line-gap-override: 0%;
+  size-adjust: 98%;
 }
 
 @font-face {
@@ -149,7 +148,7 @@
   font-weight: 400;
   src: local('Times New Roman');
   ascent-override: 65.98%;
-  descent-override: 21.30%;
+  descent-override: 21.3%;
   line-gap-override: 17.46%;
   size-adjust: 114.57%;
 }
@@ -203,9 +202,15 @@
   --text-color: var(--clr-black);
 
   /* fonts */
-  --body-font-family: 'Gilroy', 'gilroy-normal-700-fallback', 'gilroy-normal-600-fallback', 'gilroy-normal-400-fallback', 'gilroy-normal-300-fallback', 'Arial', sans-serif;
-  --heading-font-family: 'Zahrah',  'zahrah-normal-700-fallback', 'zahrah-italic-700-fallback', 'zahrah-normal-600-fallback', 'zahrah-italic-600-fallback', 'zahrah-italic-500-fallback','Arial', sans-serif;
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --body-font-family: 'Gilroy', 'gilroy-normal-700-fallback',
+    'gilroy-normal-600-fallback', 'gilroy-normal-400-fallback',
+    'gilroy-normal-300-fallback', 'Arial', sans-serif;
+  --heading-font-family: 'Zahrah', 'zahrah-normal-700-fallback',
+    'zahrah-italic-700-fallback', 'zahrah-normal-600-fallback',
+    'zahrah-italic-600-fallback', 'zahrah-italic-500-fallback', 'Arial',
+    sans-serif;
+  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono',
+    monospace;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -223,7 +228,6 @@
   /* nav height */
   --desktop-nav-height: 100px;
   --nav-height: 64px;
-
 }
 
 html {
@@ -248,24 +252,50 @@ header {
   height: var(--nav-height);
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
   margin-top: 1em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
 
-p, dl, ol, ul, pre, blockquote {
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -280,13 +310,16 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-code, pre, samp {
+code,
+pre,
+samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code, samp {
-  padding: .125em;
+code,
+samp {
+  padding: 0.125em;
 }
 
 pre {
@@ -295,7 +328,8 @@ pre {
 
 /* buttons */
 
-a.button:any-link, button {
+a.button:any-link,
+button {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
@@ -315,13 +349,18 @@ a.button:any-link, button {
   border-radius: 30px;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus  {
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-a.button.secondary, button.secondary {
-  font-family: 'Zahrah Semibold Italic 400', 'Zahrah Semibold Italic 400 Fallback', serif;
+a.button.secondary,
+button.secondary {
+  font-family: 'Zahrah Semibold Italic 400',
+    'Zahrah Semibold Italic 400 Fallback', serif;
   font-size: 20px;
   font-style: italic;
   font-weight: 400;
@@ -334,7 +373,8 @@ a.button.secondary, button.secondary {
   padding: 10px 20px;
 }
 
-a.button.secondary:hover, button.secondary:hover {
+a.button.secondary:hover,
+button.secondary:hover {
   background-color: var(--clr-white);
   color: var(--clr-black);
 }
@@ -364,7 +404,7 @@ main .section {
 main pre {
   background-color: var(--overlay-background-color);
   padding: 1em;
-  border-radius: .25em;
+  border-radius: 0.25em;
   overflow-x: auto;
   white-space: pre;
 }
@@ -377,12 +417,12 @@ main blockquote {
 }
 
 main blockquote p::before {
-  content: "“";
+  content: '“';
   line-height: 0;
 }
 
 main blockquote p::after {
-  content: "”";
+  content: '”';
   line-height: 0;
 }
 
@@ -435,6 +475,13 @@ main img {
   letter-spacing: 4px;
 }
 
+.section.heading-pink .default-content-wrapper h1,
+.section.heading-pink .default-content-wrapper h2 {
+  font-family: 'Zahrah Semibold 400', 'Zahrah Semibold 400 Fallback', serif;
+  font-size: var(--heading-font-size-l);
+  color: var(--clr-dark-pink);
+}
+
 @media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
@@ -483,68 +530,69 @@ main .section.highlight {
 
 /* modal dialog styles */
 .modal-background {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 3000;
-    background: rgb(0 0 0 / 80%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+  background: rgb(0 0 0 / 80%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .modal-content {
-    background: #fff;
-    padding: 20px;
-    text-align: center;
-    max-width: 120rem;
-    width: 60%;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 400;
-    position: relative;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  max-width: 120rem;
+  width: 60%;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
 
-    /* TODO: font-family: 'Gilroy Regular' */
+  /* TODO: font-family: 'Gilroy Regular' */
 }
 
-.modal-content h1 {
-    margin: 10px 0;
-    padding: 0;
-    font-size: 24px;
-    font-weight: 300;
+.modal-content h1 { /* stylelint-disable-line no-descending-specificity */
+  margin: 10px 0;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 300;
 }
 
 .modal-content button {
-    display: block;
-    background: #fff;
-    border: 1px solid #000;
-    width: 44px;
-    height: 44px;
-    margin: -20px -20px 0 0;
-    text-align: center;
-    color: #333;
-    border-radius: 50%;
-    padding: 0;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 44px;
-    font-family: Arial, monospace;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1000;
-    transition: all .3s ease;
+  display: block;
+  background: #fff;
+  border: 1px solid #000;
+  width: 44px;
+  height: 44px;
+  margin: -20px -20px 0 0;
+  text-align: center;
+  color: #333;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 44px;
+  font-family: Arial, monospace;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-button:disabled, button:disabled:hover {
+button:disabled,
+button:disabled:hover {
   background-color: var(--overlay-background-color);
   cursor: unset;
 }
 
 .modal-content button:hover {
-    background: #000;
-    color: #fff;
+  background: #000;
+  color: #fff;
 }
