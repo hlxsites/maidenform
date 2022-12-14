@@ -12,23 +12,23 @@
 
 /* fallback font for Gilroy  (normal - 700) */
 @font-face {
-  font-family: "gilroy-normal-700-fallback";
+  font-family: 'gilroy-normal-700-fallback';
   size-adjust: 102.931%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Gilroy (normal - 600) */
 @font-face {
-  font-family: "gilroy-normal-600-fallback";
+  font-family: 'gilroy-normal-600-fallback';
   size-adjust: 102.811%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Gilroy (normal - 500) */
 @font-face {
-  font-family: "gilroy-normal-500-fallback";
+  font-family: 'gilroy-normal-500-fallback';
   size-adjust: 101.991%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 @font-face {
@@ -37,23 +37,23 @@
   font-weight: 400;
   src: local('Arial');
   ascent-override: 91.96%;
-  descent-override: 25.50%;
-  line-gap-override: 0.00%;
+  descent-override: 25.5%;
+  line-gap-override: 0%;
   size-adjust: 104.92%;
 }
 
 /* fallback font for Gilroy Regular (normal - 300) */
 @font-face {
-  font-family: "gilroy-normal-300-fallback";
+  font-family: 'gilroy-normal-300-fallback';
   size-adjust: 100.871%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Zahrah Bold (normal - 700) */
 @font-face {
-  font-family: "zahrah-normal-700-fallback";
+  font-family: 'zahrah-normal-700-fallback';
   size-adjust: 103.121%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 @font-face {
@@ -63,7 +63,7 @@
   src: local('Arial');
   ascent-override: 91.98%;
   descent-override: 24.89%;
-  line-gap-override: 0.00%;
+  line-gap-override: 0%;
   size-adjust: 104.36%;
 }
 
@@ -74,7 +74,7 @@
   src: local('Times New Roman Italic');
   ascent-override: 66.53%;
   descent-override: 21.47%;
-  line-gap-override: 17.60%;
+  line-gap-override: 17.6%;
   size-adjust: 113.64%;
 }
 
@@ -91,45 +91,44 @@
 
 /* fallback font for Zahrah Bold Italic (italic - 700) */
 @font-face {
-  font-family: "zahrah-italic-700-fallback";
+  font-family: 'zahrah-italic-700-fallback';
   size-adjust: 103.121%;
-  src: local("Arial");
+  src: local('Arial');
 }
-
 
 /* fallback font for Zahrah SemiBold (normal - 600) */
 @font-face {
-  font-family: "zahrah-normal-600-fallback";
+  font-family: 'zahrah-normal-600-fallback';
   size-adjust: 102.181%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Zahrah SemiBold Italic (italic - 600) */
 @font-face {
   font-family: 'zahrah-italic-600-fallback';
   size-adjust: 100.871%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Zahrah Medium Italic (italic - 500) */
 @font-face {
   font-family: 'zahrah-italic-500-fallback';
   size-adjust: 98.879%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Gilroy Bold (normal - normal) */
 @font-face {
   font-family: gilroy-bold-normal-normal-fallback;
   size-adjust: 102.931%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 /* fallback font for Gilroy Bold (normal - bold) */
 @font-face {
   font-family: gilroy-bold-normal-bold-fallback;
   size-adjust: 102.811%;
-  src: local("Arial");
+  src: local('Arial');
 }
 
 @font-face {
@@ -137,10 +136,10 @@
   font-style: normal;
   font-weight: 700;
   src: local('Arial Bold');
-  ascent-override: 99.50%;
+  ascent-override: 99.5%;
   descent-override: 28.85%;
-  line-gap-override: 0.00%;
-  size-adjust: 98.00%;
+  line-gap-override: 0%;
+  size-adjust: 98%;
 }
 
 @font-face {
@@ -149,9 +148,42 @@
   font-weight: 400;
   src: local('Times New Roman');
   ascent-override: 65.98%;
-  descent-override: 21.30%;
+  descent-override: 21.3%;
   line-gap-override: 17.46%;
   size-adjust: 114.57%;
+}
+
+@font-face {
+  font-family: 'Zahrah Regular Italic 400 Fallback';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Times New Roman Italic');
+  ascent-override: 69.02%;
+  descent-override: 22.28%;
+  line-gap-override: 18.26%;
+  size-adjust: 109.53%;
+}
+
+@font-face {
+  font-family: 'Zahrah Regular 400 Fallback';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Times New Roman');
+  ascent-override: 67.91%;
+  descent-override: 21.92%;
+  line-gap-override: 17.97%;
+  size-adjust: 111.33%;
+}
+
+@font-face {
+  font-family: 'Zahrah Regular 600 Fallback';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Times New Roman Bold');
+  ascent-override: 72.13%;
+  descent-override: 23.28%;
+  line-gap-override: 19.08%;
+  size-adjust: 104.81%;
 }
 
 :root {
@@ -172,9 +204,15 @@
   --clr-grey: #f4f4f4;
 
   /* fonts */
-  --body-font-family: 'Gilroy', 'gilroy-normal-700-fallback', 'gilroy-normal-600-fallback', 'gilroy-normal-400-fallback', 'gilroy-normal-300-fallback', 'Arial', sans-serif;
-  --heading-font-family: 'Zahrah',  'zahrah-normal-700-fallback', 'zahrah-italic-700-fallback', 'zahrah-normal-600-fallback', 'zahrah-italic-600-fallback', 'zahrah-italic-500-fallback','Arial', sans-serif;
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --body-font-family: 'Gilroy', 'gilroy-normal-700-fallback',
+    'gilroy-normal-600-fallback', 'gilroy-normal-400-fallback',
+    'gilroy-normal-300-fallback', 'Arial', sans-serif;
+  --heading-font-family: 'Zahrah', 'zahrah-normal-700-fallback',
+    'zahrah-italic-700-fallback', 'zahrah-normal-600-fallback',
+    'zahrah-italic-600-fallback', 'zahrah-italic-500-fallback', 'Arial',
+    sans-serif;
+  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono',
+    monospace;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -220,22 +258,43 @@ header {
   height: var(--nav-height);
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
   margin-top: 1em;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl);
+}
+
+h2 {
+  font-size: var(--heading-font-size-xl);
+}
+
+h3 {
+  font-size: var(--heading-font-size-l);
+}
+
+h4 {
+  font-size: var(--heading-font-size-m);
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+}
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 0;
@@ -252,13 +311,16 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-code, pre, samp {
+code,
+pre,
+samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code, samp {
-  padding: .125em;
+code,
+samp {
+  padding: 0.125em;
 }
 
 pre {
@@ -267,7 +329,8 @@ pre {
 
 /* buttons */
 
-a.button:any-link, button {
+a.button:any-link,
+button {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
@@ -287,13 +350,18 @@ a.button:any-link, button {
   border-radius: 30px;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus  {
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-a.button.secondary, button.secondary {
-  font-family: 'Zahrah Semibold Italic 400', 'Zahrah Semibold Italic 400 Fallback', serif;
+a.button.secondary,
+button.secondary {
+  font-family: 'Zahrah Semibold Italic 400',
+    'Zahrah Semibold Italic 400 Fallback', serif;
   font-size: 20px;
   font-style: italic;
   font-weight: 400;
@@ -306,7 +374,8 @@ a.button.secondary, button.secondary {
   padding: 10px 20px;
 }
 
-a.button.secondary:hover, button.secondary:hover {
+a.button.secondary:hover,
+button.secondary:hover {
   background-color: var(--clr-white);
   color: var(--clr-black);
 }
@@ -343,12 +412,12 @@ main .section > div p {
 }
 
 main blockquote p::before {
-  content: "“";
+  content: '“';
   line-height: 0;
 }
 
 main blockquote p::after {
-  content: "”";
+  content: '”';
   line-height: 0;
 }
 
@@ -531,6 +600,13 @@ main .section.customer-service > div > p + p img{
   font-weight: 400;
   text-decoration: underline;
   letter-spacing: 4px;
+}
+
+.section.heading-pink .default-content-wrapper h1,
+.section.heading-pink .default-content-wrapper h2 {
+  font-family: 'Zahrah Semibold 400', 'Zahrah Semibold 400 Fallback', serif;
+  font-size: var(--heading-font-size-l);
+  color: var(--clr-dark-pink);
 }
 
 @media (min-width: 600px) {

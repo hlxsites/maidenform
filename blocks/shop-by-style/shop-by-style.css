@@ -1,0 +1,80 @@
+.section.shop-by-style-container {
+    padding: 0;
+}
+
+.section>.shop-by-style-wrapper {
+    max-width: unset;
+    background: #e7e5df;
+}
+
+.shop-by-style {
+    overflow: hidden;
+    text-align: center;
+}
+
+.shop-by-style>div {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+    max-width: 100%;
+}
+
+.shop-by-style>div>div {
+    max-width: 100%;
+    padding: 10px;
+}
+
+.shop-by-style>div>div h2 {
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0 20px;
+}
+
+.shop-by-style>div>div h1 {
+    font-family: 'Zahrah SemiBold Italic 400', 'Zahrah SemiBold Italic 400 Fallback', serif;
+    font-size: 34px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 38px;
+}
+
+.shop-by-style>div>div:has(h1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.shop-by-style>div>div>ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: auto;
+    max-width: 100%;
+    line-height: 16px;
+}
+
+.shop-by-style>div>div>ul>li {
+    margin: 0 5px 10px;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 700;
+    font-family: 'Zahrah Bold Italic 700', 'Zahrah Bold Italic 700 Fallback', serif;
+}
+
+.shop-by-style>div>div>ul>li img {
+    min-width: 150px;
+}
+
+@media (min-width: 900px) {
+    .shop-by-style>div>div h2 {
+        font-size: 24px;
+    }
+
+    .shop-by-style>div>div h1 {
+        font-size: 40px;
+        line-height: 44px;
+    }
+}
