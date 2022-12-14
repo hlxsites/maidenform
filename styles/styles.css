@@ -481,16 +481,8 @@ main img {
   flex-direction: column;
 }
 
-/* main .section 
-h1, h2, h3,
-h4, h5, h6 {
-  font-family: var(--body-font-family);
-} */
-
-main .section.accessibility h1 , h2, h3 , 
-main .section.privacy-policy h1 , h2, h3 ,
-main .section.secure-shopping h1 , h2, h3 ,
-main .section.terms-of-use h1 , h2, h3 {
+.section:is(.accessibility, .privacy-policy, .secure-shopping, .terms-of-use) 
+h1, h2, h3, h4 {
   font-family: var(--ff-gilroy-light);
 }
 
