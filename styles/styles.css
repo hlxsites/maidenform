@@ -510,3 +510,7 @@ button:disabled, button:disabled:hover {
     background: #000;
     color: #fff;
 }
+
+.section.centered-text {
+  text-align: center;
+}

@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-classes-per-file
 class Tabs {
   constructor(rootUl) {
     this.rootUl = rootUl;
@@ -36,6 +37,50 @@ class Tabs {
   }
 }
 
+class SizeSelector {
+  constructor() {
+    this.bandSizes = [32, 34, 36, 38, 40, 42];
+  }
+
+  setSelectedBandSize(selectedSize) {
+    this.cupSizes = Array.from({ length: 6 }, (_, i) => i + 1 + Number.parseInt(selectedSize, 10));
+    this.parent.querySelector('select[name="cup-size"]').innerHTML = `
+      <option disabled selected value="">Select your cup size</option>
+      ${this.cupSizes.reduce((s, number) => `${s} <option>${number}</option>`, '')}
+    `;
+    this.parent.querySelector('select[name="cup-size"]').removeAttribute('disabled');
+  }
+
+  decorate(parent) {
+    this.parent = parent;
+    const fitFinderSelector = document.createElement('div');
+    fitFinderSelector.classList.add('fit-finder-selector');
+
+    fitFinderSelector.innerHTML = `
+    <form action="/bra-fit-calculator/results">
+        <div>
+            <span class="title-number">1</span>
+            <select name="band-size" required>
+                <option disabled selected value="">Select your band size</option>
+${this.bandSizes.reduce((s, number) => `${s} <option>${number}</option>`, '')}
+            </select>
+        </div>
+        <div>
+            <span class="title-number">2</span>
+            <select name="cup-size" disabled="true" required>
+                <option disabled selected value="">Select your cup size</option>
+            </select>
+        </div>
+        <button>Fit Me</button>
+    </form>`;
+
+    parent.append(fitFinderSelector);
+    fitFinderSelector.querySelector('select[name="band-size"]').addEventListener('change', (e) => {
+      this.setSelectedBandSize(e.target.value);
+    });
+  }
+}
+
 export default function decorate(block) {
   const blockSections = block.children;
 
@@ -59,4 +104,8 @@ export default function decorate(block) {
   const tabs = new Tabs(block.querySelector('.fit-tabs ul'));
   tabs.decorate();
   tabs.attachEventListeners();
+
+  // Create fit finder tool
+  const selector = new SizeSelector();
+  selector.decorate(block.querySelector('.fit-finder-tool'));
 }

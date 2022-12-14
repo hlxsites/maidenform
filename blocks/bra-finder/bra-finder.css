@@ -6,6 +6,8 @@
 /* Image overlay */
 .block.bra-finder .fit-image-overlay {
   position: relative;
+  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
+  font-style: italic;
 }
 
 .block.bra-finder .fit-image-overlay > div:first-child {
@@ -26,7 +28,33 @@
 }
 
 .block.bra-finder .fit-image-overlay > div:first-child p {
-  font-size: 18px;
+  font-size: 22px;
+  color: #414042;
+  margin: 0;
+}
+
+.block.bra-finder .fit-image-overlay > div:first-child p:last-child {
+  background: #ba885d;
+  color: white;
+  border-radius: 25px;
+}
+
+.block.bra-finder .fit-image-overlay > div:first-child a:hover {
+  text-decoration: none;
+}
+
+.block.bra-finder .fit-image-overlay > div:first-child a:hover p:last-child {
+  text-decoration: underline;
+}
+
+.block.bra-finder .fit-image-overlay > div:first-child a h3 {
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.block.bra-finder .fit-image-overlay > div:first-child a h3 em {
+  color: white;
+  text-transform: none;
 }
 
 .block.bra-finder .fit-image-overlay > div:last-child img {
@@ -75,6 +103,7 @@
 }
 
 .block.bra-finder .fit-tabs ul[role='tabpanel'] li {
+  flex: 1;
   display: grid;
   grid-template-areas: 'picture title' 'picture description';
   gap: 15px;
@@ -117,6 +146,44 @@
   flex: 1;
 }
 
+/* Fit finder tool */
+.block.bra-finder .fit-finder-tool {
+  text-align: center;
+}
+
+.block.bra-finder .fit-finder-tool > div:first-child {
+  font-style: italic;
+  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
+  color: #ce789f;
+}
+
+.block.bra-finder .fit-finder-tool form > div {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+.block.bra-finder .fit-finder-tool form select {
+  width: 210px;
+  background: none;
+  border: 2px solid #bf4f82;
+  color: #bf4f82;
+  padding: 12px;
+}
+
+.block.bra-finder .fit-finder-tool .title-number {
+  color: #bf4f82;
+  font-size: 5rem;
+}
+
+.block.bra-finder .fit-finder-tool button {
+  background: #bf4f82;
+  font-size: 1.2rem;
+  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
+  font-style: italic;
+}
+
 @media (min-width: 800px) {
   .block.bra-finder .fit-tabs ul[role='tabpanel'] {
     flex-direction: row;
@@ -141,5 +208,20 @@
     gap: 40px;
     flex-direction: row;
     justify-content: center;
+  }
+
+  .block.bra-finder .fit-finder-tool .fit-finder-selector > form {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .block.bra-finder .fit-image-overlay > div:first-child a {
+    padding: 40px;
+  }
+
+  .block.bra-finder .fit-image-overlay > div:first-child p {
+    font-size: 28px;
   }
 }
