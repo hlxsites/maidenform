@@ -269,7 +269,7 @@
   /* nav height */
   --desktop-nav-height: 100px;
   --nav-height: 64px;
-  
+
   /* section max width */
   --section-max-width: 720px;
 }
@@ -529,7 +529,7 @@ main .section.privacy-policy ol, main .section.privacy-policy ul {
   padding-left: 1.5rem;
 }
 
-main .section.privacy-policy ol li 
+main .section.privacy-policy ol li
 {
   margin-top: 2em;
   font-size: 1.6rem;
@@ -558,7 +558,7 @@ main .section.privacy-policy a:any-link{
 /* styles for /terms-of-use */
 main .section.terms-of-use h1{
   font-size: 4.2rem;
-  margin: 0 0 2rem;  
+  margin: 0 0 2rem;
   color: #333;
 }
 
@@ -747,6 +747,10 @@ button:disabled, button:disabled:hover {
   color: #fff;
 }
 
+.section.centered-text {
+  text-align: center;
+}
+
 main pre {
   background-color: var(--overlay-background-color);
   padding: 1em;
@@ -769,10 +773,10 @@ main blockquote {
     --heading-font-size-l: 36px;
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;  
+    --heading-font-size-xs: 22px;
     --section-max-width: 1160px;
   }
-  
+
   .section > div {
     max-width: var(--section-max-width);
     margin: auto;
@@ -782,4 +786,3 @@ main blockquote {
     padding-left: 4rem;
   }
 }
-
