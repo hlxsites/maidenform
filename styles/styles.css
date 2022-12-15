@@ -625,6 +625,30 @@ main .section.customer-service > div > p + p img{
   letter-spacing: 4px;
 }
 
+/* Product List Page */
+
+body.plp main .section {
+  font-size: 16px;
+  font-family: var(--ff-gilroy-medium);
+  font-weight: 500;
+}
+
+body.plp main .section h1 {
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: var(--ff-gilroy-regular);
+  font-weight: 400;
+}
+
+body.plp main .section h2 {
+  color: var(--clr-dark-pink);
+  font-size: 42px;
+  font-family: var(--ff-gilroy-medium);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
 .section.heading-pink .default-content-wrapper h1,
 .section.heading-pink .default-content-wrapper h2 {
   font-family: var(--ff-zahrah-semibold);
