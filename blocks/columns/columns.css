@@ -122,7 +122,7 @@
 .columns.two-images, .columns.two-images > div {
     text-align: center;
     background: #f4e9e2;
-    font-family: var(--ff-zahrah-regular-italic);
+    font-family: var(--ff-zahrah-semibold-italic);
     font-size: 19px;
     line-height: 24.2px;
 }
@@ -146,7 +146,7 @@
 }
 
 .columns.two-images h2 {
-    font-family: var(--ff-zahrah-regular-italic);
+    font-family: var(--ff-zahrah-semibold-italic);
     font-size: 45px;
     font-weight: 400;
     font-style: italic;
@@ -194,6 +194,7 @@
     margin: 0 0 20px;
     font-family: var(--ff-zahrah-semibold-italic);
     font-size: 15px;
+    line-height: 35px;
 }
 
 .columns.teaser > div:first-child > div > div h4 {
@@ -208,7 +209,7 @@
 }
 
 .columns.teaser > div > div:nth-child(2) h2 {
-    font-family: var(--ff-zahrah-regular-italic);
+    font-family: var(--ff-zahrah-semibold-italic);
     font-size: 30px;
     margin: 0;
 }
