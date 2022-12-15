@@ -27,10 +27,8 @@
     flex-direction: column;
     justify-content: center;
     padding: 50px;
-    font-family: 'Zahrah Regular Italic 400', 'Zahrah Regular Italic 400 Fallback', serif;
+    font-family: var(--ff-zahrah-regular-italic);
     font-size: 25px;
-    font-style: italic;
-    font-weight: 400;
     transition: opacity 0.25s linear;
     box-shadow: -10px 10px 10px rgb(0 0 0 / 40%);
     opacity: 0;
@@ -47,9 +45,8 @@
 
 .hover-cards h3 {
     text-align: center;
-    font-family: 'Zahrah Regular 600', 'Zahrah Regular 600 Fallback', serif;
+    font-family: var(--ff-zahrah-regular);
     font-size: 40px;
-    font-weight: 600;
     letter-spacing: 4px;
     margin: 0;
     margin-bottom: 20px;
@@ -57,7 +54,7 @@
 
 .section.hover-cards-container h2 {
     text-align: center;
-    font-family: 'Zahrah Regular 600', 'Zahrah Regular 600 Fallback', serif;
+    font-family: var(--ff-zahrah-regular);
     font-size: 42px;
     font-weight: 600;
     letter-spacing: 4px;
@@ -67,7 +64,7 @@
 .section.hover-cards-container h2 > em {
     color: #ce789f;
     text-transform: lowercase;
-    font-family: 'Zahrah Regular Italic 400', 'Zahrah Regular Italic 400 Fallback', serif;
+    font-family: var(--ff-zahrah-regular-italic);
     font-size: 60px;
 }
 

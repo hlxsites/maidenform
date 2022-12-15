@@ -162,7 +162,7 @@ header nav .nav-menu ul > li:first-child .menu-nav-category {
 header nav .nav-menu ul > li *:is(a, p) {
   text-transform: uppercase;
   color: black;
-  font-weight: bold;
+  font-family: var(--ff-gilroy-bold);
   margin: 0;
 }
 
@@ -234,8 +234,8 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
 
   header nav > div {
     grid-template:
-        'logo tools' 1fr
-        'logo links' 1fr / 180px 1fr;
+      'logo tools' 1fr
+      'logo links' 1fr / 180px 1fr;
   }
 
   header nav .nav-tools {
@@ -285,6 +285,11 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   header nav .nav-menu ul > li *:is(a, p) {
     font-size: 15px;
     padding: 0;
+  }
+
+  header nav .nav-menu > ul > li .menu-nav-category a {
+    font-family: var(--ff-gilroy-bold);
+    font-size: 15px;
   }
 
   header nav .nav-menu .menu-nav-category > div > a:hover {
@@ -395,7 +400,7 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
 
   header nav .nav-menu .menu-nav-dropdown div:not(.m-col-featured) .m-expandable-list li > *:is(a, p) {
     text-transform: unset;
-    font-weight: normal;
+    font-family: var(--body-font-family);
   }
 
   header nav p.m-expandable-title {
@@ -409,8 +414,9 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
     padding-right: 24px;
     font-size: 26px;
   }
-
+  
   header nav .nav-menu > ul > li .menu-nav-category a {
+    font-family: var(--ff-gilroy-bold);
     font-size: 18px;
   }
 
