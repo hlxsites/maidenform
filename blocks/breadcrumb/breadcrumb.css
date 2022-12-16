@@ -1,0 +1,35 @@
+.breadcrumb {
+    font-family: var(--ff-gilroy-regular);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.breadcrumb ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb ul > li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb ul > li a {
+    color: var(--clr-dark-grey);
+    text-decoration: none;
+}
+
+.breadcrumb ul > li a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb ul > li:not(:last-child)::after {
+    color: var(--clr-dark-grey);
+    content: '/';
+    display: inline-block;
+    font-size: 14px;
+    padding-left: 6px;
+    padding-right: 3px;
+}

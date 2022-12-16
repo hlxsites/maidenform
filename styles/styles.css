@@ -1,59 +1,60 @@
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
+/* stylelint-disable no-descending-specificity */
 
-/* fallback font for Gilroy  (normal - 700) */
-@font-face {
-  font-family: 'gilroy-normal-700-fallback';
-  size-adjust: 102.931%;
-  src: local('Arial');
-}
-
-/* fallback font for Gilroy (normal - 600) */
-@font-face {
-  font-family: 'gilroy-normal-600-fallback';
-  size-adjust: 102.811%;
-  src: local('Arial');
-}
-
-/* fallback font for Gilroy (normal - 500) */
-@font-face {
-  font-family: 'gilroy-normal-500-fallback';
-  size-adjust: 101.991%;
-  src: local('Arial');
-}
+/* fallback font for Gilroy font family */
 
 @font-face {
-  font-family: 'Gilroy Medium 400 Fallback';
+  font-family: 'Gilroy ExtraBold 700 Fallback';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
+  src: local('Arial Bold');
+  ascent-override: 99.52%;
+  descent-override: 29.40%;
+  line-gap-override: 0.00%;
+  size-adjust: 98.47%;
+}
+
+@font-face {
+  font-family: 'Gilroy ExtraBold Italic 700 Fallback';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arial Bold');
+  ascent-override: 99.72%;
+  descent-override: 29.46%;
+  line-gap-override: 0.00%;
+  size-adjust: 98.27%;
+}
+
+@font-face {
+  font-family: 'Gilroy Bold 700 Fallback';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arial Bold');
+  ascent-override: 99.50%;
+  descent-override: 28.85%;
+  line-gap-override: 0.00%;
+  size-adjust: 98.00%;
+}
+
+@font-face {
+  font-family: 'Gilroy SemiBold 600 Fallback';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Arial Bold');
+  ascent-override: 99.48%;
+  descent-override: 28.14%;
+  line-gap-override: 0.00%;
+  size-adjust: 97.53%;
+}
+
+@font-face {
+  font-family: 'Gilroy Medium 500 Fallback';
+  font-style: normal;
+  font-weight: 500;
   src: local('Arial');
   ascent-override: 91.96%;
-  descent-override: 25.5%;
-  line-gap-override: 0%;
+  descent-override: 25.50%;
+  line-gap-override: 0.00%;
   size-adjust: 104.92%;
-}
-
-/* fallback font for Gilroy Regular (normal - 300) */
-@font-face {
-  font-family: 'gilroy-normal-300-fallback';
-  size-adjust: 100.871%;
-  src: local('Arial');
-}
-
-/* fallback font for Zahrah Bold (normal - 700) */
-@font-face {
-  font-family: 'zahrah-normal-700-fallback';
-  size-adjust: 103.121%;
-  src: local('Arial');
 }
 
 @font-face {
@@ -63,127 +64,142 @@
   src: local('Arial');
   ascent-override: 91.98%;
   descent-override: 24.89%;
-  line-gap-override: 0%;
+  line-gap-override: 0.00%;
   size-adjust: 104.36%;
 }
 
 @font-face {
-  font-family: 'Zahrah Semibold Italic 400 Fallback';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Times New Roman Italic');
-  ascent-override: 66.53%;
-  descent-override: 21.47%;
-  line-gap-override: 17.6%;
-  size-adjust: 113.64%;
+  font-family: 'Gilroy Light 300 Fallback';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Arial');
+  ascent-override: 90.93%;
+  descent-override: 24.60%;
+  line-gap-override: 0.00%;
+  size-adjust: 105.58%;
+}
+
+@font-face {
+  font-family: 'Gilroy UltraLight 200 Fallback';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Arial');
+  ascent-override: 89.96%;
+  descent-override: 24.34%;
+  line-gap-override: 0.00%;
+  size-adjust: 106.71%;
+}
+
+/* fallback fonts for Zarah font family */
+
+@font-face {
+  font-family: 'Zahrah Bold 700 Fallback';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Arial Bold');
+  ascent-override: 76.71%;
+  descent-override: 24.76%;
+  line-gap-override: 20.29%;
+  size-adjust: 98.55%;
 }
 
 @font-face {
   font-family: 'Zahrah Bold Italic 700 Fallback';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Times New Roman Bold Italic');
-  ascent-override: 66.75%;
-  descent-override: 21.54%;
-  line-gap-override: 17.66%;
-  size-adjust: 113.26%;
-}
-
-/* fallback font for Zahrah Bold Italic (italic - 700) */
-@font-face {
-  font-family: 'zahrah-italic-700-fallback';
-  size-adjust: 103.121%;
-  src: local('Arial');
-}
-
-/* fallback font for Zahrah SemiBold (normal - 600) */
-@font-face {
-  font-family: 'zahrah-normal-600-fallback';
-  size-adjust: 102.181%;
-  src: local('Arial');
-}
-
-/* fallback font for Zahrah SemiBold Italic (italic - 600) */
-@font-face {
-  font-family: 'zahrah-italic-600-fallback';
-  size-adjust: 100.871%;
-  src: local('Arial');
-}
-
-/* fallback font for Zahrah Medium Italic (italic - 500) */
-@font-face {
-  font-family: 'zahrah-italic-500-fallback';
-  size-adjust: 98.879%;
-  src: local('Arial');
-}
-
-/* fallback font for Gilroy Bold (normal - normal) */
-@font-face {
-  font-family: gilroy-bold-normal-normal-fallback;
-  size-adjust: 102.931%;
-  src: local('Arial');
-}
-
-/* fallback font for Gilroy Bold (normal - bold) */
-@font-face {
-  font-family: gilroy-bold-normal-bold-fallback;
-  size-adjust: 102.811%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: 'Gilroy Bold 700 Fallback';
   font-style: normal;
   font-weight: 700;
   src: local('Arial Bold');
-  ascent-override: 99.5%;
-  descent-override: 28.85%;
-  line-gap-override: 0%;
-  size-adjust: 98%;
+  ascent-override: 77.76%;
+  descent-override: 25.10%;
+  line-gap-override: 20.57%;
+  size-adjust: 97.23%;
 }
 
 @font-face {
-  font-family: 'Zahrah Semibold 400 Fallback';
+  font-family: 'Zahrah Semibold 600 Fallback';
   font-style: normal;
-  font-weight: 400;
-  src: local('Times New Roman');
-  ascent-override: 65.98%;
-  descent-override: 21.3%;
-  line-gap-override: 17.46%;
-  size-adjust: 114.57%;
+  font-weight: 600;
+  src: local('Arial Bold');
+  ascent-override: 78.08%;
+  descent-override: 25.20%;
+  line-gap-override: 20.66%;
+  size-adjust: 96.82%;
 }
 
 @font-face {
-  font-family: 'Zahrah Regular Italic 400 Fallback';
-  font-style: italic;
-  font-weight: 400;
-  src: local('Times New Roman Italic');
-  ascent-override: 69.02%;
-  descent-override: 22.28%;
-  line-gap-override: 18.26%;
-  size-adjust: 109.53%;
+  font-family: 'Zahrah Semibold Italic 600 Fallback';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Arial Bold');
+  ascent-override: 79.46%;
+  descent-override: 25.64%;
+  line-gap-override: 21.02%;
+  size-adjust: 95.15%;
+}
+
+@font-face {
+  font-family: 'Zahrah Medium 500 Fallback';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Arial');
+  ascent-override: 73.24%;
+  descent-override: 23.64%;
+  line-gap-override: 19.38%;
+  size-adjust: 103.22%;
+}
+
+@font-face {
+  font-family: 'Zahrah Medium Italic 500 Fallback';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Arial');
+  ascent-override: 74.86%;
+  descent-override: 24.16%;
+  line-gap-override: 19.80%;
+  size-adjust: 100.99%;
 }
 
 @font-face {
   font-family: 'Zahrah Regular 400 Fallback';
   font-style: normal;
   font-weight: 400;
-  src: local('Times New Roman');
-  ascent-override: 67.91%;
-  descent-override: 21.92%;
-  line-gap-override: 17.97%;
-  size-adjust: 111.33%;
+  src: local('Arial');
+  ascent-override: 74.28%;
+  descent-override: 23.97%;
+  line-gap-override: 19.65%;
+  size-adjust: 101.78%;
 }
 
 @font-face {
-  font-family: 'Zahrah Regular 600 Fallback';
+  font-family: 'Zahrah Regular Italic 400 Fallback';
   font-style: normal;
-  font-weight: 600;
-  src: local('Times New Roman Bold');
-  ascent-override: 72.13%;
-  descent-override: 23.28%;
-  line-gap-override: 19.08%;
-  size-adjust: 104.81%;
+  font-weight: 400;
+  src: local('Arial');
+  ascent-override: 76.19%;
+  descent-override: 24.59%;
+  line-gap-override: 20.16%;
+  size-adjust: 99.22%;
+}
+
+@font-face {
+  font-family: 'Zahrah Light 300 Fallback';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Arial');
+  ascent-override: 75.22%;
+  descent-override: 24.28%;
+  line-gap-override: 19.90%;
+  size-adjust: 100.50%;
+}
+
+@font-face {
+  font-family: 'Zahrah Light Italic 300 Fallback';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Arial');
+  ascent-override: 77.42%;
+  descent-override: 24.99%;
+  line-gap-override: 20.48%;
+  size-adjust: 97.65%;
 }
 
 :root {
@@ -204,13 +220,26 @@
   --clr-grey: #f4f4f4;
 
   /* fonts */
-  --body-font-family: 'Gilroy', 'gilroy-normal-700-fallback',
-    'gilroy-normal-600-fallback', 'gilroy-normal-400-fallback',
-    'gilroy-normal-300-fallback', 'Arial', sans-serif;
-  --heading-font-family: 'Zahrah', 'zahrah-normal-700-fallback',
-    'zahrah-italic-700-fallback', 'zahrah-normal-600-fallback',
-    'zahrah-italic-600-fallback', 'zahrah-italic-500-fallback', 'Arial',
-    sans-serif;
+  --ff-gilroy-xbold: 'Gilroy ExtraBold 700', 'Gilroy ExtraBold 700 Fallback' , sans-serif;
+  --ff-gilroy-xbold-italic: 'Gilroy ExtraBold Italic 700', 'Gilroy ExtraBold Italic 700 Fallback', sans-serif;
+  --ff-gilroy-bold: 'Gilroy Bold 700', 'Gilroy Bold 700 Fallback', sans-serif;
+  --ff-gilroy-semibold: 'Gilroy SemiBold 600', 'Gilroy SemiBold 600 Fallback', sans-serif;
+  --ff-gilroy-medium: 'Gilroy Medium 500', 'Gilroy Medium 500 Fallback', sans-serif;
+  --ff-gilroy-regular: 'Gilroy Regular 400', 'Gilroy Regular 400 Fallback', sans-serif;
+  --ff-gilroy-light: 'Gilroy Light 300', 'Gilroy Light 300 Fallback', sans-serif;
+  --ff-gilroy-ultralight: 'Gilroy UltraLight 200', 'Gilroy UltraLight 200 Fallback', sans-serif;
+  --ff-zahrah-bold: 'Zahrah Bold 700', 'Zahrah Bold 700 Fallback' , serif;
+  --ff-zahrah-bold-italic: 'Zahrah Bold Italic 700', 'Zahrah Bold Italic 700 Fallback', serif;
+  --ff-zahrah-semibold: 'Zahrah Semibold 600', 'Zahrah Semibold 600 Fallback', serif;
+  --ff-zahrah-semibold-italic: 'Zahrah Semibold Italic 600', 'Zahrah Semibold Italic 600 Fallback', serif;
+  --ff-zahrah-medium: 'Zahrah Medium 500', 'Zahrah Medium 500 Fallback', serif;
+  --ff-zahrah-medium-italic: 'Zahrah Medium Italic 500', 'Zahrah Medium Italic 500 Fallback', serif;
+  --ff-zahrah-regular: 'Zahrah Regular 400', 'Zahrah Regular 400 Fallback', serif;
+  --ff-zahrah-regular-italic: 'Zahrah Regular Italic 400', 'Zahrah Regular Italic 400 Fallback', serif;
+  --ff-zahrah-light-italic: 'Zahrah Light Italic 300', 'Zahrah Light Italic 300 Fallback', serif;
+  --ff-zahrah-light: 'Zahrah Light 300', 'Zahrah Light 300 Fallback', serif;
+  --body-font-family: var(--ff-gilroy-regular);
+  --heading-font-family: var(--ff-gilroy-bold);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono',
     monospace;
 
@@ -265,8 +294,6 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-font-family);
-  font-weight: 600;
-  line-height: 1.25;
   margin-top: 1em;
   margin-bottom: 0.5em;
   scroll-margin: calc(var(--nav-height) + 1em);
@@ -298,7 +325,7 @@ h6 {
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 a:any-link {
@@ -360,11 +387,8 @@ button:focus {
 
 a.button.secondary,
 button.secondary {
-  font-family: 'Zahrah Semibold Italic 400',
-    'Zahrah Semibold Italic 400 Fallback', serif;
+  font-family: var(--ff-zahrah-semibold-italic);
   font-size: 20px;
-  font-style: italic;
-  font-weight: 400;
   letter-spacing: 1px;
   line-height: 20px;
   min-width: 130px;
@@ -408,7 +432,6 @@ main .section > div {
 
 main .section > div p {
   font-size: 1.6rem;
-  margin: 0;
 }
 
 main blockquote p::before {
@@ -447,11 +470,9 @@ main img {
   flex-direction: column;
 }
 
-main .section
-h1, h2, h3,
-h4, h5, h6 {
-  font-family: var(--body-font-family);
-  font-weight: 400;
+.section:is(.accessibility, .privacy-policy, .secure-shopping, .terms-of-use)
+h1, h2, h3, h4 {
+  font-family: var(--ff-gilroy-light);
 }
 
 /* styles for /secure-shopping */
@@ -461,10 +482,11 @@ main .section.secure-shopping > div{
 }
 
 main .section.secure-shopping h1 {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
   padding: .75em;
   margin: 0;
+  font-family: var(--ff-gilroy-light);
   font-size: 20px;
 }
 
@@ -550,14 +572,6 @@ main .section.terms-of-use h3 {
   color: var(--clr-red);
 }
 
-main .section > div p:first-of-type {
-  margin-top: 1rem;
-}
-
-main .section > div p:last-of-type {
-  margin-bottom: 1rem;
-}
-
 /* styles for /customer-service */
 main .section.customer-service h1 {
   display: none;
@@ -565,12 +579,11 @@ main .section.customer-service h1 {
 
 main .section.customer-service h4 {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-family: var(--ff-gilroy-light);
 }
 
 main .section.customer-service > div > p {
   font-size: 1.6rem;
-  font-weight: 300;
   margin-bottom: 1rem;
 }
 
@@ -594,19 +607,85 @@ main .section.customer-service > div > p + p img{
 }
 
 .section.shadow > div:first-child h3 {
-  font-family: 'Zahrah Semibold 400', 'Zahrah Semibold 400 Fallback', serif;
+  font-family: var(--ff-zahrah-semibold);
   margin: 0;
   font-size: 22px;
-  font-weight: 400;
   text-decoration: underline;
   letter-spacing: 4px;
 }
 
+/* Product List Page */
+
+body.plp main .section {
+  font-size: 16px;
+  font-family: var(--ff-gilroy-medium);
+  font-weight: 500;
+}
+
+body.plp main .section h1 {
+  margin-top: 0;
+  text-transform: uppercase;
+  font-size: 30px;
+  font-family: var(--ff-gilroy-regular);
+}
+
+body.plp main .section h2 {
+  color: var(--clr-dark-pink);
+  font-size: 42px;
+  font-family: var(--ff-gilroy-medium);
+  margin-bottom: 0;
+}
+
 .section.heading-pink .default-content-wrapper h1,
 .section.heading-pink .default-content-wrapper h2 {
-  font-family: 'Zahrah Semibold 400', 'Zahrah Semibold 400 Fallback', serif;
+  font-family: var(--ff-zahrah-semibold);
   font-size: var(--heading-font-size-l);
   color: var(--clr-dark-pink);
+}
+
+main > .section.magic-top {
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 30px solid #eb0a8c;
+  border-bottom: 15px solid #000;
+  padding-top: 15px;
+  margin: 0;
+}
+
+main > .section.magic-top img {
+  width: 75%;
+}
+
+main > .section.magic-top h1 {
+  font-family: var(--ff-zahrah-semibold);
+  font-size: 21px;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+main > .section.magic-bottom {
+  padding: 0;
+  margin: 0;
+}
+
+main > .section.magic-bottom > .default-content-wrapper:last-child {
+  margin: 0;
+  padding: 0;
+  max-width: unset;
+}
+
+main > .section.magic-bottom > .default-content-wrapper:last-child img {
+  width: 100%;
+  max-width: unset;
+  height: 100%;
+  min-height: 140px;
+  object-fit: cover;
+}
+
+main > .section.magic-bottom > div:not(:last-child) {
+  border-bottom: 15px solid #000;
+  width: auto;
+  max-width: unset;
 }
 
 @media (min-width: 600px) {
@@ -620,6 +699,10 @@ main .section.customer-service > div > p + p img{
 
   .section.center > div:first-child {
     flex-direction: row;
+  }
+
+  main > .section.magic-top h1 {
+    font-size: 40px;
   }
 }
 
@@ -684,7 +767,6 @@ main .section.highlight {
   /* TODO: font-family: 'Gilroy Regular' */
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .modal-content h1 {
   margin: 10px 0;
   padding: 0;

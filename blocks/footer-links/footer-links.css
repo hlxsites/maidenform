@@ -37,10 +37,8 @@
     margin: 0;
     padding: 0;
     text-transform: uppercase;
-    font-weight: 600;
+    font-family: var(--ff-gilroy-bold);
     font-size: 16px;
-
-    /* TODO: font-family: "Gilroy Bold" */
 }
 
 @media (min-width: 768px) {

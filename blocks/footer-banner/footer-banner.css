@@ -61,13 +61,11 @@
     margin: 0;
     display: inline;
     font-size: 12px;
-    font-weight: 400;
+    font-family: var(--ff-gilroy-bold);
     text-decoration: underline;
     text-transform: uppercase;
     border-radius: 0;
     padding: 9px 15px;
-
-    /* TODO: font-family: 'Gilroy Bold' */
 }
 
 @media (min-width: 768px) {
