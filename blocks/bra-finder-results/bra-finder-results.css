@@ -1,6 +1,27 @@
 .block.bra-finder-results {
   text-align: center;
   color: #58595b;
+  font-family: var(--ff-zahrah-regular);
+}
+
+.block.bra-finder-results p {
+  font-size: 3rem;
+  margin-top: 40px;
+}
+
+.block.bra-finder-results h1, .block.bra-finder-results h2, .block.bra-finder-results h3, .block.bra-finder-results h4 {
+  font-family: var(--ff-zahrah-regular);
+}
+
+#dont-like-your-suggestions {
+  font-size: 4rem;
+  margin-bottom: 0;
+  line-height: 1rem;
+}
+
+#try-other-silhouettes {
+  margin-top: 0;
+  font-size: 6rem;
 }
 
 .block.bra-finder-results > div {
@@ -10,7 +31,6 @@
 .block.bra-finder-results h2 {
   letter-spacing: .5rem;
   color: #595a5c;
-  font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
   text-transform: uppercase;
   text-align: center;
 }
@@ -30,7 +50,7 @@
 }
 
 .block.bra-finder-results p.substitute-alt1.substitute-alt2 {
-  padding: 12px;
+  padding: 32px;
   background: #efefef;
   display: inline-block;
   font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
@@ -40,8 +60,30 @@
 
 .block.bra-finder-results p.substitute-size em {
   color: #ce789f;
-  font-size: 4rem;
+  font-size: 6rem;
   font-style: italic;
   font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
+}
 
+.block.bra-finder-results .other-silhouettes {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+}
+
+.block.bra-finder-results .other-silhouettes li {
+  padding: 40px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 4px solid #fad1e0;
+
+}
+
+.block.bra-finder-results .other-silhouettes img {
+  display: block;
 }

@@ -67,13 +67,20 @@ async function decorateExtendedResults(block, bandSize, cupSize, bandFit, cupFit
   const otherSilhouettes = [...block.querySelectorAll('ul')].find((ul) => ul.querySelector('li:first-child > em')?.innerText === '{{other-sihlouettes}}');
   if (otherSilhouettes) {
     otherSilhouettes.children[0].remove();
-    console.log([...otherSilhouettes.children]
-      .map((child) => child.innerText.trim().toLowerCase().replaceAll(/[- ]/g, '')));
     [...otherSilhouettes.children]
       .find((child) => child.innerText.trim().toLowerCase().replaceAll(/[- ]/g, '') === silhouette)?.remove();
     while (otherSilhouettes.children.length > 3) {
       otherSilhouettes.children[0].remove();
     }
+    [...otherSilhouettes.children].forEach((silhouette) => {
+      const url = new URL(window.location.href);
+      const link = document.createElement('a');
+      url.searchParams.set('silhouette', silhouette.innerText.trim().toLowerCase().replaceAll(/[- ]/g, ''));
+      link.href = url.href;
+      link.innerHTML = silhouette.innerHTML;
+      silhouette.innerHTML = link.outerHTML;
+    });
+    otherSilhouettes.classList.add('other-silhouettes');
   }
 }
 

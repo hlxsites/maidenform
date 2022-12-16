@@ -68,7 +68,7 @@ export default function decorate(block) {
     if (nextQuestion && nextQuestion.classList.contains('question')) {
       nextQuestion.removeAttribute('hidden');
     } else {
-      window.location = `/bra-fit-finder/result?${collectSelections(block).toString()}`;
+      window.location = `/bra-fit-finder/results?${collectSelections(block).toString()}`;
     }
   });
   block.append(nextButton);
