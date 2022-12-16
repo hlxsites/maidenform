@@ -579,12 +579,11 @@ main .section.customer-service h1 {
 
 main .section.customer-service h4 {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-family: var(--ff-gilroy-light);
 }
 
 main .section.customer-service > div > p {
   font-size: 1.6rem;
-  font-weight: 300;
   margin-bottom: 1rem;
 }
 
