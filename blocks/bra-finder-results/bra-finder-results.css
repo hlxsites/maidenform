@@ -35,6 +35,7 @@
   display: inline-block;
   font-family: Zahrah, 'Zahrah Semibold 400 Fallback', serif;
   font-size: 25px;
+  margin-top: 50px;
 }
 
 .block.bra-finder-results p.substitute-size em {
