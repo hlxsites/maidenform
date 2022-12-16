@@ -675,9 +675,10 @@ main > .section.magic-bottom > .default-content-wrapper:last-child {
 }
 
 main > .section.magic-bottom > .default-content-wrapper:last-child img {
-  width: auto;
+  width: 100%;
   max-width: unset;
   height: 100%;
+  min-height: 140px;
   object-fit: cover;
 }
 
