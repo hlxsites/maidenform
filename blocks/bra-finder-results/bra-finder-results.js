@@ -10,14 +10,14 @@ function substituteTemplates(block, templates) {
   });
 }
 
-async function decorateSimpleResults(block, bandSize, cupSize) {
+async function decorateSimpleResults(block, band, cup) {
   const braSizesResponse = await fetch('/brasizes.json');
   const braSizes = await braSizesResponse.json();
 
   const recommendation = braSizes.sizes?.data?.find(
     ({
-      band,
-      cup
+      bandSize,
+      cupSize,
     }) => bandSize === band && cupSize === cup,
   );
 
@@ -39,8 +39,6 @@ async function decorateExtendedResults(block, bandSize, cupSize, bandFit, cupFit
   const braSizesResponse = await fetch('/brasizes.json');
   const braSizes = await braSizesResponse.json();
 
-  console.log(braSizes['finder-32']?.data);
-
   const recommendation = braSizes['finder-32']?.data?.find(
     (rec) => bandSize === rec.band
       && cupSize.toLowerCase() === rec.cup.toLowerCase()
@@ -52,8 +50,6 @@ async function decorateExtendedResults(block, bandSize, cupSize, bandFit, cupFit
     block.innerHTML = '<a href="/bra-finder">An error occurred. No recommendation found. Click to go back.</a>';
     return;
   }
-
-  console.log(recommendation)
 
   const templateSubstitutes = {
     size: recommendation.size,
@@ -72,13 +68,13 @@ async function decorateExtendedResults(block, bandSize, cupSize, bandFit, cupFit
     while (otherSilhouettes.children.length > 3) {
       otherSilhouettes.children[0].remove();
     }
-    [...otherSilhouettes.children].forEach((silhouette) => {
+    [...otherSilhouettes.children].forEach((thisSilhouette) => {
       const url = new URL(window.location.href);
       const link = document.createElement('a');
-      url.searchParams.set('silhouette', silhouette.innerText.trim().toLowerCase().replaceAll(/[- ]/g, ''));
+      url.searchParams.set('silhouette', thisSilhouette.innerText.trim().toLowerCase().replaceAll(/[- ]/g, ''));
       link.href = url.href;
-      link.innerHTML = silhouette.innerHTML;
-      silhouette.innerHTML = link.outerHTML;
+      link.innerHTML = thisSilhouette.innerHTML;
+      thisSilhouette.innerHTML = link.outerHTML;
     });
     otherSilhouettes.classList.add('other-silhouettes');
   }

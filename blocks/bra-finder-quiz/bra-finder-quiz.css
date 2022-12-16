@@ -101,3 +101,10 @@
   background: #c41b53;
   border-color: #c41b53;
 }
+
+@media (max-width: 600px) {
+  .bra-finder-quiz .question.q4 ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
