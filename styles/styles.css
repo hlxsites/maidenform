@@ -1,14 +1,4 @@
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
+/* stylelint-disable no-descending-specificity */
 
 /* fallback font for Gilroy font family */
 
@@ -654,6 +644,50 @@ body.plp main .section h2 {
   color: var(--clr-dark-pink);
 }
 
+main > .section.magic-top {
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 30px solid #eb0a8c;
+  border-bottom: 15px solid #000;
+  padding-top: 15px;
+  margin: 0;
+}
+
+main > .section.magic-top img {
+  width: 75%;
+}
+
+main > .section.magic-top h1 {
+  font-family: var(--ff-zahrah-semibold);
+  font-size: 21px;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+main > .section.magic-bottom {
+  padding: 0;
+  margin: 0;
+}
+
+main > .section.magic-bottom > .default-content-wrapper:last-child {
+  margin: 0;
+  padding: 0;
+  max-width: unset;
+}
+
+main > .section.magic-bottom > .default-content-wrapper:last-child img {
+  width: auto;
+  max-width: unset;
+  height: 100%;
+  object-fit: cover;
+}
+
+main > .section.magic-bottom > div:not(:last-child) {
+  border-bottom: 15px solid #000;
+  width: auto;
+  max-width: unset;
+}
+
 @media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
@@ -665,6 +699,10 @@ body.plp main .section h2 {
 
   .section.center > div:first-child {
     flex-direction: row;
+  }
+
+  main > .section.magic-top h1 {
+    font-size: 40px;
   }
 }
 
@@ -729,7 +767,6 @@ main .section.highlight {
   /* TODO: font-family: 'Gilroy Regular' */
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .modal-content h1 {
   margin: 10px 0;
   padding: 0;

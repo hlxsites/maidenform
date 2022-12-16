@@ -1,3 +1,5 @@
+/* stylelint-disable no-descending-specificity */
+
 .section.teaser-container {
     padding: 10px 0;
 }
@@ -68,6 +70,166 @@
     opacity: 0.8;
 }
 
+/* Black Text Style */
+
+.teaser.black-text {
+    color: #000;
+    text-shadow: none;
+}
+
+.teaser.black-text > div > div:first-child h1 {
+    color: #000;
+    text-shadow: none;
+}
+
+.teaser.black-text  > div > div p {
+    color: #000;
+}
+
+/* Half Half Style */
+
+.teaser.half-half > div > div:first-child h1 {
+    margin: 0;
+    flex: unset;
+    font-size: 22px;
+    font-family: var(--ff-zahrah-semibold);
+    letter-spacing: 4px;
+}
+
+.teaser.half-half > div > div:first-child img {
+    max-width: 75%;
+}
+
+.teaser.half-half > div > div:first-child {
+    grid-area: 2 / 1 / 2 / 1;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.teaser.half-half > div > div p {
+    font-family: var(--ff-gilroy-regular);
+    font-size: 16px;
+    font-style: normal;
+}
+
+.teaser.half-half > div > div:nth-child(2) {
+    display: none;
+}
+
+.teaser.half-half > div > div:nth-child(3) {
+    grid-area: 1 / 1 / 1 / 1;
+}
+
+.teaser.half-half > div > div:nth-child(2) img,
+.teaser.half-half > div > div:nth-child(3) img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* One-Third Style */
+
+.teaser.one-third > div > div:first-child h1 {
+    margin: 0;
+    flex: unset;
+    font-size: 22px;
+    font-family: var(--ff-zahrah-semibold);
+    letter-spacing: 4px;
+    color: #000;
+    text-shadow: none;
+}
+
+.teaser.one-third > div > div:first-child img {
+    max-width: 75%;
+    filter: invert(100%);
+}
+
+.teaser.one-third > div > div:first-child {
+    grid-area: 2 / 1 / 2 / 1;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.teaser.one-third > div > div p {
+    font-family: var(--ff-gilroy-regular);
+    font-size: 16px;
+    font-style: normal;
+    color: #000;
+    text-shadow: none;
+}
+
+.teaser.one-third > div > div:nth-child(2) {
+    grid-area: 1 / 1 / 1 / 1;
+}
+
+.teaser.one-third > div > div:nth-child(3) {
+    display: none;
+}
+
+.teaser.one-third > div > div:nth-child(2) img,
+.teaser.one-third > div > div:nth-child(3) img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Two-Third Style */
+
+.teaser.two-third > div > div:first-child h1 {
+    margin: 0;
+    flex: unset;
+    font-size: 22px;
+    font-family: var(--ff-zahrah-semibold);
+    letter-spacing: 4px;
+}
+
+.teaser.two-third > div > div:first-child img {
+    max-width: 75%;
+}
+
+.teaser.two-third > div > div:first-child {
+    grid-area: 2 / 1 / 2 / 1;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.teaser.two-third > div > div p {
+    font-family: var(--ff-gilroy-regular);
+    font-size: 16px;
+    font-style: normal;
+}
+
+.teaser.two-third > div > div:nth-child(2) {
+    grid-area: 1 / 1 / 1 / 1;
+}
+
+.teaser.two-third > div > div:nth-child(3) {
+    display: none;
+}
+
+.teaser.two-third > div > div:nth-child(2) img,
+.teaser.two-third > div > div:nth-child(3) img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Button Style */
+
+.teaser.half-half a.button.secondary,
+.teaser.one-third a.button.secondary,
+.teaser.two-third a.button.secondary {
+    background: #fff;
+    color: #000;
+    text-shadow: none;
+    border: 1px solid #000;
+}
+
+.teaser.half-half a.button.secondary:hover,
+.teaser.one-third a.button.secondary:hover,
+.teaser.two-third a.button.secondary:hover {
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+}
+
 @media (min-width: 900px) {
     .section.teaser-container {
         padding: 10px 16px;
@@ -79,5 +241,101 @@
 
     .teaser > div > div p {
         font-size: 25px;
+    }
+
+    /* Half-Half Style */
+
+    .teaser.half-half > div > div:first-child h1 {
+        font-size: 40px;
+    }
+    
+    .teaser.half-half > div > div:first-child {
+        grid-area: 1 / 1 / 1 / 3;
+        padding-top: 60px;
+    }
+
+    .teaser.half-half > div > div:first-child img {
+        max-width: unset;
+    }
+
+    .teaser.half-half > div > div:nth-child(2) {
+        display: block;
+    }
+    
+    .teaser.half-half > div > div p {
+        font-size: 26px;
+    }
+    
+    .teaser.half-half > div > div:nth-child(3) {
+        grid-area: 1 / 2 / 1 / 2;
+    }
+
+    /* One-Third Style */
+
+    .teaser.one-third > div > div:first-child h1 {
+        font-size: 40px;
+        color: #fff;
+        text-shadow: 0 0 0.25rem #000, 0 0 1.5rem #000;
+    }
+    
+    .teaser.one-third > div {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .teaser.one-third > div > div:first-child img {
+        filter: invert(0%);
+        max-width: unset;
+    }
+    
+    .teaser.one-third > div > div:first-child {
+        grid-area: 1 / 1 / 1 / 3;
+        padding-top: 60px;
+    }
+    
+    .teaser.one-third > div > div p {
+        font-size: 26px;
+        color: #fff;
+        text-shadow: 0 0 0.25rem #000, 0 0 1.5rem #000;
+    }
+    
+    .teaser.one-third > div > div:nth-child(3) {
+        grid-area: 1 / 2 / 1 / 2;
+        display: block;
+    }
+
+    /* Two-Third Style */
+
+    .teaser.two-third > div > div:first-child h1 {
+        font-size: 40px;
+    }
+    
+    .teaser.two-third > div > div:first-child img {
+        max-width: unset;
+    }
+
+    .teaser.two-third > div {
+        grid-template-columns: 2fr 1fr;
+    }
+    
+    .teaser.two-third > div > div:first-child {
+        grid-area: 1 / 1 / 1 / 3;
+        padding-top: 60px;
+    }
+    
+    .teaser.two-third > div > div p {
+        font-size: 26px;
+    }
+    
+    .teaser.two-third > div > div:nth-child(3) {
+        grid-area: 1 / 2 / 1 / 2;
+        display: block;
+    }
+
+    /* Button Style */
+
+    .teaser.half-half a.button.secondary,
+    .teaser.one-third a.button.secondary,
+    .teaser.two-third a.button.secondary {
+        border: 0;
     }
 }
