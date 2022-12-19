@@ -245,6 +245,10 @@
 
     /* Half-Half Style */
 
+    .teaser.half-half > div {
+        grid-template-rows: 750px;
+    }
+
     .teaser.half-half > div > div:first-child h1 {
         font-size: 40px;
     }
@@ -270,16 +274,22 @@
         grid-area: 1 / 2 / 1 / 2;
     }
 
+    .teaser.half-half > div > div:nth-child(2) img,
+    .teaser.half-half > div > div:nth-child(3) img {
+        width: 100%;
+    }
+
     /* One-Third Style */
+
+    .teaser.one-third > div {
+        grid-template-rows: 750px;
+        grid-template-columns: 1fr 2fr;
+    }
 
     .teaser.one-third > div > div:first-child h1 {
         font-size: 40px;
         color: #fff;
         text-shadow: 0 0 0.25rem #000, 0 0 1.5rem #000;
-    }
-    
-    .teaser.one-third > div {
-        grid-template-columns: 1fr 2fr;
     }
 
     .teaser.one-third > div > div:first-child img {
@@ -303,7 +313,17 @@
         display: block;
     }
 
+    .teaser.one-third > div > div:nth-child(2) img,
+    .teaser.one-third > div > div:nth-child(3) img {
+        width: 100%;
+    }
+
     /* Two-Third Style */
+
+    .teaser.two-third > div {
+        grid-template-rows: 750px;
+        grid-template-columns: 2fr 1fr;
+    }
 
     .teaser.two-third > div > div:first-child h1 {
         font-size: 40px;
@@ -311,10 +331,6 @@
     
     .teaser.two-third > div > div:first-child img {
         max-width: unset;
-    }
-
-    .teaser.two-third > div {
-        grid-template-columns: 2fr 1fr;
     }
     
     .teaser.two-third > div > div:first-child {
@@ -329,6 +345,11 @@
     .teaser.two-third > div > div:nth-child(3) {
         grid-area: 1 / 2 / 1 / 2;
         display: block;
+    }
+
+    .teaser.two-third > div > div:nth-child(2) img,
+    .teaser.two-third > div > div:nth-child(3) img {
+        width: 100%;
     }
 
     /* Button Style */
