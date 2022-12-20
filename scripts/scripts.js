@@ -59,17 +59,13 @@ function buildImageLinks(element) {
       // select the last image that is associated with the link
       const lastPicture = up.lastElementChild;
       if (lastPicture && (picture === lastPicture)) {
-        if (lastPicture.lastElementChild.nodeName === 'IMG') {
-          const img = lastPicture.lastElementChild;
-          // get the p tag that has link
-          const p = lastPicture.parentElement.nextElementSibling;
-          if (p && p.childNodes.length === 1 && p.childNodes[0].nodeName === 'A') {
-            const link = p.childNodes[0];
-            link.innerHTML = img.outerHTML;
-            const imagelink = link;
-            lastPicture.replaceChild(imagelink, img);
-            p.remove();
-          }
+        // get the p tag that has link
+        const p = lastPicture.parentElement.nextElementSibling;
+        if (p && p.childNodes.length === 1 && p.childNodes[0].nodeName === 'A') {
+          const link = p.childNodes[0];
+          link.innerHTML = lastPicture.outerHTML;
+          up.replaceChild(link, lastPicture);
+          p.remove();
         }
       }
     }
