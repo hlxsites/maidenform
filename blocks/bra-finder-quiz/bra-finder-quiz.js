@@ -1,5 +1,3 @@
-import { toClassName } from '../../scripts/lib-franklin.js';
-
 function deselectAll(parent) {
   parent.querySelectorAll('[aria-selected="true"]').forEach((selected) => {
     selected.removeAttribute('aria-selected');
@@ -10,15 +8,19 @@ function getCurrentQuestion(block) {
   return block.querySelector('.question:not([hidden="true"])');
 }
 
-function checkCanAdvance(block) {
+function canAdvanceQuestion(block) {
   const currentQuestion = getCurrentQuestion(block);
 
-  const canAdvance = [...currentQuestion.querySelectorAll('ul')]
+  return [...currentQuestion.querySelectorAll('ul')]
     .reduce((acc, questionPart) => acc && questionPart.querySelector('[aria-selected="true"]'), true);
+}
 
-  if (canAdvance) {
-    block.querySelector('button').removeAttribute('disabled');
-  }
+function isOnFirstQuestion(block) {
+  return getCurrentQuestion(block).classList.contains('q1');
+}
+
+function isOnLastQuestion(block) {
+  return !getCurrentQuestion(block).nextElementSibling?.classList.contains('question');
 }
 
 // Uses the <strong> element as the value of the field
@@ -43,6 +45,64 @@ function collectSelections(block) {
   return searchParams;
 }
 
+function addNavigationButtons(block) {
+  // Next Button
+  const nextButton = document.createElement('button');
+  nextButton.innerText = 'Next';
+  nextButton.setAttribute('name', 'next');
+  nextButton.setAttribute('disabled', 'true');
+
+  // Previous Button
+  const previousButton = document.createElement('button');
+  previousButton.innerText = 'Previous';
+  previousButton.setAttribute('hidden', 'true');
+  previousButton.setAttribute('disabled', 'true');
+
+  // Handle moving to next question
+  nextButton.addEventListener('click', () => {
+    const currentQuestion = getCurrentQuestion(block);
+    currentQuestion.setAttribute('hidden', 'true');
+    const nextQuestion = currentQuestion.nextElementSibling;
+
+    if (nextQuestion && nextQuestion.classList.contains('question')) {
+      nextQuestion.removeAttribute('hidden');
+
+      if (!canAdvanceQuestion(block)) {
+        nextButton.setAttribute('disabled', 'true');
+      }
+
+      previousButton.removeAttribute('disabled');
+      previousButton.removeAttribute('hidden');
+
+      if (isOnLastQuestion(block)) {
+        nextButton.innerText = 'Show Results';
+      }
+    } else {
+      nextButton.setAttribute('hidden', 'true');
+      previousButton.setAttribute('hidden', 'true');
+      window.location = `/bra-fit-finder/results?${collectSelections(block).toString()}`;
+    }
+  });
+
+  // Handle moving to previous question
+  previousButton.addEventListener('click', () => {
+    const currentQuestion = getCurrentQuestion(block);
+    const previousQuestion = currentQuestion.previousElementSibling;
+
+    currentQuestion.setAttribute('hidden', 'true');
+    previousQuestion.removeAttribute('hidden');
+
+    nextButton.removeAttribute('disabled');
+    nextButton.innerText = 'Next';
+    if (isOnFirstQuestion(block)) {
+      previousButton.setAttribute('hidden', 'true');
+    }
+  });
+
+  block.append(previousButton);
+  block.append(nextButton);
+}
+
 export default function decorate(block) {
   ['title', 'question q1', 'question q2', 'question q3', 'question q4'].forEach((name, i) => {
     block.children[i]?.classList.add(...name.split(' '));
@@ -58,27 +118,16 @@ export default function decorate(block) {
     fieldNameContainer.closest('li').remove();
   });
 
-  const nextButton = document.createElement('button');
-  nextButton.innerText = 'Next';
-  nextButton.setAttribute('disabled', 'true');
-  nextButton.addEventListener('click', () => {
-    nextButton.setAttribute('disabled', 'true');
-    const currentQuestion = getCurrentQuestion(block);
-    currentQuestion.setAttribute('hidden', 'true');
-    const nextQuestion = currentQuestion.nextElementSibling;
-    if (nextQuestion && nextQuestion.classList.contains('question')) {
-      nextQuestion.removeAttribute('hidden');
-    } else {
-      window.location = `/bra-fit-finder/results?${collectSelections(block).toString()}`;
-    }
-  });
-  block.append(nextButton);
+  addNavigationButtons(block);
 
   block.querySelectorAll('.question > div > ul > li').forEach((questionChoice) => {
     questionChoice.addEventListener('click', () => {
       deselectAll(questionChoice.closest('ul'));
       questionChoice.setAttribute('aria-selected', 'true');
-      checkCanAdvance(block);
+
+      if (canAdvanceQuestion(block)) {
+        block.querySelector('button[name="next"]').removeAttribute('disabled');
+      }
     });
   });
 }

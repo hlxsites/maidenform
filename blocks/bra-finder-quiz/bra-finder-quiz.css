@@ -102,6 +102,21 @@
   border-color: #c41b53;
 }
 
+.bra-finder-quiz button {
+  background: #bf4f82;
+  font-family: var(--ff-zahrah-semibold);
+  font-size: 2rem;
+  margin: 20px;
+}
+
+.bra-finder-quiz button:disabled {
+  background: #dea6c0;
+}
+
+[hidden] {
+  display: none !important;
+}
+
 @media (max-width: 600px) {
   .bra-finder-quiz .question.q4 ul {
     display: grid;
