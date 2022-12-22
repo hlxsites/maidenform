@@ -159,21 +159,21 @@
     display: none;
 }
 
-/* Teaser Style */
-.section > .columns-wrapper:has(.teaser) {
+/* Overlap Style */
+.section > .columns-wrapper:has(.overlap) {
     max-width: 970px;
 }
 
-.columns.teaser {
+.columns.overlap {
     text-align: center;
 }
 
-.columns.teaser > div > div:first-child {
+.columns.overlap > div > div:first-child {
     display: flex;
     align-items: center;
 }
 
-.columns.teaser > div:first-child > div:first-child > div {
+.columns.overlap > div:first-child > div:first-child > div {
     display: block;
     background: #000;
     color: #fff;
@@ -183,32 +183,32 @@
     margin: 0 0 0 -15%;
 }
 
-.columns.teaser > div > div p {
+.columns.overlap > div > div p {
     margin: 0;
     font-family: var(--ff-gilroy-medium);
     font-size: 15px;
     line-height: 18px;
 }
 
-.columns.teaser > div:first-child > div > div h3 {
+.columns.overlap > div:first-child > div > div h3 {
     margin: 0 0 20px;
     font-family: var(--ff-zahrah-semibold-italic);
     font-size: 15px;
     line-height: 35px;
 }
 
-.columns.teaser > div:first-child > div > div h4 {
+.columns.overlap > div:first-child > div > div h4 {
     margin: 0;
     font-family: var(--ff-zahrah-semibold-italic);
     font-size: 15px;
 }
 
-.columns.teaser > div > div:nth-child(2) a.button {
+.columns.overlap > div > div:nth-child(2) a.button {
     margin: 10px;
     min-width: 210px;
 }
 
-.columns.teaser > div > div:nth-child(2) h2 {
+.columns.overlap > div > div:nth-child(2) h2 {
     font-family: var(--ff-zahrah-semibold-italic);
     font-size: 30px;
     margin: 0;
@@ -341,26 +341,26 @@
         align-self: stretch;
     }
 
-    /* Teaser Style */
+    /* Overlap Style */
 
-    .columns.teaser > div > div:first-child {
+    .columns.overlap > div > div:first-child {
         flex: 2;
     }
 
-    .columns.teaser > div:first-child > div:first-child > div {
+    .columns.overlap > div:first-child > div:first-child > div {
         max-width: 185px;
         padding: 20px;
     }
 
-    .columns.teaser > div > div p {
+    .columns.overlap > div > div p {
         font-size: 16px;
     }
 
-    .columns.teaser > div:first-child > div > div h3 {
+    .columns.overlap > div:first-child > div > div h3 {
         font-size: 28px;
     }
 
-    .columns.teaser > div:first-child > div > div h4 {
+    .columns.overlap > div:first-child > div > div h4 {
         font-size: 20px;
     }
 

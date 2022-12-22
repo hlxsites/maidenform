@@ -51,17 +51,38 @@ function decorateButtons(element) {
   });
 }
 
+function buildImageLinks(element) {
+  const pictures = element.querySelectorAll(':scope > div > p > picture');
+  pictures.forEach((picture) => {
+    const up = picture.parentElement;
+    if (up) {
+      // select the last image that is associated with the link
+      const lastPicture = up.lastElementChild;
+      if (lastPicture && (picture === lastPicture)) {
+        // get the p tag that has link
+        const p = lastPicture.parentElement.nextElementSibling;
+        if (p && p.childNodes.length === 1 && p.childNodes[0].nodeName === 'A') {
+          const link = p.childNodes[0];
+          link.innerHTML = lastPicture.outerHTML;
+          up.replaceChild(link, lastPicture);
+          p.remove();
+        }
+      }
+    }
+  });
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
-  /* try {
-    buildHeroBlock(main);
+function buildAutoBlocks(main) {
+  try {
+    buildImageLinks(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
-  } */
+  }
 }
 
 /**
