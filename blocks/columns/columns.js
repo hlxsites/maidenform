@@ -3,7 +3,7 @@ export default function decorate(block) {
   block.classList.add(`columns-${cols.length}-cols`);
 
   // Handling of teaser style
-  if (block.classList.contains('teaser')) {
+  if (block.classList.contains('overlap')) {
     if (cols.length > 1) {
       // Take second column div and move into first column
       cols[0].appendChild(cols[1]);
