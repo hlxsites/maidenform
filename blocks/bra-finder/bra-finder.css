@@ -141,7 +141,8 @@
   text-align: center;
 }
 
-.block.bra-finder .fit-measure-steps p {
+/* stylelint-disable-next-line no-descending-specificity */
+.block.bra-finder .fit-measure-steps:not(.fit-image-overlay) p {
   font-size: 24px;
 }
 

@@ -1,3 +1,5 @@
+import { decorateIcons } from '../../scripts/lib-franklin.js';
+
 function substituteTemplates(block, templates) {
   [...block.querySelectorAll('em')].forEach((el) => {
     const result = el.innerText.match(/{{(\w+)}}/);
@@ -80,6 +82,15 @@ async function decorateExtendedResults(block, bandSize, cupSize, bandFit, cupFit
   }
 }
 
+function addBackButton(block) {
+  const button = block.querySelector('.bra-finder-results > div:last-child a');
+  button?.classList.add('button', 'back-button');
+  const backIcon = document.createElement('span');
+  backIcon.classList.add('icon', 'icon-chevron-left');
+  button?.prepend(backIcon);
+  decorateIcons(block);
+}
+
 export default async function decorate(block) {
   const params = new URLSearchParams(window.location.search);
 
@@ -96,4 +107,6 @@ export default async function decorate(block) {
   } else {
     block.innerHTML = '<a href="/bra-finder">An error occurred. Click to go back.</a>';
   }
+
+  addBackButton(block);
 }

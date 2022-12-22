@@ -16,7 +16,6 @@
 #dont-like-your-suggestions {
   font-size: 4rem;
   margin-bottom: 0;
-  line-height: 1rem;
 }
 
 #try-other-silhouettes {
@@ -26,6 +25,11 @@
 
 .block.bra-finder-results > div {
   border-bottom: 1px solid #58595b;
+}
+
+.block.bra-finder-results > div:last-child {
+  border-bottom: none;
+  text-align: left;
 }
 
 .block.bra-finder-results h2 {
@@ -86,4 +90,26 @@
 
 .block.bra-finder-results .other-silhouettes img {
   display: block;
+}
+
+.block.bra-finder-results .button.back-button {
+  background: #919192;
+  font-family: var(--ff-zahrah-semibold);
+  font-size: 1.5rem;
+}
+
+.block.bra-finder-results .button.back-button:hover {
+  text-decoration: underline;
+}
+
+.block.bra-finder-results .button.back-button svg {
+  margin-right: 12px;
+  top: 3px;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .block.bra-finder-results .other-silhouettes {
+    flex-direction: column;
+  }
 }

@@ -21,13 +21,14 @@ function checkCanAdvance(block) {
   }
 }
 
+// Uses the <strong> element as the value of the field
 function convertToValue(li) {
   const strong = li.querySelector(':scope > strong');
   if (strong && strong.children.length === 0) {
-    return strong.innerText.split(' ').join('');
+    return strong.innerText.trim().split(' ').join('').toLowerCase();
   }
 
-  return toClassName(li.innerText.split(' ').join(''));
+  return li.innerText.trim().split(' ').join('').toLowerCase();
 }
 
 function collectSelections(block) {
