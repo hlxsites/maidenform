@@ -25,11 +25,11 @@
     list-style: none;
     padding: 10px 0 0;
     margin: 0;
-    font-size: 16px;
     font-family: var(--ff-gilroy-medium);
     transition: all 0.3s ease;
     max-height: 0;
     overflow: hidden;
+    font-size: 1.6rem;
 }
 
 .footer-links ul > li {
@@ -54,7 +54,7 @@
     padding: 0;
     text-transform: uppercase;
     font-family: var(--ff-gilroy-bold);
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .footer-links label::after {

@@ -26,16 +26,16 @@
 
 .shop-by-style>div>div h2 {
     font-family: var(--ff-zahrah-semibold-italic);
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
     margin: 0 0 20px;
 }
 
 .shop-by-style>div>div h1 {
     font-family: var(--ff-zahrah-semibold-italic);
-    font-size: 34px;
+    font-size: 3.4rem;
     margin: 0;
-    line-height: 38px;
+    line-height: 3.8rem;
 }
 
 .shop-by-style>div>div:has(h1) {
@@ -52,12 +52,12 @@
     text-align: center;
     overflow: auto;
     max-width: 100%;
-    line-height: 16px;
+    line-height: 1.6rem;
 }
 
 .shop-by-style>div>div>ul>li {
     margin: 0 5px 10px;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-family: var(--ff-zahrah-bold-italic);
 }
 
@@ -67,13 +67,13 @@
 
 @media (min-width: 900px) {
     .shop-by-style>div>div h2 {
-        font-size: 24px;
+        font-size: 2.4rem;
         font-family:var(--ff-zahrah-semibold-italic);
     }
 
     .shop-by-style>div>div h1 {
-        font-size: 40px;
-        line-height: 44px;
+        font-size: 4.0rem;
+        line-height: 4.4rem;
         font-family:var(--ff-zahrah-semibold-italic);
     }
 }

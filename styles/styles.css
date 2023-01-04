@@ -244,21 +244,21 @@
     monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 18px;
-  --body-font-size-xs: 14px;
+  --body-font-size-m: 2.2rem;
+  --body-font-size-s: 1.8rem;
+  --body-font-size-xs: 1.4rem;
 
   /* heading sizes */
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
-  --heading-font-size-l: 32px;
-  --heading-font-size-m: 24px;
-  --heading-font-size-s: 20px;
-  --heading-font-size-xs: 18px;
+  --heading-font-size-xxl: 4.8rem;
+  --heading-font-size-xl: 4rem;
+  --heading-font-size-l: 3.2rem;
+  --heading-font-size-m: 2.4rem;
+  --heading-font-size-s: 2rem;
+  --heading-font-size-xs: 1.8rem;
 
   /* nav height */
-  --desktop-nav-height: 100px;
-  --nav-height: 64px;
+  --desktop-nav-height: 10rem;
+  --nav-height: 6.4rem;
 
   /* section max width */
   --section-max-width: 720px;
@@ -388,9 +388,9 @@ button:focus {
 a.button.secondary,
 button.secondary {
   font-family: var(--ff-zahrah-semibold-italic);
-  font-size: 20px;
-  letter-spacing: 1px;
-  line-height: 20px;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
   min-width: 130px;
   background-color: var(--clr-black);
   border: 1px solid var(--clr-black);
@@ -487,7 +487,7 @@ main .section.secure-shopping h1 {
   padding: .75em;
   margin: 0;
   font-family: var(--ff-gilroy-light);
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 /* styles for /accessibility page */
@@ -609,7 +609,7 @@ main .section.customer-service > div > p + p img{
 .section.shadow > div:first-child h3 {
   font-family: var(--ff-zahrah-semibold);
   margin: 0;
-  font-size: 22px;
+  font-size: 2.2rem;
   text-decoration: underline;
   letter-spacing: 4px;
 }
@@ -617,7 +617,7 @@ main .section.customer-service > div > p + p img{
 /* Product List Page */
 
 body.plp main .section {
-  font-size: 16px;
+  font-size: 1.6rem;
   font-family: var(--ff-gilroy-medium);
   font-weight: 500;
 }
@@ -625,13 +625,13 @@ body.plp main .section {
 body.plp main .section h1 {
   margin-top: 0;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 3rem;
   font-family: var(--ff-gilroy-regular);
 }
 
 body.plp main .section h2 {
   color: var(--clr-dark-pink);
-  font-size: 42px;
+  font-size: 4.2rem;
   font-family: var(--ff-gilroy-medium);
   margin-bottom: 0;
 }
@@ -658,7 +658,7 @@ main > .section.magic-top img {
 
 main > .section.magic-top h1 {
   font-family: var(--ff-zahrah-semibold);
-  font-size: 21px;
+  font-size: 2.1rem;
   letter-spacing: 4px;
   margin: 0;
 }
@@ -707,18 +707,18 @@ main > .section.magic-bottom > div:not(:last-child) {
   }
 
   main > .section.magic-top h1 {
-    font-size: 40px;
+    font-size: 4rem;
   }
 }
 
 @media (min-width: 900px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
+    --heading-font-size-xxl: 6rem;
+    --heading-font-size-xl: 4.8rem;
+    --heading-font-size-l: 3.6rem;
+    --heading-font-size-m: 3rem;
+    --heading-font-size-s: 2.4rem;
+    --heading-font-size-xs: 2.2rem;
   }
 
   .section > div {
@@ -765,7 +765,7 @@ main .section.highlight {
   max-width: 120rem;
   width: 60%;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 1.4rem;
   position: relative;
   font-family: var(--ff-gilroy-regular);
 }
@@ -773,7 +773,7 @@ main .section.highlight {
 .modal-content h1 {
   margin: 10px 0;
   padding: 0;
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 300;
 }
 
@@ -788,7 +788,7 @@ main .section.highlight {
   color: #333;
   border-radius: 50%;
   padding: 0;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 400;
   line-height: 44px;
   font-family: Arial, monospace;
@@ -830,12 +830,12 @@ main blockquote {
 
 @media (min-width: 1024px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
+    --heading-font-size-xxl: 6rem;
+    --heading-font-size-xl: 4.8rem;
+    --heading-font-size-l: 3.6rem;
+    --heading-font-size-m: 3rem;
+    --heading-font-size-s: 2.4rem;
+    --heading-font-size-xs: 2.2rem;
     --section-max-width: 1160px;
   }
 

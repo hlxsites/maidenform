@@ -19,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: 1.3rem;
     text-align: center;
     gap: 25px;
     font-family: var(--ff-gilroy-medium);
@@ -27,7 +27,7 @@
 
 .copyright > div:first-child > div {
     text-align: center;
-    font-size: 10px;
+    font-size: 1.0rem;
     padding: 25px 0;
     font-family: var(--ff-gilroy-regular);
 }

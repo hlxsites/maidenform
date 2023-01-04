@@ -1,6 +1,6 @@
 .breadcrumb {
     font-family: var(--ff-gilroy-regular);
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 400;
 }
 
@@ -29,7 +29,7 @@
     color: var(--clr-dark-grey);
     content: '/';
     display: inline-block;
-    font-size: 14px;
+    font-size: 1.4rem;
     padding-left: 6px;
     padding-right: 3px;
 }
