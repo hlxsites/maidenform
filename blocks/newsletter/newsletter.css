@@ -9,12 +9,10 @@
     color: #fff;
     gap: 25px;
     font-size: 12px;
-    font-weight: 500;
     letter-spacing: 1px;
     line-height: 25px;
     text-transform: uppercase;
-
-    /* TODO: font-family: "Gilroy Regular"; */
+    font-family: var(--ff-gilroy-regular);
 }
 
 .newsletter .content-wrapper {
@@ -48,8 +46,7 @@
     color: #000;
     font-size: 12px;
     height: 30px;
-
-    /* TODO: font-family: "Gilroy Regular"; */
+    font-family: var(--ff-gilroy-regular);
     padding-left: 10px;
 }
 

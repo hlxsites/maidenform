@@ -766,10 +766,8 @@ main .section.highlight {
   width: 60%;
   border-radius: 4px;
   font-size: 14px;
-  font-weight: 400;
   position: relative;
-
-  /* TODO: font-family: 'Gilroy Regular' */
+  font-family: var(--ff-gilroy-regular);
 }
 
 .modal-content h1 {

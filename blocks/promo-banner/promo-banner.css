@@ -5,8 +5,7 @@
   padding: 2px;
   width: calc(100% - 4px);
   overflow: hidden;
-
-  /* TODO: font-family: 'Gilroy Regular' */
+  font-family: var(--ff-gilroy-regular);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -53,13 +52,11 @@
   margin: 0;
   display: inline;
   font-size: 12px;
-  font-weight: 400;
   text-decoration: underline;
   text-transform: uppercase;
   border-radius: 0;
   padding: 9px 15px;
-
-  /* TODO: font-family: 'Gilroy Bold' */
+  font-family: var(--ff-gilroy-bold);
 }
 
 @media (min-width: 768px) {
