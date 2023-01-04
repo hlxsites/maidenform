@@ -19,7 +19,7 @@
     padding: 10px 0 0;
     margin: 0;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .footer-links ul > li {
@@ -38,7 +38,7 @@
     padding: 0;
     text-transform: uppercase;
     font-family: var(--ff-gilroy-bold);
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 @media (min-width: 768px) {

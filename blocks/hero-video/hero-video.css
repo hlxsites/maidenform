@@ -54,21 +54,21 @@
 
 .hero-video .overlay-content h3 {
   color: #fff;
-  font-size: 65px;
+  font-size: 6.5rem;
   line-height: 1;
   margin: 10px 0;
 }
 
 .hero-video .overlay-content h4 {
   color: #f6d4cb;
-  font-size: 20px;
-  letter-spacing: 3px;
+  font-size: 2.0rem;
+  letter-spacing: 0.3rem;
   margin: 0;
 }
 
 .hero-video .overlay-content p {
   color: #fff;
-  font-size: 20px;
+  font-size: 2.0rem;
   line-height: 1.1;
   margin: 0;
 }
@@ -100,7 +100,7 @@
 
   .hero-video .overlay-content p {
     line-height: 1.1;
-    font-size: 20px;
+    font-size: 2.0rem;
   }
 }
 

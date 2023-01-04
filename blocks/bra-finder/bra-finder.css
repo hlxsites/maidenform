@@ -43,7 +43,7 @@
 }
 
 .block.bra-finder .fit-image-overlay > div:first-child p {
-  font-size: 22px;
+  font-size: 2.2rem;
   color: #414042;
   margin: 0;
 }
@@ -143,7 +143,7 @@
 
 /* stylelint-disable-next-line no-descending-specificity */
 .block.bra-finder .fit-measure-steps:not(.fit-image-overlay) p {
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 
 .block.bra-finder .fit-measure-steps:not(.fit-image-overlay) > div {
@@ -231,6 +231,6 @@
   }
 
   .block.bra-finder .fit-image-overlay > div:first-child p {
-    font-size: 28px;
+    font-size: 2.8rem;
   }
 }
