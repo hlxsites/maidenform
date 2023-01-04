@@ -17,10 +17,6 @@
     display: none;
 }
 
-.footer-links > div > div > input:checked ~ ul {
-    max-height: 1000px;
-}
-
 .footer-links ul {
     list-style: none;
     padding: 10px 0 0;
@@ -30,6 +26,10 @@
     max-height: 0;
     overflow: hidden;
     font-size: 1.6rem;
+}
+
+.footer-links > div > div > input:checked ~ ul {
+    max-height: 1000px;
 }
 
 .footer-links ul > li {
