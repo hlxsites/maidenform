@@ -47,6 +47,7 @@
 
 .footer-links label {
     display: flex;
+    cursor: pointer;
 }
 
 .footer-links h3 {
@@ -76,6 +77,10 @@
 @media (min-width: 768px) {
     .footer-links ul {
         max-height: unset;
+    }
+
+    .footer-links label {
+        cursor: default;
     }
 
     .footer-links > div {
