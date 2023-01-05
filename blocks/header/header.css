@@ -98,7 +98,7 @@ header nav .nav-tools form[aria-expanded='true'] input {
   width: 100%;
   padding-left: 45px;
   padding-right: 45px;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 header nav .nav-tools form[aria-expanded='true'] .search-button {
@@ -232,7 +232,7 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   }
 
   header nav .nav-tools .sign-in-link-desktop {
-    font-size: 12px;
+    font-size: 1.2rem;
     text-decoration: underline;
     margin-right: 20px;
     display: initial;
@@ -297,14 +297,14 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   }
   
   header nav .nav-menu ul > li *:is(a, p) {
-    font-size: 15px;
+    font-size: 1.5rem;
     padding: 0;
   }
 
   header nav .nav-menu > ul > li .menu-nav-category a {
     font-family: var(--ff-gilroy-bold);
-    font-size: 15px;
     pointer-events: unset;
+    font-size: 1.5rem;
   }
 
   header nav .nav-menu .menu-nav-category > div > a:hover {
@@ -427,12 +427,12 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   header nav .nav-menu > ul > li {
     padding-left: 24px;
     padding-right: 24px;
-    font-size: 26px;
+    font-size: 2.6rem;
   }
-  
+
   header nav .nav-menu > ul > li .menu-nav-category a {
     font-family: var(--ff-gilroy-bold);
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 
   header nav .nav-logo svg {
