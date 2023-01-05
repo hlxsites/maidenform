@@ -205,6 +205,7 @@
 :root {
   /* colors */
   --clr-black: #000;
+  --clr-charcoal: #333;
   --clr-white: #fff;
   --clr-dark-pink: #c41b53;
   --clr-dark-grey: #767676;
@@ -267,7 +268,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 10px;
+  font-size: 62.5%; /* 62.5% of 16px browser font size is 10px */
 }
 
 body {
@@ -363,19 +364,19 @@ button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
+  border: .2rem solid transparent;
+  padding: .5rem 3rem;
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
   background-color: var(--link-color);
-  margin: 16px 0;
+  margin: 1.6rem 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 3rem;
 }
 
 a.button:hover,
@@ -392,11 +393,11 @@ button.secondary {
   font-size: 2rem;
   letter-spacing: 0.1rem;
   line-height: 2rem;
-  min-width: 130px;
+  min-width: 13rem;
   background-color: var(--clr-black);
   border: 1px solid var(--clr-black);
   color: var(--clr-white);
-  padding: 10px 20px;
+  padding: 1rem 2rem;
 }
 
 a.button.secondary:hover,
@@ -424,7 +425,7 @@ main input[type=text]:hover {
 }
 
 main .section {
-  padding: 64px 16px;
+  padding: 6.4rem 1.6rem;
 }
 
 main .section > div {
@@ -460,8 +461,8 @@ main img {
 
 /* Section Styles */
 .section.center {
-  padding: 0 16px;
-  margin: 40px 0;
+  padding: 0 1.6rem;
+  margin: 4rem 0;
 }
 
 .section.center > div {
@@ -543,14 +544,14 @@ main .section.customer-service > div > p + p a{
 
 main .section.privacy-policy a:any-link{
   text-decoration: underline;
-  color:var(--clr-black) ;
+  color: var(--clr-black) ;
 }
 
 /* styles for /terms-of-use */
 main .section.terms-of-use h1{
   font-size: 4.2rem;
   margin: 0 0 2rem;
-  color: #333;
+  color: var(--clr-charcoal);
 }
 
 main .section.terms-of-use  p {
@@ -599,8 +600,8 @@ main .section.customer-service > div > p + p img{
 }
 
 .section.shadow > div:first-child {
-  gap: 20px;
-  padding: 20px 0;
+  gap: 2rem;
+  padding: 2rem 0;
 }
 
 .section.shadow > div:first-child p {
@@ -612,7 +613,7 @@ main .section.customer-service > div > p + p img{
   margin: 0;
   font-size: 2.2rem;
   text-decoration: underline;
-  letter-spacing: 4px;
+  letter-spacing: .18em;
 }
 
 /* Product List Page */
@@ -651,9 +652,9 @@ body.plp main .section .default-content-wrapper h2 {
 main > .section.magic-top {
   background-repeat: no-repeat;
   background-size: cover;
-  border-top: 30px solid #eb0a8c;
-  border-bottom: 15px solid #000;
-  padding-top: 15px;
+  border-top: 3rem solid #eb0a8c;
+  border-bottom: 1.5rem solid #000;
+  padding-top: 1.5rem;
   margin: 0;
 }
 
@@ -664,7 +665,7 @@ main > .section.magic-top img {
 main > .section.magic-top h1 {
   font-family: var(--ff-zahrah-semibold);
   font-size: 2.1rem;
-  letter-spacing: 4px;
+  letter-spacing: .18em;
   margin: 0;
 }
 
@@ -683,12 +684,12 @@ main > .section.magic-bottom > .default-content-wrapper:last-child img {
   width: 100%;
   max-width: unset;
   height: 100%;
-  min-height: 140px;
+  min-height: 14rem;
   object-fit: cover;
 }
 
 main > .section.magic-bottom > div:not(:last-child) {
-  border-bottom: 15px solid #000;
+  border-bottom: 1.5rem solid #000;
   width: auto;
   max-width: unset;
 }
@@ -700,11 +701,11 @@ main > .section.magic-bottom > div:not(:last-child) {
   }
 
   main .section {
-    padding: 64px 32px;
+    padding: 6.4rem 3.2rem;
   }
 
   .section.center {
-    padding: 0 32px;
+    padding: 0 3.2rem;
   }
 
   .section.center > div:first-child {
@@ -765,7 +766,7 @@ main .section.highlight {
 
 .modal-content {
   background: #fff;
-  padding: 20px;
+  padding: 2rem;
   text-align: center;
   max-width: 120rem;
   width: 60%;
@@ -776,7 +777,7 @@ main .section.highlight {
 }
 
 .modal-content h1 {
-  margin: 10px 0;
+  margin: 1rem 0;
   padding: 0;
   font-size: 2.4rem;
   font-weight: 300;
@@ -786,16 +787,16 @@ main .section.highlight {
   display: block;
   background: #fff;
   border: 1px solid #000;
-  width: 44px;
-  height: 44px;
-  margin: -20px -20px 0 0;
+  width: 4.4rem;
+  height: 4.4rem;
+  margin: -2rem -2rem 0 0;
   text-align: center;
   color: #333;
   border-radius: 50%;
   padding: 0;
   font-size: 2rem;
   font-weight: 400;
-  line-height: 44px;
+  line-height: 4.4rem;
   font-family: Arial, monospace;
   position: absolute;
   right: 0;
@@ -810,8 +811,8 @@ button:disabled, button:disabled:hover {
 }
 
 .modal-content button:hover {
-  background: #000;
-  color: #fff;
+  background: var(--clr-black);
+  color: var(--clr-white);
 }
 
 .section.centered-text {
