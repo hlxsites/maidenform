@@ -471,6 +471,10 @@ main img {
   flex-direction: column;
 }
 
+.section.no-section-padding {
+  padding: 0;
+}
+
 .section:is(.accessibility, .privacy-policy, .secure-shopping, .terms-of-use)
 h1, h2, h3, h4 {
   font-family: var(--ff-gilroy-light);
@@ -705,10 +709,6 @@ main > .section.magic-bottom > div:not(:last-child) {
 
   .section.center {
     padding: 0 32px;
-  }
-
-  .section.center > div:first-child {
-    flex-direction: row;
   }
 
   main > .section.magic-top h1 {
