@@ -6,6 +6,7 @@ const query = `query getCategoriesInCategory($uid: String!) {
     ) {
         items {
             uid
+            id
             name
             product_count
             children_count
@@ -20,4 +21,4 @@ const query = `query getCategoriesInCategory($uid: String!) {
     }
 }`;
 
-export default query;
+export default query.replaceAll(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ');

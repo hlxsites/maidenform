@@ -5,11 +5,11 @@ import Folder from '@spectrum-icons/illustrations/Folder';
 import Copy from '@spectrum-icons/workflow/Copy';
 
 const Picker = props => {
-    const { blocks, getPath, getItems } = props;
+    const { blocks, getPath, getItems, rootCategoryKey } = props;
 
     const [state, setState] = useState({
         items: {},
-        folder: 'Mg==',
+        folder: rootCategoryKey,
         path: [],
         loadingState: 'loading',
         block: null,
@@ -92,7 +92,7 @@ const Picker = props => {
     useEffect(() => {
         (async () => {
             let newItems = await getItems(state.folder);
-            let newPath = await getPath(state.folder);
+            let newPath = await getPath(state.folder, rootCategoryKey);
 
             setState(state => {
                 const blockObj = state.block ? blocks[state.block] : {};
@@ -138,7 +138,7 @@ const Picker = props => {
                         return <Item key={item.key} textValue={item.name} hasChildItems>
                             <Folder />
                             <Text>{item.name}</Text>
-                            {item.childCount && <Text slot="description">{item.childCount} items</Text>}
+                            {item.childCount > 0 && <Text slot="description">{item.childCount} items</Text>}
                             {currentBlock.selection === 'single' && (currentBlock.type === 'any' || currentBlock.type === 'folder') && <ActionButton aria-label="Copy" onPress={() => copyToClipboard(item.key)}><Copy /></ActionButton>}
                         </Item>
                     }

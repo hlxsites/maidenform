@@ -1,7 +1,6 @@
 {
     "project": "Maidenform",
-    "host": "www.maidenform.com",
-    "byocdn": true,
+    "byocdn": false,
     "plugins": [{
         "id": "cif",
         "title": "Commerce",

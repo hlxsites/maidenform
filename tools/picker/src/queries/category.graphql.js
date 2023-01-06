@@ -3,6 +3,7 @@ const query = `query getCategory($uid: String!) {
         items {
             name
             uid
+            id
             breadcrumbs {
                 category_name
                 category_uid
@@ -11,4 +12,4 @@ const query = `query getCategory($uid: String!) {
     }
 }`;
 
-export default query;
+export default query.replaceAll(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ');

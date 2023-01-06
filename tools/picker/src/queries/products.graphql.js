@@ -11,6 +11,17 @@ const query = `query getProductsInCategory($uid: String!) {
                 url
                 label
             }
+            ... on ConfigurableProduct {
+                variants {
+                    product {
+                        thumbnail {
+                            url
+                            label
+                        }
+                    }
+                }
+            }
+            url_key
             __typename
         }
         page_info {
@@ -22,4 +33,4 @@ const query = `query getProductsInCategory($uid: String!) {
     }
 }`;
 
-export default query;
+export default query.replaceAll(/(?:\r\n|\r|\n|\t|[\s]{4})/g, ' ');

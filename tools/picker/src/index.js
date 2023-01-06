@@ -8,8 +8,9 @@ import getProductsInCategory from './queries/products.graphql.js';
 
 import './styles.css';
 
-// TODO: Replace with endpoint via CF Worker to avoid CORS issues
-const endpoint = 'https://graph.adobe.io/api/86e3b058-a382-4f9c-b73f-8edf67f98e46/graphql?api_key=67b0c8fbcc8f4eaeb4690cd812ba578a';
+const endpoint = 'http://localhost:3002/graphql';
+const rootCategoryKey = 'MTI4OQ=='; // UID
+const storeView = 'maidenform_store_view';
 
 /**
  * List of blocks to be available in the picker.
@@ -25,46 +26,24 @@ const blocks = {
     'identifier': {
         'key': 'identifier',
         'name': 'Identifier only',
-        'output': i => i.sku || i.uid,
+        'output': i => i.isFolder ? i.id : i.url_key,  // url_key for product, id for category
         'selection': 'single',
         'type': 'any',
     },
-    'product-teaser': {
-        'key': 'product-teaser',
-        'name': 'Product Teaser',
+    'product-list-page': {
+        'key': 'product-list-page',
+        'name': 'Product List Page',
         'output': i => `<table width="100%" style="border: 1px solid black;">
-            <tr>
-                <th colspan="2" style="border: 1px solid black; background: lightgray;">Product Teaser</th>
-            </tr>
-            <tr>
-                <td style="border: 1px solid black">sku</td>
-                <td style="border: 1px solid black">${i.sku}</td>
-            </tr>
-            <tr>
-                <td style="border: 1px solid black">action</td>
-                <td style="border: 1px solid black">link</td>
-            </tr>
-        </table>`,
+    <tr>
+        <th colspan="2" style="border: 1px solid black; background: lightgray;">Product List Page</th>
+    </tr>
+    <tr>
+        <td style="border: 1px solid black">category</td>
+        <td style="border: 1px solid black">${i.id}</td>
+    </tr>
+</table>`,
         'selection': 'single',
-        'type': 'item',
-    },
-    'product-carousel': {
-        'key': 'product-carousel',
-        'name': 'Product Carousel',
-        'output': items => `<table width="100%" style="border: 1px solid black;">
-            <tr>
-                <th style="border: 1px solid black; background: lightgray;">Product Carousel</th>
-            </tr>
-            <tr>
-                <td style="border: 1px solid black">
-                    <ul>
-                        ${items.map(i => `<li>${i.sku}</li>`).join('')}
-                    </ul>
-                </td>
-            </tr>
-        </table>`,
-        'selection': 'multiple',
-        'type': 'item',
+        'type': 'folder',
     }
 };
 
@@ -75,8 +54,7 @@ const blocks = {
  *   key: Unique key of the folder
  *   name: Displayed name of the folder
  */
-const getPath = async (key) => {
-    const rootCategoryKey = 'Mg==';
+const getPath = async (key, rootCategoryKey) => {
     const newPath = [{ key: rootCategoryKey, name: 'Root Category' }];
     if (key === rootCategoryKey) {
         return newPath;
@@ -88,6 +66,7 @@ const getPath = async (key) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Store': storeView,
             },
             body: JSON.stringify({
                 operationName: 'getCategory',
@@ -132,6 +111,7 @@ const getItems = async (folderKey) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Store': storeView,
             },
             body: JSON.stringify({
                 operationName: 'getCategoriesInCategory',
@@ -157,6 +137,7 @@ const getItems = async (folderKey) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Store': storeView,
             },
             body: JSON.stringify({
                 operationName: 'getProductsInCategory',
@@ -165,8 +146,24 @@ const getItems = async (folderKey) => {
             })
         }).then(res => res.json());
         products?.data?.products?.items.forEach(product => {
+            // Handle thumbnail for variants and change dimensions
+            let thumbnail;
+
+            try {
+                if (product.__typename === 'ConfigurableProduct') {
+                    thumbnail = product?.variants?.[0].product.thumbnail;
+                } else {
+                    thumbnail = product.thumbnail;
+                }
+                const thumbnailUrl = new URL(thumbnail.url);
+                thumbnailUrl.searchParams.set('width', 40);
+                thumbnailUrl.searchParams.set('height', 40);
+                thumbnail.url = thumbnailUrl.toString();
+            } catch {}
+
             newItems[product.sku] = { 
                 ...product,
+                thumbnail,
                 isFolder: false,
                 key: product.sku
             };
@@ -180,5 +177,5 @@ const getItems = async (folderKey) => {
 
 const app = document.getElementById("app");
 if (app) {
-    ReactDOM.render(<Picker blocks={blocks} getPath={getPath} getItems={getItems} />, app);
+    ReactDOM.render(<Picker blocks={blocks} getPath={getPath} getItems={getItems} rootCategoryKey={rootCategoryKey} />, app);
 }
