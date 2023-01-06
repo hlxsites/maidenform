@@ -8,12 +8,14 @@ class Carousel {
 
   updateSlide(nextIndex) {
     const $slidesContainer = this.$root.querySelector('ul.carousel-stage');
+    const $thumbnailsContainer = this.$root.querySelector('ul.carousel-thumbnails');
 
     const currentIndex = this.getCurrentSlideIndex();
 
     $slidesContainer.children[currentIndex].removeAttribute('active');
     $slidesContainer.children[nextIndex].setAttribute('active', true);
     $slidesContainer.style.transform = `translateX(-${nextIndex * 100}%)`;
+    $thumbnailsContainer.style.transform = `translateY(-${nextIndex * 322.6}px)`;
   }
 
   getCurrentSlideIndex() {
@@ -67,28 +69,30 @@ export default function decorate($block) {
                 </picture>    
             </li>
         </ul>
-        <ul class="carousel-stage">
-            <li active="true">
-                <picture>
-                    <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Front.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
-                </picture>    
-            </li>
-            <li>
-                <picture>
-                    <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
-                </picture>    
-            </li>
-            <li>
-                <picture>
-                    <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
-                </picture>    
-            </li>
-            <li>
-                <picture>
-                    <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
-                </picture>    
-            </li>
-        </ul>
+        <div class="carousel-stage-wrapper">
+            <ul class="carousel-stage">
+                <li active="true">
+                    <picture>
+                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Front.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
+                    </picture>    
+                </li>
+                <li>
+                    <picture>
+                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
+                    </picture>    
+                </li>
+                <li>
+                    <picture>
+                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
+                    </picture>    
+                </li>
+                <li>
+                    <picture>
+                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
+                    </picture>    
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="product-title desktop-hidden">
         <h1>Everyday Full Coverage Cushioned Underwire Bra</h1>
