@@ -20,7 +20,7 @@
 
 .columns.icons-and-links > div {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
         'icon icon'
         'links additionallinks'
 }
@@ -30,7 +30,7 @@
 }
 
 .columns.icons-and-links > div:nth-child(odd) {
-    background-color: #f4f4f4; 
+    background-color: #f4f4f4;
 }
 
 .columns.icons-and-links > div > div:first-child{
@@ -50,7 +50,7 @@
 }
 
 .columns.icons-and-links p {
-    margin-bottom: 1.5rem;
+    margin: 1rem 0;
 }
 
 .columns.icons-and-links > div > div:first-of-type > p:first-of-type {
@@ -73,7 +73,7 @@
     margin: 0;
     font-family: var(--ff-gilroy-regular);
     font-weight: 400;
-    font-size: 22px;
+    font-size: 2.2rem;
 }
 
 .columns.center-shadow > div > div > p:nth-child(3) {
@@ -91,18 +91,18 @@
     align-items: stretch;
     text-align: center;
     font-family: var(--ff-zahrah-semibold-italic);
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 400;
-    line-height: 20px;
+    line-height: 2.0rem;
 }
 
 .columns.large-image h2 {
     font-family: var(--ff-zahrah-semibold-italic);
-    font-size: 45px;
+    font-size: 4.5rem;
     font-weight: 400;
     font-style: italic;
     letter-spacing: -1px;
-    line-height: 35px;
+    line-height: 3.5rem;
     margin: 30px 0 10px;
 }
 
@@ -123,7 +123,7 @@
     text-align: center;
     background: #f4e9e2;
     font-family: var(--ff-zahrah-semibold-italic);
-    font-size: 19px;
+    font-size: 1.9rem;
     line-height: 24.2px;
 }
 
@@ -140,18 +140,18 @@
 
 .columns.two-images h4 {
     font-family: var(--ff-gilroy-bold);
-    font-size: 16px;
-    letter-spacing: 4px;
+    font-size: 1.6rem;
+    letter-spacing: 0.4rem;
     text-transform: uppercase;
 }
 
 .columns.two-images h2 {
     font-family: var(--ff-zahrah-semibold-italic);
-    font-size: 45px;
+    font-size: 4.5rem;
     font-weight: 400;
     font-style: italic;
     letter-spacing: -1px;
-    line-height: 35px;
+    line-height: 3.5rem;
     margin: 15px 0 0;
 }
 
@@ -159,58 +159,58 @@
     display: none;
 }
 
-/* Teaser Style */
-.section > .columns-wrapper:has(.teaser) {
+/* Overlap Style */
+.section > .columns-wrapper:has(.overlap) {
     max-width: 970px;
 }
 
-.columns.teaser {
+.columns.overlap {
     text-align: center;
 }
 
-.columns.teaser > div > div:first-child {
+.columns.overlap > div > div:first-child {
     display: flex;
     align-items: center;
 }
 
-.columns.teaser > div:first-child > div:first-child > div {
+.columns.overlap > div:first-child > div:first-child > div {
     display: block;
     background: #000;
     color: #fff;
     padding: 15px 20px;
-    font-size: 14px;
+    font-size: 1.4rem;
     max-width: 100px;
     margin: 0 0 0 -15%;
 }
 
-.columns.teaser > div > div p {
+.columns.overlap > div > div p {
     margin: 0;
     font-family: var(--ff-gilroy-medium);
-    font-size: 15px;
-    line-height: 18px;
+    font-size: 1.5rem;
+    line-height: 1.8rem;
 }
 
-.columns.teaser > div:first-child > div > div h3 {
+.columns.overlap > div:first-child > div > div h3 {
     margin: 0 0 20px;
     font-family: var(--ff-zahrah-semibold-italic);
-    font-size: 15px;
-    line-height: 35px;
+    font-size: 1.5rem;
+    line-height: 3.5rem;
 }
 
-.columns.teaser > div:first-child > div > div h4 {
+.columns.overlap > div:first-child > div > div h4 {
     margin: 0;
     font-family: var(--ff-zahrah-semibold-italic);
-    font-size: 15px;
+    font-size: 1.5rem;
 }
 
-.columns.teaser > div > div:nth-child(2) a.button {
+.columns.overlap > div > div:nth-child(2) a.button {
     margin: 10px;
     min-width: 210px;
 }
 
-.columns.teaser > div > div:nth-child(2) h2 {
+.columns.overlap > div > div:nth-child(2) h2 {
     font-family: var(--ff-zahrah-semibold-italic);
-    font-size: 30px;
+    font-size: 3.0rem;
     margin: 0;
 }
 
@@ -219,7 +219,7 @@
 .columns.colors > div {
     text-align: center;
     font-family: var(--ff-zahrah-regular-italic);
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 .columns.colors > div > div {
@@ -287,7 +287,7 @@
     }
 
     .columns.large-image > div p {
-        font-size: 22px;
+        font-size: 2.2rem;
     }
 
     .columns.large-image.columns-2-cols > div > div:first-child {
@@ -301,7 +301,7 @@
 
     .columns.large-image h2 {
         margin: 30px 0;
-        font-size: 73px;
+        font-size: 7.3rem;
         line-height: 58.4px;
     }
 
@@ -312,16 +312,16 @@
     }
 
     .columns.two-images > div p {
-        font-size: 22px;
+        font-size: 2.2rem;
     }
 
     .columns.two-images h4 {
-        font-size: 22px;
-        letter-spacing: 4px;
+        font-size: 2.2rem;
+        letter-spacing: 0.4rem;
     }
 
     .columns.two-images h2 {
-        font-size: 73px;
+        font-size: 7.3rem;
         line-height: 58.4px;
         margin: 20px 0;
     }
@@ -341,27 +341,27 @@
         align-self: stretch;
     }
 
-    /* Teaser Style */
+    /* Overlap Style */
 
-    .columns.teaser > div > div:first-child {
+    .columns.overlap > div > div:first-child {
         flex: 2;
     }
 
-    .columns.teaser > div:first-child > div:first-child > div {
+    .columns.overlap > div:first-child > div:first-child > div {
         max-width: 185px;
         padding: 20px;
     }
 
-    .columns.teaser > div > div p {
-        font-size: 16px;
+    .columns.overlap > div > div p {
+        font-size: 1.6rem;
     }
 
-    .columns.teaser > div:first-child > div > div h3 {
-        font-size: 28px;
+    .columns.overlap > div:first-child > div > div h3 {
+        font-size: 2.8rem;
     }
 
-    .columns.teaser > div:first-child > div > div h4 {
-        font-size: 20px;
+    .columns.overlap > div:first-child > div > div h4 {
+        font-size: 2.0rem;
     }
 
     .columns.icons-and-links > div {
@@ -373,14 +373,23 @@
     }
 
     .columns.icons-and-links > div > div {
-        flex: 1;
         margin-left:1.2rem;
+    }
+
+    .columns.icons-and-links > div > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .columns.icons-and-links > div > div:nth-child(3) {
+        align-self: flex-start;
+        margin: 1rem 0;
     }
 
     .columns.icons-and-links > div > div:first-child{
         grid-column: 1;
     }
-    
+
     .section.customer-service > div.columns-wrapper {
         max-width: var(--section-max-width);
     }

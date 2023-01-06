@@ -98,7 +98,7 @@ header nav .nav-tools form[aria-expanded='true'] input {
   width: 100%;
   padding-left: 45px;
   padding-right: 45px;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 header nav .nav-tools form[aria-expanded='true'] .search-button {
@@ -159,10 +159,24 @@ header nav .nav-menu ul > li:first-child .menu-nav-category {
   border-top: 1px solid #e7ebee;
 }
 
+header nav p.m-expandable-title a {
+  pointer-events: none;
+}
+
+header nav .m-expandable-list > li a {
+  display: block;
+}
+
+header nav .nav-menu > ul > li .menu-nav-category a {
+  pointer-events: none;
+}
+
 header nav .nav-menu ul > li *:is(a, p) {
   text-transform: uppercase;
+  text-decoration: none;
   color: black;
   font-family: var(--ff-gilroy-bold);
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -184,10 +198,6 @@ header nav .m-bg-img {
 
 header nav .m-expandable-list {
   display: none;
-}
-
-header nav .m-expandable-list > li a {
-  display: block;
 }
 
 header nav .nav-menu .menu-nav-category > div > em > a {
@@ -222,7 +232,7 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   }
 
   header nav .nav-tools .sign-in-link-desktop {
-    font-size: 12px;
+    font-size: 1.2rem;
     text-decoration: underline;
     margin-right: 20px;
     display: initial;
@@ -268,6 +278,10 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
     padding-bottom: 4px;
     grid-area: links;
   }
+  
+  header nav p.m-expandable-title a {
+    pointer-events: unset;
+  }
 
   header nav .nav-menu ul {
     display: flex;
@@ -281,15 +295,16 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   header nav .nav-menu .menu-nav-dropdown .column {
     padding: 12px;
   }
-
+  
   header nav .nav-menu ul > li *:is(a, p) {
-    font-size: 15px;
+    font-size: 1.5rem;
     padding: 0;
   }
 
   header nav .nav-menu > ul > li .menu-nav-category a {
     font-family: var(--ff-gilroy-bold);
-    font-size: 15px;
+    pointer-events: unset;
+    font-size: 1.5rem;
   }
 
   header nav .nav-menu .menu-nav-category > div > a:hover {
@@ -369,7 +384,6 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
     display: initial;
   }
 
-
   header nav .nav-menu .menu-nav-dropdown .m-expandable-list li {
     padding: 0;
     border: none;
@@ -406,18 +420,19 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   header nav p.m-expandable-title {
     border: none;
   }
+
 }
 
 @media (min-width: 1300px) {
   header nav .nav-menu > ul > li {
     padding-left: 24px;
     padding-right: 24px;
-    font-size: 26px;
+    font-size: 2.6rem;
   }
-  
+
   header nav .nav-menu > ul > li .menu-nav-category a {
     font-family: var(--ff-gilroy-bold);
-    font-size: 18px;
+    font-size: 1.8rem;
   }
 
   header nav .nav-logo svg {

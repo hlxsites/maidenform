@@ -1,14 +1,4 @@
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
+/* stylelint-disable no-descending-specificity */
 
 /* fallback font for Gilroy font family */
 
@@ -215,12 +205,14 @@
 :root {
   /* colors */
   --clr-black: #000;
+  --clr-charcoal: #333;
   --clr-white: #fff;
   --clr-dark-pink: #c41b53;
   --clr-dark-grey: #767676;
   --clr-dark-red: #793e4e;
   --clr-red: #ef2f23;
   --clr-dark-blue: #202342;
+  --clr-pink: #d73389;
   --link-color: var(--clr-black);
   --link-hover-color: var(--clr-black);
   --background-color: var(--clr-white);
@@ -254,21 +246,21 @@
     monospace;
 
   /* body sizes */
-  --body-font-size-m: 22px;
-  --body-font-size-s: 18px;
-  --body-font-size-xs: 14px;
+  --body-font-size-m: 2.2rem;
+  --body-font-size-s: 1.8rem;
+  --body-font-size-xs: 1.4rem;
 
   /* heading sizes */
-  --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
-  --heading-font-size-l: 32px;
-  --heading-font-size-m: 24px;
-  --heading-font-size-s: 20px;
-  --heading-font-size-xs: 18px;
+  --heading-font-size-xxl: 4.8rem;
+  --heading-font-size-xl: 4rem;
+  --heading-font-size-l: 3.2rem;
+  --heading-font-size-m: 2.4rem;
+  --heading-font-size-s: 2rem;
+  --heading-font-size-xs: 1.8rem;
 
   /* nav height */
-  --desktop-nav-height: 100px;
-  --nav-height: 64px;
+  --desktop-nav-height: 10rem;
+  --nav-height: 6.4rem;
 
   /* section max width */
   --section-max-width: 720px;
@@ -276,7 +268,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 10px;
+  font-size: 62.5%; /* 62.5% of 16px browser font size is 10px */
 }
 
 body {
@@ -372,19 +364,19 @@ button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
+  border: .2rem solid transparent;
+  padding: .5rem 3rem;
   text-align: center;
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
   background-color: var(--link-color);
-  margin: 16px 0;
+  margin: 1.6rem 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  border-radius: 3rem;
 }
 
 a.button:hover,
@@ -398,14 +390,14 @@ button:focus {
 a.button.secondary,
 button.secondary {
   font-family: var(--ff-zahrah-semibold-italic);
-  font-size: 20px;
-  letter-spacing: 1px;
-  line-height: 20px;
-  min-width: 130px;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+  min-width: 13rem;
   background-color: var(--clr-black);
   border: 1px solid var(--clr-black);
   color: var(--clr-white);
-  padding: 10px 20px;
+  padding: 1rem 2rem;
 }
 
 a.button.secondary:hover,
@@ -414,7 +406,7 @@ button.secondary:hover {
   color: var(--clr-black);
 }
 
-main input {
+main input[type=text] {
   font-size: 1.25rem;
   width: 100%;
   max-width: 50rem;
@@ -428,12 +420,12 @@ main input {
   background-color: var(--background-color);
 }
 
-main input:hover {
+main input[type=text]:hover {
   border: 1px solid var(--text-color);
 }
 
 main .section {
-  padding: 64px 16px;
+  padding: 6.4rem 1.6rem;
 }
 
 main .section > div {
@@ -469,8 +461,8 @@ main img {
 
 /* Section Styles */
 .section.center {
-  padding: 0 16px;
-  margin: 40px 0;
+  padding: 0 1.6rem;
+  margin: 4rem 0;
 }
 
 .section.center > div {
@@ -480,7 +472,7 @@ main img {
   flex-direction: column;
 }
 
-.section:is(.accessibility, .privacy-policy, .secure-shopping, .terms-of-use) 
+.section:is(.accessibility, .privacy-policy, .secure-shopping, .terms-of-use)
 h1, h2, h3, h4 {
   font-family: var(--ff-gilroy-light);
 }
@@ -497,7 +489,7 @@ main .section.secure-shopping h1 {
   padding: .75em;
   margin: 0;
   font-family: var(--ff-gilroy-light);
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 /* styles for /accessibility page */
@@ -552,14 +544,14 @@ main .section.customer-service > div > p + p a{
 
 main .section.privacy-policy a:any-link{
   text-decoration: underline;
-  color:var(--clr-black) ;
+  color: var(--clr-black) ;
 }
 
 /* styles for /terms-of-use */
 main .section.terms-of-use h1{
   font-size: 4.2rem;
   margin: 0 0 2rem;
-  color: #333;
+  color: var(--clr-charcoal);
 }
 
 main .section.terms-of-use  p {
@@ -589,12 +581,11 @@ main .section.customer-service h1 {
 
 main .section.customer-service h4 {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-family: var(--ff-gilroy-light);
 }
 
 main .section.customer-service > div > p {
   font-size: 1.6rem;
-  font-weight: 300;
   margin-bottom: 1rem;
 }
 
@@ -609,8 +600,8 @@ main .section.customer-service > div > p + p img{
 }
 
 .section.shadow > div:first-child {
-  gap: 20px;
-  padding: 20px 0;
+  gap: 2rem;
+  padding: 2rem 0;
 }
 
 .section.shadow > div:first-child p {
@@ -620,29 +611,33 @@ main .section.customer-service > div > p + p img{
 .section.shadow > div:first-child h3 {
   font-family: var(--ff-zahrah-semibold);
   margin: 0;
-  font-size: 22px;
+  font-size: 2.2rem;
   text-decoration: underline;
-  letter-spacing: 4px;
+  letter-spacing: .18em;
 }
 
 /* Product List Page */
 
-body.plp main .section {
-  font-size: 16px;
+body.plp main .section .breadcrumb-wrapper {
+  max-width: 1920px;
+}
+
+body.plp main .section .default-content-wrapper {
+  font-size: 1.6rem;
   font-family: var(--ff-gilroy-medium);
   font-weight: 500;
 }
 
-body.plp main .section h1 {
+body.plp main .section .default-content-wrapper h1 {
   margin-top: 0;
   text-transform: uppercase;
-  font-size: 30px;
+  font-size: 3rem;
   font-family: var(--ff-gilroy-regular);
 }
 
-body.plp main .section h2 {
+body.plp main .section .default-content-wrapper h2 {
   color: var(--clr-dark-pink);
-  font-size: 42px;
+  font-size: 4.2rem;
   font-family: var(--ff-gilroy-medium);
   margin-bottom: 0;
 }
@@ -654,28 +649,82 @@ body.plp main .section h2 {
   color: var(--clr-dark-pink);
 }
 
+main > .section.magic-top {
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top: 3rem solid #eb0a8c;
+  border-bottom: 1.5rem solid #000;
+  padding-top: 1.5rem;
+  margin: 0;
+}
+
+main > .section.magic-top img {
+  width: 75%;
+}
+
+main > .section.magic-top h1 {
+  font-family: var(--ff-zahrah-semibold);
+  font-size: 2.1rem;
+  letter-spacing: .18em;
+  margin: 0;
+}
+
+main > .section.magic-bottom {
+  padding: 0;
+  margin: 0;
+}
+
+main > .section.magic-bottom > .default-content-wrapper:last-child {
+  margin: 0;
+  padding: 0;
+  max-width: unset;
+}
+
+main > .section.magic-bottom > .default-content-wrapper:last-child img {
+  width: 100%;
+  max-width: unset;
+  height: 100%;
+  min-height: 14rem;
+  object-fit: cover;
+}
+
+main > .section.magic-bottom > div:not(:last-child) {
+  border-bottom: 1.5rem solid #000;
+  width: auto;
+  max-width: unset;
+}
+
 @media (min-width: 600px) {
+  main:has(.section.magic-bottom) {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
   main .section {
-    padding: 64px 32px;
+    padding: 6.4rem 3.2rem;
   }
 
   .section.center {
-    padding: 0 32px;
+    padding: 0 3.2rem;
   }
 
   .section.center > div:first-child {
     flex-direction: row;
   }
+
+  main > .section.magic-top h1 {
+    font-size: 4rem;
+  }
 }
 
 @media (min-width: 900px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
+    --heading-font-size-xxl: 6rem;
+    --heading-font-size-xl: 4.8rem;
+    --heading-font-size-l: 3.6rem;
+    --heading-font-size-m: 3rem;
+    --heading-font-size-s: 2.4rem;
+    --heading-font-size-xs: 2.2rem;
   }
 
   .section > div {
@@ -717,23 +766,20 @@ main .section.highlight {
 
 .modal-content {
   background: #fff;
-  padding: 20px;
+  padding: 2rem;
   text-align: center;
   max-width: 120rem;
   width: 60%;
   border-radius: 4px;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 1.4rem;
   position: relative;
-
-  /* TODO: font-family: 'Gilroy Regular' */
+  font-family: var(--ff-gilroy-regular);
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .modal-content h1 {
-  margin: 10px 0;
+  margin: 1rem 0;
   padding: 0;
-  font-size: 24px;
+  font-size: 2.4rem;
   font-weight: 300;
 }
 
@@ -741,16 +787,16 @@ main .section.highlight {
   display: block;
   background: #fff;
   border: 1px solid #000;
-  width: 44px;
-  height: 44px;
-  margin: -20px -20px 0 0;
+  width: 4.4rem;
+  height: 4.4rem;
+  margin: -2rem -2rem 0 0;
   text-align: center;
   color: #333;
   border-radius: 50%;
   padding: 0;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 400;
-  line-height: 44px;
+  line-height: 4.4rem;
   font-family: Arial, monospace;
   position: absolute;
   right: 0;
@@ -765,8 +811,8 @@ button:disabled, button:disabled:hover {
 }
 
 .modal-content button:hover {
-  background: #000;
-  color: #fff;
+  background: var(--clr-black);
+  color: var(--clr-white);
 }
 
 .section.centered-text {
@@ -790,12 +836,12 @@ main blockquote {
 
 @media (min-width: 1024px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
-    --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;
+    --heading-font-size-xxl: 6rem;
+    --heading-font-size-xl: 4.8rem;
+    --heading-font-size-l: 3.6rem;
+    --heading-font-size-m: 3rem;
+    --heading-font-size-s: 2.4rem;
+    --heading-font-size-xs: 2.2rem;
     --section-max-width: 1160px;
   }
 

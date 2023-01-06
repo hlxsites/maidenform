@@ -10,16 +10,26 @@
 .footer-links > div {
     display: flex;
     flex-direction: column;
-    gap: 25px;
     justify-content: space-evenly;
+}
+
+.footer-links > div > div > input {
+    display: none;
 }
 
 .footer-links ul {
     list-style: none;
     padding: 10px 0 0;
     margin: 0;
-    font-weight: 500;
-    font-size: 16px;
+    font-family: var(--ff-gilroy-medium);
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    font-size: 1.6rem;
+}
+
+.footer-links > div > div > input:checked ~ ul {
+    max-height: 1000px;
 }
 
 .footer-links ul > li {
@@ -27,10 +37,17 @@
     padding: 3px 0;
 }
 
+.footer-links ul > li:last-child {
+    margin-bottom: 15px;
+}
+
 .footer-links ul > li a {
     color: #000;
+}
 
-    /* TODO font-family: "Gilroy Medium" */
+.footer-links label {
+    display: flex;
+    cursor: pointer;
 }
 
 .footer-links h3 {
@@ -38,17 +55,50 @@
     padding: 0;
     text-transform: uppercase;
     font-family: var(--ff-gilroy-bold);
-    font-size: 16px;
+    font-size: 1.6rem;
+}
+
+.footer-links label::after {
+    display: inline-block;
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin-left: auto;
+    background: url('../../icons/chevron-left.svg') right center;
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+    transition: all 0.3s ease;
+}
+
+.footer-links input:checked ~ label::after {
+    transform: rotate(270deg);
 }
 
 @media (min-width: 768px) {
+    .footer-links ul {
+        max-height: unset;
+    }
+
+    .footer-links label {
+        cursor: default;
+    }
+
     .footer-links > div {
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
+        gap: 25px;
+    }
+
+    .footer-links label::after {
+        display: none;
     }
 
     .footer-links ul > li {
         text-indent: 0;
+    }
+
+    .footer-links ul > li:last-child {
+        margin-bottom: 0;
     }
 }

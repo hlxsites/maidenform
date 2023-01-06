@@ -2,7 +2,6 @@ import {
   sampleRUM,
   loadHeader,
   loadFooter,
-  decorateButtons,
   decorateIcons,
   decorateSections,
   decorateBlocks,
@@ -25,18 +24,65 @@ window.hlx.RUM_GENERATION = 'project-1'; // add your RUM generation information 
     main.prepend(section);
   }
 } */
+/**
+ * decorates paragraphs containing a single link as buttons.
+ * @param {Element} element container element
+ */
+
+function decorateButtons(element) {
+  element.querySelectorAll('a').forEach((a) => {
+    a.title = a.title || a.textContent;
+    if (a.href !== a.textContent) {
+      const up = a.parentElement;
+      const twoup = a.parentElement.parentElement;
+      if (!a.querySelector('img')) {
+        if (up.childNodes.length === 1 && up.tagName === 'STRONG'
+          && twoup.childNodes.length === 1 && twoup.tagName === 'P') {
+          a.className = 'button primary';
+          twoup.classList.add('button-container');
+        }
+        if (up.childNodes.length === 1 && up.tagName === 'EM'
+          && twoup.childNodes.length === 1 && twoup.tagName === 'P') {
+          a.className = 'button secondary';
+          twoup.classList.add('button-container');
+        }
+      }
+    }
+  });
+}
+
+function buildImageLinks(element) {
+  const pictures = element.querySelectorAll(':scope > div > p > picture');
+  pictures.forEach((picture) => {
+    const up = picture.parentElement;
+    if (up) {
+      // select the last image that is associated with the link
+      const lastPicture = up.lastElementChild;
+      if (lastPicture && (picture === lastPicture)) {
+        // get the p tag that has link
+        const p = lastPicture.parentElement.nextElementSibling;
+        if (p && p.childNodes.length === 1 && p.childNodes[0].nodeName === 'A') {
+          const link = p.childNodes[0];
+          link.innerHTML = lastPicture.outerHTML;
+          up.replaceChild(link, lastPicture);
+          p.remove();
+        }
+      }
+    }
+  });
+}
 
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
-  /* try {
-    buildHeroBlock(main);
+function buildAutoBlocks(main) {
+  try {
+    buildImageLinks(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
-  } */
+  }
 }
 
 /**
