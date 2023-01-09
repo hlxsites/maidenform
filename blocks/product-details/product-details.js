@@ -4,18 +4,25 @@ class Carousel {
   constructor($root) {
     this.$root = $root;
     this.numChildren = [...$root.querySelectorAll('ul.carousel-stage > li')].length;
+    this.thumbnailScroll = 0;
   }
 
   updateSlide(nextIndex) {
     const $slidesContainer = this.$root.querySelector('ul.carousel-stage');
-    const $thumbnailsContainer = this.$root.querySelector('ul.carousel-thumbnails');
 
     const currentIndex = this.getCurrentSlideIndex();
 
     $slidesContainer.children[currentIndex].removeAttribute('active');
     $slidesContainer.children[nextIndex].setAttribute('active', true);
     $slidesContainer.style.transform = `translateX(-${nextIndex * 100}%)`;
-    $thumbnailsContainer.style.transform = `translateY(-${nextIndex * 322.6}px)`;
+    this.updateThumbnailScroll(nextIndex);
+  }
+
+  updateThumbnailScroll(nextIndex) {
+    const $thumbnailsContainer = this.$root.querySelector('ul.carousel-thumbnails');
+    this.thumbnailScroll = Math.min(Math.max(nextIndex, 0), this.numChildren - 1);
+
+    $thumbnailsContainer.style.transform = `translateY(-${(this.thumbnailScroll === 0 ? 0 : 1) * -150 + (this.thumbnailScroll) * 322.6}px)`;
   }
 
   getCurrentSlideIndex() {
@@ -23,9 +30,16 @@ class Carousel {
       .findIndex(($child) => $child.getAttribute('active') === 'true');
   }
 
+  static negativeModulo(i, mod) {
+    return ((i % mod) + mod) % mod;
+  }
+
   init() {
     const nextButton = this.$root.querySelector('button[name="stage-next"]');
     const prevButton = this.$root.querySelector('button[name="stage-prev"]');
+    const thumbnailDownButton = this.$root.querySelector('button[name="thumbnail-next"]');
+    const thumbnailUpButton = this.$root.querySelector('button[name="thumbnail-prev"]');
+    const thumbnails = this.$root.querySelectorAll('.carousel-thumbnails > li');
 
     nextButton.addEventListener('click', () => {
       const currentIndex = this.getCurrentSlideIndex();
@@ -34,8 +48,21 @@ class Carousel {
 
     prevButton.addEventListener('click', () => {
       const currentIndex = this.getCurrentSlideIndex();
-      this.updateSlide((((currentIndex - 1) % this.numChildren) + this.numChildren)
-        % this.numChildren);
+      this.updateSlide(Carousel.negativeModulo(currentIndex - 1, this.numChildren));
+    });
+
+    thumbnailUpButton.addEventListener('click', () => {
+      this.updateThumbnailScroll(this.thumbnailScroll - 1);
+    });
+
+    thumbnailDownButton.addEventListener('click', () => {
+      this.updateThumbnailScroll(this.thumbnailScroll + 1);
+    });
+
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.addEventListener('click', () => {
+        this.updateSlide(index);
+      });
     });
   }
 }
@@ -43,33 +70,39 @@ class Carousel {
 export default function decorate($block) {
   $block.innerHTML = `
     <div class="product-detail-carousel">
-        <div class="main-controls">
-            <button name="stage-prev"><span class="icon icon-chevron-left"></span></button>
-            <button name="stage-next"><span class="icon icon-chevron-right"></span></button>
+        <div class="carousel-thumbnails-wrapper">
+            <div class="thumbnail-controls">
+                <button name="thumbnail-prev"><span class="icon icon-caret-up-fill"></span></button>
+                <button name="thumbnail-next"><span class="icon icon-caret-down-fill"></span></button>
+            </div>
+            <ul class="carousel-thumbnails">
+                <li>
+                    <picture>
+                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Front.jpg?width=247&quality=100&bg-color=255,255,255" />
+                    </picture>    
+                </li>
+                <li>
+                    <picture>
+                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=247&quality=100&bg-color=255,255,255" />
+                    </picture>    
+                </li>
+                <li>
+                    <picture>
+                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=247&quality=100&bg-color=255,255,255" />
+                    </picture>    
+                </li>
+                <li>
+                    <picture>
+                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=247&quality=100&bg-color=255,255,255" />
+                    </picture>    
+                </li>
+            </ul>
         </div>
-        <ul class="carousel-thumbnails">
-            <li>
-                <picture>
-                    <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Front.jpg?width=247&quality=100&bg-color=255,255,255" />
-                </picture>    
-            </li>
-            <li>
-                <picture>
-                    <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=247&quality=100&bg-color=255,255,255" />
-                </picture>    
-            </li>
-            <li>
-                <picture>
-                    <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=247&quality=100&bg-color=255,255,255" />
-                </picture>    
-            </li>
-            <li>
-                <picture>
-                    <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=247&quality=100&bg-color=255,255,255" />
-                </picture>    
-            </li>
-        </ul>
         <div class="carousel-stage-wrapper">
+            <div class="main-controls">
+                <button name="stage-prev"><span class="icon icon-caret-left-fill"></span></button>
+                <button name="stage-next"><span class="icon icon-caret-right-fill"></span></button>
+            </div>
             <ul class="carousel-stage">
                 <li active="true">
                     <picture>
