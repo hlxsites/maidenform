@@ -1,0 +1,13 @@
+{
+  "name": "sitemap-redirect",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "sitemap-redirect.js",
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "xlsx": "^0.18.5",
+    "xml2js": "^0.4.23"
+  }
+}
