@@ -22,7 +22,7 @@ class Carousel {
     const $thumbnailsContainer = this.$root.querySelector('ul.carousel-thumbnails');
     this.thumbnailScroll = Math.min(Math.max(nextIndex, 0), this.numChildren - 1);
 
-    $thumbnailsContainer.style.transform = `translateY(-${(this.thumbnailScroll === 0 ? 0 : 1) * -150 + (this.thumbnailScroll) * 322.6}px)`;
+    $thumbnailsContainer.style.transform = `translateY(-${(this.thumbnailScroll === 0 ? 0 : 1) * -252.7 + (this.thumbnailScroll) * 322.6}px)`;
   }
 
   getCurrentSlideIndex() {
@@ -65,6 +65,19 @@ class Carousel {
       });
     });
   }
+}
+
+function updateSelectedSwatch(block, index) {
+  const swatches = [...block.querySelectorAll('.sidebar-section .swatches > .swatch')];
+  const selectedSwatch = block.querySelector('.sidebar-section .swatches .swatch.selected');
+
+  const newlySelectedSwatch = swatches[index];
+  selectedSwatch.classList.remove('selected');
+  newlySelectedSwatch.classList.add('selected');
+
+  block.querySelectorAll('.selected-swatch-name, .variant-selection > span:nth-child(2)').forEach((element) => {
+    element.innerText = newlySelectedSwatch.getAttribute('data-swatch-name');
+  });
 }
 
 export default function decorate($block) {
@@ -154,20 +167,21 @@ export default function decorate($block) {
         <div class="sidebar-section color-selector">
             <h4>AVAILABLE COLOR</h4>
             <div class="swatches">
-                <div class="swatch selected" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Black_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_White_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BlackandNavyBlossomsPrint_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Sandshell_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BodyBeige_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Ivory_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BleachedIndigo_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Chestnut_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_LilacMeringue_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
+                <div data-swatch-name="Black" class="swatch selected" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Black_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
+                <div data-swatch-name="White" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_White_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
+                <div data-swatch-name="Black and Navy Blossoms Print" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BlackandNavyBlossomsPrint_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
+                <div data-swatch-name="Sandshell" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Sandshell_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
+                <div data-swatch-name="Body Beige" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BodyBeige_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
+                <div data-swatch-name="Ivory" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Ivory_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
+                <div data-swatch-name="Bleached Indigo" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BleachedIndigo_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
+                <div data-swatch-name="Chestnut" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Chestnut_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
+                <div data-swatch-name="Lilac Meringue" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_LilacMeringue_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
             </div>
+            <div class="selected-swatch-name">Black</div>
         </div>
         <div class="sidebar-section sizes-selector">
             <h4>AVAILABLE BAND SIZE</h4>
-            <span>Size Guide</span>
+            <span class="size-guide">Size Guide</span>
             <ul>
                 <li>34</li>
                 <li>36</li>
@@ -178,7 +192,6 @@ export default function decorate($block) {
         </div>
         <div class="sidebar-section sizes-selector">
             <h4>AVAILABLE CUP SIZE</h4>
-            <span>Size Guide</span>
             <ul>
                 <li>B</li>
                 <li>C</li>
@@ -187,7 +200,7 @@ export default function decorate($block) {
             </ul>
         </div>
         <div class="sidebar-section">
-            <h4 class="selection"><span>SELECTION:</span><span>Black</span></h4>
+            <h4 class="variant-selection"><span>SELECTION: </span><span>Black</span></h4>
         </div>
         <div class="sidebar-section quantity-select">
             <h4 class="selection">QUANTITY:</h4>
@@ -220,6 +233,12 @@ export default function decorate($block) {
 
   const carousel = new Carousel($block.querySelector('.product-details .product-detail-carousel'));
   carousel.init();
+
+  $block.querySelectorAll('.swatch').forEach((swatch, index) => {
+    swatch.addEventListener('click', () => {
+      updateSelectedSwatch($block, index);
+    });
+  });
 
   decorateIcons($block);
 }
