@@ -6,3 +6,5 @@ node_modules/*
 
 helix-importer-ui
 .cache
+node_modules
+.parcel-cache
