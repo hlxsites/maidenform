@@ -472,6 +472,10 @@ main img {
   flex-direction: column;
 }
 
+.section.no-section-padding {
+  padding: 0;
+}
+
 .section:is(.accessibility, .privacy-policy, .secure-shopping, .terms-of-use)
 h1, h2, h3, h4 {
   font-family: var(--ff-gilroy-light);
@@ -708,10 +712,6 @@ main > .section.magic-bottom > div:not(:last-child) {
     padding: 0 3.2rem;
   }
 
-  .section.center > div:first-child {
-    flex-direction: row;
-  }
-
   main > .section.magic-top h1 {
     font-size: 4rem;
   }
@@ -839,6 +839,10 @@ main blockquote {
   margin: 3rem;
   text-indent: -1rem;
   hanging-punctuation: first;
+}
+
+body.product-detail-page main .section > div {
+  max-width: 1400px;
 }
 
 @media (min-width: 1024px) {
