@@ -785,7 +785,7 @@ main .section.highlight {
 
 .modal-content button {
   display: block;
-  background: #fff;
+  background: var(--clr-white);
   border: 1px solid #000;
   width: 4.4rem;
   height: 4.4rem;
@@ -813,6 +813,13 @@ button:disabled, button:disabled:hover {
 .modal-content button:hover {
   background: var(--clr-black);
   color: var(--clr-white);
+}
+
+.modal-content button:focus-visible {
+  background: var(--clr-black);
+  color: var(--clr-white);
+  outline: 2px solid var(--clr-pink);
+  outline-offset: 2px;
 }
 
 .section.centered-text {
