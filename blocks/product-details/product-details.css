@@ -28,6 +28,16 @@
   flex-direction: column;
 }
 
+.product-details .sidebar-section h4 {
+  margin: 0;
+}
+
+.product-details .sidebar-section.quantity-select {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
 .product-details .product-title .price .price-reduced {
   font-size: 1.8rem;
   line-height: 3.6rem;
@@ -59,10 +69,12 @@
 }
 
 .product-details .swatches {
+  list-style: none;
+  padding: 0;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin-top: 12px;
+  margin: 12px 0 0;
 }
 
 .product-details .swatch {
@@ -84,7 +96,7 @@
   padding: 8px 15px;
 }
 
-.product-details .swatch.selected {
+.product-details .swatch[aria-selected="true"] {
   outline: 2px solid black;
 }
 
@@ -162,6 +174,28 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.product-details .sizes-selector ul li[aria-selected="true"] {
+  border-color: black;
+  color: black;
+}
+
+.product-details .sizes-selector ul li[aria-disabled="true"] {
+  cursor: not-allowed;
+  position: relative;
+}
+
+.product-details .sizes-selector ul li[aria-disabled="true"]::after {
+  background: url('/icons/size-disabled.svg');
+  background-size: contain;
+  content: '';
+  height: 70%;
+  left: 10%;
+  position: absolute;
+  top: 15%;
+  width: 80%;
+  z-index: 1;
 }
 
 .product-details .product-detail-carousel .carousel-thumbnails-wrapper {

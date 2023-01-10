@@ -67,13 +67,22 @@ class Carousel {
   }
 }
 
-function updateSelectedSwatch(block, index) {
-  const swatches = [...block.querySelectorAll('.sidebar-section .swatches > .swatch')];
-  const selectedSwatch = block.querySelector('.sidebar-section .swatches .swatch.selected');
+function updateSelectedItemInList(list, newIndex) {
+  const listItems = [...list.querySelectorAll(':scope > li')];
+  const currentlySelectedItem = list.querySelector(':scope > li[aria-selected="true"]');
 
-  const newlySelectedSwatch = swatches[index];
-  selectedSwatch.classList.remove('selected');
-  newlySelectedSwatch.classList.add('selected');
+  const newlySelectedItem = listItems[newIndex];
+
+  currentlySelectedItem.removeAttribute('aria-selected');
+  newlySelectedItem.setAttribute('aria-selected', 'true');
+
+  return newlySelectedItem;
+}
+
+function updateSelectedSwatch(block, index) {
+  const swatches = block.querySelector('.sidebar-section .swatches');
+  const newlySelectedSwatch = updateSelectedItemInList(swatches, index);
+  newlySelectedSwatch.setAttribute('aria-selected', 'true');
 
   block.querySelectorAll('.selected-swatch-name, .variant-selection > span:nth-child(2)').forEach((element) => {
     element.innerText = newlySelectedSwatch.getAttribute('data-swatch-name');
@@ -166,26 +175,26 @@ export default function decorate($block) {
         </div>
         <div class="sidebar-section color-selector">
             <h4>AVAILABLE COLOR</h4>
-            <div class="swatches">
-                <div data-swatch-name="Black" class="swatch selected" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Black_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div data-swatch-name="White" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_White_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div data-swatch-name="Black and Navy Blossoms Print" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BlackandNavyBlossomsPrint_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div data-swatch-name="Sandshell" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Sandshell_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div data-swatch-name="Body Beige" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BodyBeige_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div data-swatch-name="Ivory" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Ivory_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div data-swatch-name="Bleached Indigo" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BleachedIndigo_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div data-swatch-name="Chestnut" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Chestnut_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-                <div data-swatch-name="Lilac Meringue" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_LilacMeringue_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></div>
-            </div>
+            <ul class="swatches">
+                <li aria-selected="true" data-swatch-name="Black" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Black_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></li>
+                <li data-swatch-name="White" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_White_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></li>
+                <li data-swatch-name="Black and Navy Blossoms Print" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BlackandNavyBlossomsPrint_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></li>
+                <li data-swatch-name="Sandshell" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Sandshell_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></li>
+                <li data-swatch-name="Body Beige" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BodyBeige_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></li>
+                <li data-swatch-name="Ivory" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Ivory_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></li>
+                <li data-swatch-name="Bleached Indigo" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_BleachedIndigo_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></li>
+                <li data-swatch-name="Chestnut" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_Chestnut_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></li>
+                <li data-swatch-name="Lilac Meringue" class="swatch" style="background: url(https://swatches.maidenform.com/HNS_09436/HNS_09436_LilacMeringue_sw.jpg?quality=85&height=50&width=50&fit=bounds) no-repeat center;"></li>
+            </ul>
             <div class="selected-swatch-name">Black</div>
         </div>
         <div class="sidebar-section sizes-selector">
             <h4>AVAILABLE BAND SIZE</h4>
             <span class="size-guide">Size Guide</span>
             <ul>
-                <li>34</li>
+                <li aria-selected="true">34</li>
                 <li>36</li>
-                <li>38</li>
+                <li aria-disabled="true">38</li>
                 <li>40</li>
                 <li>42</li>
             </ul>
@@ -193,10 +202,10 @@ export default function decorate($block) {
         <div class="sidebar-section sizes-selector">
             <h4>AVAILABLE CUP SIZE</h4>
             <ul>
-                <li>B</li>
+                <li aria-selected="true">B</li>
                 <li>C</li>
                 <li>D</li>
-                <li>DD</li>
+                <li aria-disabled="true">DD</li>
             </ul>
         </div>
         <div class="sidebar-section">
@@ -237,6 +246,16 @@ export default function decorate($block) {
   $block.querySelectorAll('.swatch').forEach((swatch, index) => {
     swatch.addEventListener('click', () => {
       updateSelectedSwatch($block, index);
+    });
+  });
+
+  $block.querySelectorAll('.sizes-selector > ul').forEach((sizeList) => {
+    sizeList.querySelectorAll(':scope > li').forEach((sizeItem, index) => {
+      sizeItem.addEventListener('click', () => {
+        if (!sizeItem.getAttribute('aria-disabled')) {
+          updateSelectedItemInList(sizeList, index);
+        }
+      });
     });
   });
 
