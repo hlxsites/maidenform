@@ -123,7 +123,7 @@ export default function decorate($block) {
                 </li>
                 <li>
                     <picture>
-                        <img height="313" width="247" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=247&quality=100&bg-color=255,255,255" />
+                        <img loading="lazy" height="313" width="247" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=247&quality=100&bg-color=255,255,255" />
                     </picture>    
                 </li>
             </ul>
@@ -145,21 +145,21 @@ export default function decorate($block) {
                     <picture>
                         <source media="(min-width: 400px)" srcset="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
                         <source srcset="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=400&quality=100&bg-color=255,255,255&dpr=1 0.5x" />
-                        <img height="888" width="700" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
+                        <img loading="lazy" height="888" width="700" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
                     </picture>    
                 </li>
                 <li>
                     <picture>
                         <source media="(min-width: 400px)" srcset="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
                         <source srcset="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=400&quality=100&bg-color=255,255,255&dpr=1 0.5x" />
-                        <img height="888" width="700" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
+                        <img loading="lazy" height="888" width="700" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
                     </picture>    
                 </li>
                 <li>
                     <picture>
                         <source media="(min-width: 400px)" srcset="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
                         <source srcset="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=400&quality=100&bg-color=255,255,255&dpr=1 0.5x" />
-                        <img height="888" width="700" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
+                        <img loading="lazy" height="888" width="700" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=700&quality=100&bg-color=255,255,255&dpr=1 1x" />
                     </picture>    
                 </li>
             </ul>
