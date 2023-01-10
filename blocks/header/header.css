@@ -14,7 +14,6 @@ header nav > div {
 }
 
 header nav .nav-menu {
-  padding-bottom: 50px;
   display: none;
 }
 
@@ -275,7 +274,6 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   header nav .nav-menu {
     display: flex;
     align-items: flex-end;
-    padding-bottom: 4px;
     grid-area: links;
   }
   
@@ -322,8 +320,7 @@ header nav .nav-menu .menu-nav-dropdown *:not(.icon) > img {
   }
 
   header nav .nav-menu > ul > li {
-    padding-bottom: 30px;
-    margin-bottom: -30px;
+    padding-bottom: 4px;
   }
 
   header nav .nav-menu ul > li:first-child .menu-nav-category {
