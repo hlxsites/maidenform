@@ -153,9 +153,12 @@
 }
 
 .product-details .product-detail-carousel .carousel-stage-wrapper img {
-  aspect-ratio: 888 / 700;
-  height: 888px;
+  aspect-ratio: 800 / 1014;
+  width: 100vw;
+  height: auto;
   object-fit: contain;
+  display: block;
+  margin: auto;
 }
 
 .product-details .product-detail-carousel ul {
@@ -269,6 +272,11 @@
 @media (min-width: 600px) {
   .product-details > *:not(.product-detail-carousel) {
     padding: 0 32px;
+  }
+
+  .product-details .product-detail-carousel .carousel-stage-wrapper img {
+    aspect-ratio: 700 / 800;
+    width: auto;
   }
 }
 
