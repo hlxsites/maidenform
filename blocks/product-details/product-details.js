@@ -73,7 +73,7 @@ function updateSelectedItemInList(list, newIndex) {
 
   const newlySelectedItem = listItems[newIndex];
 
-  currentlySelectedItem.removeAttribute('aria-selected');
+  currentlySelectedItem?.removeAttribute('aria-selected');
   newlySelectedItem.setAttribute('aria-selected', 'true');
 
   return newlySelectedItem;
@@ -84,9 +84,17 @@ function updateSelectedSwatch(block, index) {
   const newlySelectedSwatch = updateSelectedItemInList(swatches, index);
   newlySelectedSwatch.setAttribute('aria-selected', 'true');
 
-  block.querySelectorAll('.selected-swatch-name, .variant-selection > span:nth-child(2)').forEach((element) => {
-    element.innerText = newlySelectedSwatch.getAttribute('data-swatch-name');
-  });
+  block.querySelectorAll('.selected-swatch-name').innerText = newlySelectedSwatch.getAttribute('data-swatch-name');
+}
+
+function updateSelection(block) {
+  const variantSelection = block.querySelector('.variant-selection > span:nth-child(2)');
+
+  const color = block.querySelector('.swatch[aria-selected="true"]').getAttribute('data-swatch-name');
+  const sizes = [...block.querySelectorAll('.sizes-selector > ul > li[aria-selected="true"]')]
+    .reduce((total, item) => `${total}${item.innerHTML}`, '');
+
+  variantSelection.innerText = `${color} ${sizes}`;
 }
 
 export default function decorate($block) {
@@ -100,22 +108,22 @@ export default function decorate($block) {
             <ul class="carousel-thumbnails">
                 <li>
                     <picture>
-                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Front.jpg?width=247&quality=100&bg-color=255,255,255" />
+                        <img height="888" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Front.jpg?width=247&quality=100&bg-color=255,255,255" />
                     </picture>    
                 </li>
                 <li>
                     <picture>
-                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=247&quality=100&bg-color=255,255,255" />
+                        <img height="888" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Side.jpg?width=247&quality=100&bg-color=255,255,255" />
                     </picture>    
                 </li>
                 <li>
                     <picture>
-                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=247&quality=100&bg-color=255,255,255" />
+                        <img height="888" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Back.jpg?width=247&quality=100&bg-color=255,255,255" />
                     </picture>    
                 </li>
                 <li>
                     <picture>
-                        <img src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=247&quality=100&bg-color=255,255,255" />
+                        <img height="888" src="https://cdn.maidenform.com/catalog/product/M/F/MFB_09436/MFB_09436_Black_Detail01.jpg?width=247&quality=100&bg-color=255,255,255" />
                     </picture>    
                 </li>
             </ul>
@@ -192,7 +200,7 @@ export default function decorate($block) {
             <h4>AVAILABLE BAND SIZE</h4>
             <span class="size-guide">Size Guide</span>
             <ul>
-                <li aria-selected="true">34</li>
+                <li>34</li>
                 <li>36</li>
                 <li aria-disabled="true">38</li>
                 <li>40</li>
@@ -202,7 +210,7 @@ export default function decorate($block) {
         <div class="sidebar-section sizes-selector">
             <h4>AVAILABLE CUP SIZE</h4>
             <ul>
-                <li aria-selected="true">B</li>
+                <li>B</li>
                 <li>C</li>
                 <li>D</li>
                 <li aria-disabled="true">DD</li>
@@ -246,6 +254,7 @@ export default function decorate($block) {
   $block.querySelectorAll('.swatch').forEach((swatch, index) => {
     swatch.addEventListener('click', () => {
       updateSelectedSwatch($block, index);
+      updateSelection($block);
     });
   });
 
@@ -254,6 +263,7 @@ export default function decorate($block) {
       sizeItem.addEventListener('click', () => {
         if (!sizeItem.getAttribute('aria-disabled')) {
           updateSelectedItemInList(sizeList, index);
+          updateSelection($block);
         }
       });
     });

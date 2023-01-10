@@ -833,6 +833,10 @@ main blockquote {
   hanging-punctuation: first;
 }
 
+body.product-detail-page main .section > div {
+  max-width: 1400px;
+}
+
 @media (min-width: 1024px) {
   :root {
     --heading-font-size-xxl: 6rem;
