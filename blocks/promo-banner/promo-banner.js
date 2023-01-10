@@ -15,12 +15,20 @@ export default async function decorate(block) {
     // Add details button
     const button = document.createElement('button');
     button.innerHTML = 'Details';
+    button.ariaExpanded = false;
     promotion.children[0].appendChild(button);
 
     // Add class for modal
     promotion.children[1].classList.add('modal');
     const modal = new Modal(promotion.children[1], carousel);
-    button.addEventListener('click', () => modal.show());
+    button.setAttribute('aria-controls', modal.getId());
+    button.addEventListener('click', (event) => {
+      event.target.ariaExpanded = true;
+      modal.show();
+    });
+    modal.setOnClose(() => {
+      button.ariaExpanded = false;
+    });
   });
 
   carousel.start();

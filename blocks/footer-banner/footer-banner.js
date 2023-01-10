@@ -42,31 +42,87 @@ export class Carousel {
 export class Modal {
   constructor(content, carousel) {
     this.content = content;
+    this.id = `modal-${Math.random().toString(36).substr(2, 9)}`;
     this.carousel = carousel;
+    this.onClose = null;
+
+    // ESC event handler
+    this.handleEscKey = (event) => {
+      if (event.key === 'Escape') {
+        this.hide();
+      }
+    };
+
+    // Focus trap
+    this.focusTrap = (event) => {
+      if (event.key !== 'Tab' && event.keyCode !== 9) {
+        return;
+      }
+      if (event.shiftKey) {
+        if (document.activeElement === this.firstFocusableEl) {
+          event.preventDefault();
+          this.lastFocusableEl.focus();
+        }
+      } else if (document.activeElement === this.lastFocusableEl) {
+        event.preventDefault();
+        this.firstFocusableEl.focus();
+      }
+    };
+  }
+
+  static setHidden(bool) {
+    document.body.querySelector('header').ariaHidden = bool;
+    document.body.querySelector('main').ariaHidden = bool;
+    document.body.querySelector('footer').ariaHidden = bool;
+  }
+
+  setOnClose(onClose) {
+    this.onClose = onClose;
+  }
+
+  getId() {
+    return this.id;
   }
 
   show() {
     this.modal = document.createRange().createContextualFragment(`
       <div class="modal-background">
-        <div class="modal-content">
-          <button aria-label="Close">X</button>
+        <div class="modal-content" role="dialog" aria-modal="true">
+          <button aria-label="Close (ESC)" tabindex="0">X</button>
         </div>
       </div>
     `);
-
     this.modal.querySelector('.modal-content').appendChild(this.content);
+
+    // Event listeners for closing modal
     this.modal.querySelector('.modal-background').addEventListener('click', () => this.hide());
     this.modal.querySelector('.modal-content button').addEventListener('click', () => this.hide());
+    document.addEventListener('keyup', this.handleEscKey);
     this.modal.querySelector('.modal-content').addEventListener('click', (e) => e.stopPropagation());
 
     this.modal = document.body.appendChild(this.modal.children[0]);
+    Modal.setHidden(true);
 
+    // Focus trap
+    const focusableEls = this.modal.querySelector('.modal-content').querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+    [this.firstFocusableEl] = focusableEls;
+    this.lastFocusableEl = focusableEls[focusableEls.length - 1];
+    this.modal.addEventListener('keydown', this.focusTrap);
+
+    // Focus first element
+    this.firstFocusableEl.focus();
     this.carousel.stop();
   }
 
   hide() {
+    document.removeEventListener('keyup', this.handleEscKey);
+    Modal.setHidden(false);
     this.modal.remove();
     this.carousel.start();
+
+    if (this.onClose) {
+      this.onClose();
+    }
   }
 }
 
@@ -85,12 +141,20 @@ export default async function decorate(block) {
     // Add details button
     const button = document.createElement('button');
     button.innerHTML = 'Details';
+    button.ariaExpanded = false;
     promotion.children[0].appendChild(button);
 
     // Add class for modal
     promotion.children[1].classList.add('modal');
     const modal = new Modal(promotion.children[1], carousel);
-    button.addEventListener('click', () => modal.show());
+    button.setAttribute('aria-controls', modal.getId());
+    button.addEventListener('click', (event) => {
+      event.target.ariaExpanded = true;
+      modal.show();
+    });
+    modal.setOnClose(() => {
+      button.ariaExpanded = false;
+    });
   });
 
   carousel.start();
